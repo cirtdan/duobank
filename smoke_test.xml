@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Smoke Tests Suite" parallel="tests" thread-count="10">
-
-
+<suite name="Smoke Tests Suite">
 
     <test name="Smoke Tests UI">
-
         <groups>
-
             <run>
-                <include name="smoke_test"></include>
+                <include name="smoke" />
             </run>
-
         </groups>
 
-
         <packages>
+
             <package name=".*"></package>
+            <!--runs all the packages-->
         </packages>
 
-    </test> <!-- Test -->
-</suite> <!-- Suite -->
+    </test>
+</suite>

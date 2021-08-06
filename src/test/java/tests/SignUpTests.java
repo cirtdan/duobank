@@ -1,6 +1,7 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -11,28 +12,27 @@ import utilities.ConfigReader;
 
 public class SignUpTests extends TestBase {
 
-    @Test (groups = {"smoke_test"})
+    @Test (groups = {"smoke"})
     public void positiveSignUp() {
 
         SignUpPage signup = new SignUpPage();
         signup.signUp(firstName, lastName, email, pass);
 
-        new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe("http://duobank-env.eba-hjmrxg9a.us-east-2.elasticbeanstalk.com/index.php"));
-        Assert.assertTrue(driver.getCurrentUrl().equals("http://duobank-env.eba-hjmrxg9a.us-east-2.elasticbeanstalk.com/index.php"));
+        new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe(loginUrl));
+        Assert.assertTrue(driver.getCurrentUrl().equals(loginUrl));
     }
 
-    @Test (groups = {"smoke_test"})
+    @Test (groups = {"smoke"})
     public void negativeSignUpWithWrongEmail() {
 
         SignUpPage signup = new SignUpPage();
         String wrongEmailFormat = "@gmail.com";
         signup.signUp(firstName, lastName, wrongEmailFormat, pass);
 
-        new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe("http://duobank-env.eba-hjmrxg9a.us-east-2.elasticbeanstalk.com/index.php"));
-        Assert.assertTrue(driver.getCurrentUrl().equals("http://duobank-env.eba-hjmrxg9a.us-east-2.elasticbeanstalk.com/index.php"));
+        Assert.assertNotEquals(signup.actualWelcomingMessage.getText(), expectedWelcomingMessage);
     }
 
-    @Test (groups = {"smoke_test"})
+    @Test (groups = {"smoke"})
     public void SignUpWithUnusualNameAndWrongEmailFormat() {
 
         SignUpPage signup = new SignUpPage();
@@ -40,18 +40,25 @@ public class SignUpTests extends TestBase {
         String wrongEmailFormat = "XA-12@io-.com";
         signup.signUp(elonSonsName, lastName, wrongEmailFormat, pass);
 
-        new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe("http://duobank-env.eba-hjmrxg9a.us-east-2.elasticbeanstalk.com/index.php"));
-        Assert.assertTrue(driver.getCurrentUrl().equals("http://duobank-env.eba-hjmrxg9a.us-east-2.elasticbeanstalk.com/index.php"));
+        Assert.assertNotEquals(signup.actualWelcomingMessage.getText(), expectedWelcomingMessage);
     }
 
-    @Test (groups = {"smoke_test"})
+    @Test (groups = {"smoke"})
     public void SignUpWithUnsafePassword() {
 
         SignUpPage signup = new SignUpPage();
         signup.signUp(firstName, lastName, alternativeEmail, signup.unsafePassword()); // alternativeEmail used to sign up
 
-        new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe("http://duobank-env.eba-hjmrxg9a.us-east-2.elasticbeanstalk.com/index.php"));
-        Assert.assertTrue(driver.getCurrentUrl().equals("http://duobank-env.eba-hjmrxg9a.us-east-2.elasticbeanstalk.com/index.php"));
+        Assert.assertEquals(signup.actualWelcomingMessage.getText(), expectedWelcomingMessage);
     }
 
+    @Test (groups = {"smoke"})
+    public void SignUpWithExistingUser() {
+
+        SignUpPage signup = new SignUpPage();
+        signup.signUp(firstName, lastName, testerEmail, testerPassword); // existed user email
+
+        Assert.assertNotEquals(signup.actualWelcomingMessage.getText(), expectedWelcomingMessage);
+        Assert.assertEquals(signup.emailExistedMessageActual.getText(), emailExistedMessageExpected);
+    }
 }

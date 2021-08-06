@@ -1,14 +1,16 @@
 package tests;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.ApplicationPage;
 import pages.LoginPage;
 import utilities.ConfigReader;
 import utilities.SeleniumUtils;
 
-public class LoginTests extends SignUpTests{
+public class LoginTests extends TestBase{
 
-    @Test (groups = {"smoke_test"})
+    @Test (groups = {"smoke"})
     public void appHealthCheck(){
 
 
@@ -17,25 +19,43 @@ public class LoginTests extends SignUpTests{
 
     }
 
-    @Test (groups = {"smoke_test"})
+    @Test (priority=1, groups = {"smoke"})
     public void positiveLogin() {
 
         LoginPage loginPage = new LoginPage();
         logger.info("Entering Email, Password and clicking login button and verifying the url is expected");
 
-        loginPage.login(testerEmail, testerEmail);
-        Assert.assertTrue(driver.getCurrentUrl().equals("http://duobank-env.eba-hjmrxg9a.us-east-2.elasticbeanstalk.com/dashboard.php"));
+        loginPage.login(testerEmail, testerPassword);
+        Assert.assertTrue(driver.getCurrentUrl().equals(dashboardUrl));
 
     }
-    @Test (groups = {"smoke_test"})
+
+    @Test (groups = {"smoke"})
     public void negativeLogin() {
 
         LoginPage loginPage = new LoginPage();
         logger.info("Entering wrongEmail, Password and clicking login button and verifying the url is expected");
         loginPage.login(email, pass);
-        Assert.assertFalse(driver.getCurrentUrl().equals("http://duobank-env.eba-hjmrxg9a.us-east-2.elasticbeanstalk.com/dashboard.php"));
+        Assert.assertFalse(driver.getCurrentUrl().equals(dashboardUrl));
 
     }
 
+    @Test (priority=2, groups = {"smoke"})
+    public void loginAndVerifyUsername(){
+
+        LoginPage loginPage = new LoginPage();
+
+        loginPage.login(testerEmail, testerPassword);
+        Assert.assertEquals(loginPage.actualUsernameButton.getText(), expectedUsername);
+    }
+
+    @Test (groups = {"smoke"})
+    public void loginAndVerifyUrl(){
+
+        LoginPage loginPage = new LoginPage();
+
+        loginPage.login(testerEmail, testerPassword);
+        Assert.assertTrue(driver.getCurrentUrl().equals(dashboardUrl));
+    }
 }
 

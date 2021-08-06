@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite CrossBrowser" parallel="tests" thread-count="4">
+
+    <test name="Chrome Tests">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="tests.LoginTests"></class>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="Edge Tests">
+        <parameter name="browser" value="edge"></parameter>
+        <classes>
+            <class name="tests.LoginTests"></class>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="Firefox Tests">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="tests.LoginTests"></class>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="Headless Chrome Tests">
+        <parameter name="browser" value="headlessChrome"></parameter>
+        <classes>
+            <class name="tests.LoginTests"></class>
+        </classes>
+    </test> <!-- Test -->
+
+
+
+</suite> <!-- Suite -->

@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -23,6 +24,12 @@ public class SignUpPage extends PageBase {
 
     @FindBy(xpath = "//button[@name='register']")
     public WebElement signUpButtonField;
+
+    @FindBy(xpath = "//h4")
+    public WebElement actualWelcomingMessage;
+
+    @FindBy(xpath = "//span[.='This email already used']")
+    public WebElement emailExistedMessageActual;
 
 
     public void signUp(String firstname, String lastname, String email, String pass) {

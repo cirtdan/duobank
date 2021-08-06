@@ -6,9 +6,11 @@ import com.aventstack.extentreports.reporter.ExtentReporter;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.github.javafaker.Faker;
 import com.sun.javafx.tools.ant.CSSToBinTask;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import pages.ApplicationPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.SeleniumUtils;
@@ -35,6 +37,16 @@ public class TestBase {
 
     String alternativeEmail = fake.internet().emailAddress();
     String wrongEmail = fake.internet().emailAddress();
+
+    String expectedUsername = ConfigReader.getProperty("firstName") + " " + ConfigReader.getProperty("lastName");
+
+    String loginUrl = ConfigReader.getProperty("url");
+    String dashboardUrl = ConfigReader.getProperty("dashboardUrl");
+
+    String expectedWelcomingMessage = "Welcome Back, Automation Testers!";
+
+    String emailExistedMessageExpected = "This email already used";
+
 
     protected static ExtentReports reporter;
     protected static ExtentSparkReporter htmlReporter;
