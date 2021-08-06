@@ -30,7 +30,11 @@ public class TestBase {
     String email = fake.internet().emailAddress();
     String pass = fake.internet().password();
 
+    String testerEmail = ConfigReader.getProperty("email");
+    String testerPassword = ConfigReader.getProperty("pass");
+
     String alternativeEmail = fake.internet().emailAddress();
+    String wrongEmail = fake.internet().emailAddress();
 
     protected static ExtentReports reporter;
     protected static ExtentSparkReporter htmlReporter;
