@@ -5,28 +5,28 @@
     <test name="Chrome Tests">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="tests.LoginTests"></class>
+            <class name="tests.MortgageApplicationTests"></class>
         </classes>
     </test> <!-- Test -->
 
     <test name="Edge Tests">
         <parameter name="browser" value="edge"></parameter>
         <classes>
-            <class name="tests.LoginTests"></class>
+            <class name="tests.MortgageApplicationTests"></class>
         </classes>
     </test> <!-- Test -->
 
     <test name="Firefox Tests">
         <parameter name="browser" value="firefox"></parameter>
         <classes>
-            <class name="tests.LoginTests"></class>
+            <class name="tests.MortgageApplicationTests"></class>
         </classes>
     </test> <!-- Test -->
 
     <test name="Headless Chrome Tests">
         <parameter name="browser" value="headlessChrome"></parameter>
         <classes>
-            <class name="tests.LoginTests"></class>
+            <class name="tests.MortgageApplicationTests"></class>
         </classes>
     </test> <!-- Test -->
 

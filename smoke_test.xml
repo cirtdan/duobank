@@ -2,12 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Smoke Tests Suite">
 
+    <groups>
+        <run>
+            <include name="smoke" />
+        </run>
+    </groups>
+
     <test name="Smoke Tests UI">
-        <groups>
-            <run>
-                <include name="smoke" />
-            </run>
-        </groups>
 
         <packages>
 

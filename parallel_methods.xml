@@ -4,7 +4,7 @@
 
 
 
-    <test name="Regression Tests UI" parallel="methods" thread-count="10">
+    <test name="Regression Tests UI" parallel="methods" thread-count="2">
 
 
 

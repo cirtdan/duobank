@@ -8,9 +8,12 @@ import com.github.javafaker.Faker;
 import com.sun.javafx.tools.ant.CSSToBinTask;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.ApplicationPage;
+import pages.LoginPage;
+import pages.SignUpPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.SeleniumUtils;
@@ -18,6 +21,7 @@ import utilities.SeleniumUtils;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -25,34 +29,72 @@ public class TestBase {
 
     protected WebDriver driver;
 
+    LoginPage loginPage = new LoginPage();
+    SignUpPage signup = new SignUpPage();
+    ApplicationPage appPage = new ApplicationPage();
+
     Faker fake = new Faker();
 
     String firstName = fake.name().firstName();
     String lastName = fake.name().lastName();
     String email = fake.internet().emailAddress();
     String pass = fake.internet().password();
+    String dateOfBirth = "05/05/1985";
+    String ssn = "123-45-6789";
+    String cellNumber = "121-100-0101";
+    String homeNumber = "222-100-0101";
 
     String testerEmail = ConfigReader.getProperty("email");
     String testerPassword = ConfigReader.getProperty("pass");
 
     String alternativeEmail = fake.internet().emailAddress();
-    String wrongEmail = fake.internet().emailAddress();
+    String wrongEmailFormat = "@gmail.com";
+    String wrongEmailFormat2 = "XA-12@io-.com";
+    String elonSonsName = "X Æ A-12,";
 
     String expectedUsername = ConfigReader.getProperty("firstName") + " " + ConfigReader.getProperty("lastName");
 
     String loginUrl = ConfigReader.getProperty("url");
     String dashboardUrl = ConfigReader.getProperty("dashboardUrl");
+    String mortgageAppUrl = ConfigReader.getProperty("mortgageAppUrl");
+    String appListUrl = ConfigReader.getProperty("appListUrl");
 
     String expectedWelcomingMessage = "Welcome Back, Automation Testers!";
-
     String emailExistedMessageExpected = "This email already used";
+
+    String loanApplicationPageTitle = "Loan Application";
+
+    String realtorInfo = fake.name().fullName() + ", " + fake.internet().emailAddress();
+
+    String purposeOfLoan = "Purchase A Home";
+    String estimatedPurchasePrice = "1000000";
+    String downPaymentAmount = "200000";
+    String downPaymentPercentage = "20";
+    String expectedLoanAmount = "" + (Integer.parseInt(estimatedPurchasePrice) - Integer.parseInt(downPaymentAmount));
+    String monthlyRentalPayment = "2000";
+    String employerName = "Quality Auto LLC";
+    String jobPosition = "CFO";
+    String jobCity = "Manassas";
+    int jobState = 1 + (int)(Math.random() * 2);
+    String jobStartDate = "01/01/2020";
+    String grossMonthlyIncome = "10000";
+    String monthlyOvertime = "3000";
+    String monthlyBonuses = "2000";
+    String monthlyCommissions = "1500";
+    String monthlyDividents = "1200";
+    String totalMonthlyIncomeExpected = ""+(Integer.parseInt(grossMonthlyIncome) +
+            Integer.parseInt(monthlyOvertime) + Integer.parseInt(monthlyBonuses) +
+            Integer.parseInt(monthlyCommissions) + Integer.parseInt(monthlyDividents)) + " $";
+
+    String additionalIncomeAmount = "" + (100 + (int)(Math.random() * 4900));
+    int incomeSource = 1 + (int)(Math.random() * 2);
 
 
     protected static ExtentReports reporter;
     protected static ExtentSparkReporter htmlReporter;
     protected static ExtentTest logger;
 
-    @BeforeSuite
+    @BeforeSuite  (alwaysRun = true)
     public void setupReport(){
 
         reporter = new ExtentReports();
@@ -64,11 +106,9 @@ public class TestBase {
 
         // Configuration settings
         reporter.setSystemInfo("Tester", "Rafael Azizov");
-        reporter.setSystemInfo("Environment", "TEST_ENV");
+        reporter.setSystemInfo("Environment", "DUOBANK APPLICATION");
         reporter.setSystemInfo("Browser", ConfigReader.getProperty("browser"));
     }
-
-
 
     @BeforeMethod (alwaysRun = true)
     @Parameters("browser")
@@ -103,7 +143,7 @@ public class TestBase {
         //Driver.quitDriver();
     }
 
-    @AfterSuite
+    @AfterSuite  (alwaysRun = true)
     public void tearDownReport(){
         reporter.flush();
     }

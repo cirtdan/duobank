@@ -22,7 +22,7 @@ public class Driver {
     }
 
 
-    public static WebDriver getDriver() {
+    public static synchronized WebDriver getDriver() {
 
         return getDriver(null);
     }

@@ -14,18 +14,16 @@ public class LoginTests extends TestBase{
     public void appHealthCheck(){
 
 
-        logger.info("Navigating to the main page");
-        Assert.assertTrue(driver.getCurrentUrl().equals(ConfigReader.getProperty("url")));
+        logger.info("Navigating to the main page and checking main page URL");
+        Assert.assertTrue(driver.getCurrentUrl().equals(loginUrl));
 
     }
 
     @Test (priority=1, groups = {"smoke"})
     public void positiveLogin() {
 
-        LoginPage loginPage = new LoginPage();
-        logger.info("Entering Email, Password and clicking login button and verifying the url is expected");
-
         loginPage.login(testerEmail, testerPassword);
+        logger.info("Entering Email, Password and clicking login button and verifying the URL is expected");
         Assert.assertTrue(driver.getCurrentUrl().equals(dashboardUrl));
 
     }
@@ -33,9 +31,8 @@ public class LoginTests extends TestBase{
     @Test (groups = {"smoke"})
     public void negativeLogin() {
 
-        LoginPage loginPage = new LoginPage();
-        logger.info("Entering wrongEmail, Password and clicking login button and verifying the url is expected");
         loginPage.login(email, pass);
+        logger.info("Entering random Email, Password and clicking login button and verifying the URL is expected");
         Assert.assertFalse(driver.getCurrentUrl().equals(dashboardUrl));
 
     }
@@ -43,18 +40,16 @@ public class LoginTests extends TestBase{
     @Test (priority=2, groups = {"smoke"})
     public void loginAndVerifyUsername(){
 
-        LoginPage loginPage = new LoginPage();
-
         loginPage.login(testerEmail, testerPassword);
+        logger.info("Entering tester Email, Password, clicking login button and verifying the USER NAME is expected");
         Assert.assertEquals(loginPage.actualUsernameButton.getText(), expectedUsername);
     }
 
     @Test (groups = {"smoke"})
     public void loginAndVerifyUrl(){
 
-        LoginPage loginPage = new LoginPage();
-
         loginPage.login(testerEmail, testerPassword);
+        logger.info("Entering tester Email, Password, clicking login button and verifying the URL is expected");
         Assert.assertTrue(driver.getCurrentUrl().equals(dashboardUrl));
     }
 }
