@@ -4,7 +4,7 @@
 
     <groups>
         <run>
-            <include name="smoke" />
+            <include name="smoke"/>
         </run>
     </groups>
 
@@ -12,7 +12,7 @@
 
         <packages>
 
-            <package name=".*"></package>
+            <package name="tests"></package>
             <!--runs all the packages-->
         </packages>
 

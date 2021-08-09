@@ -161,6 +161,47 @@ public class ApplicationPage extends  PageBase{
     @FindBy(xpath = "//i[@title='Your current monthly rent payment.']")
     public WebElement monthlyRentalPaymentSign;
 
+    @FindBy(xpath = "//label[@for='privacypolicy']")
+    public WebElement privatePolicyCheckBox;
+
+    @FindBy(xpath = "//a[.='Privacy Policy']")
+    public WebElement privatePolicyLink;
+
+    @FindBy(xpath = "//span[.='PreApproval Details']")
+    public WebElement preApprovalDetailsPageText;
+
+    @FindBy(xpath = "//span[.='Personal Information']")
+    public WebElement personalInformationPageText;
+
+    @FindBy(xpath = "//span[.='Expenses']")
+    public WebElement expensesPageText;
+
+    @FindBy(xpath = "//span[.='Employment and Income']")
+    public WebElement employmentAndIncomePageText;
+
+    @FindBy(xpath = "//span[.='Credit Report']")
+    public WebElement creditReportPageText;
+
+    @FindBy(xpath = "//span[.='eConsent']")
+    public WebElement eConsentPageText;
+
+    @FindBy(xpath = "//span[.='Summary']")
+    public WebElement summaryPageText;
+
+    @FindBy(xpath = "//a[.='Loan']")
+    public WebElement loanButton;
+
+    @FindBy(xpath = "//i[@class='bx bx-home-alt']")
+    public WebElement homeButton;
+
+    @FindBy(xpath = "//a//i")
+    public WebElement LogOutButton;
+
+
+
+
+
+
 
 
 }

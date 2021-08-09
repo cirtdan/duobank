@@ -8,6 +8,8 @@ import com.github.javafaker.Faker;
 import com.sun.javafx.tools.ant.CSSToBinTask;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
@@ -50,6 +52,7 @@ public class TestBase {
     String alternativeEmail = fake.internet().emailAddress();
     String wrongEmailFormat = "@gmail.com";
     String wrongEmailFormat2 = "XA-12@io-.com";
+    String wrongEmailFormat3 = "=@h.com";
     String elonSonsName = "X Æ A-12,";
 
     String expectedUsername = ConfigReader.getProperty("firstName") + " " + ConfigReader.getProperty("lastName");
@@ -60,16 +63,19 @@ public class TestBase {
     String appListUrl = ConfigReader.getProperty("appListUrl");
 
     String expectedWelcomingMessage = "Welcome Back, Automation Testers!";
+    String expectedSignUpMessage = "Sign Up";
     String emailExistedMessageExpected = "This email already used";
+
+    String monthlyRentalPaymentExpectedErrorMessage = "THIS FIELD IS REQUIRED.";
 
     String loanApplicationPageTitle = "Loan Application";
 
     String realtorInfo = fake.name().fullName() + ", " + fake.internet().emailAddress();
 
     String purposeOfLoan = "Purchase A Home";
-    String estimatedPurchasePrice = "1000000";
-    String downPaymentAmount = "200000";
-    String downPaymentPercentage = "20";
+    String estimatedPurchasePrice = "" + (500000 + (int)(Math.random() * 500000));
+    String downPaymentAmount = "" + (100000 + (int)(Math.random() * 400000));;
+    String expectedDownPaymentPercentage = "" + (Integer.parseInt(downPaymentAmount) * 100 / Integer.parseInt(estimatedPurchasePrice));
     String expectedLoanAmount = "" + (Integer.parseInt(estimatedPurchasePrice) - Integer.parseInt(downPaymentAmount));
     String monthlyRentalPayment = "2000";
     String employerName = "Quality Auto LLC";
@@ -88,6 +94,14 @@ public class TestBase {
 
     String additionalIncomeAmount = "" + (100 + (int)(Math.random() * 4900));
     int incomeSource = 1 + (int)(Math.random() * 2);
+
+    String preApprovalDetailsPageTextExpected = "PREAPPROVAL DETAILS";
+    String expensesPageTextExpected = "EXPENSES";
+    String personalInformationPageTextExpected = "PERSONAL INFORMATION";
+    String employmentAndIncomePageTextExpected = "EMPLOYMENT AND INCOME";
+    String creditReportPageTextExpected = "CREDIT REPORT";
+    String eConsentPageTextExpected = "ECONSENT";
+    String summaryPageTextExpected = "SUMMARY";
 
 
     protected static ExtentReports reporter;

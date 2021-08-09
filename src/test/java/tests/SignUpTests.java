@@ -6,26 +6,60 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import utilities.CSVReader;
-
 import java.io.IOException;
 
 public class SignUpTests extends TestBase {
 
-    @Test (dataProvider = "getData", groups = {"smoke"})
-    public void positiveSignUp(String firstName, String lastName, String email, String password) {
+    @Test (dataProvider = "getData")
+    public void positiveSignUpWithMockData(String firstName, String lastName, String email, String password) {
 
         signup.signUp(firstName, lastName, email, password);
         logger.info("Signing Up and verifying the URS is expected");
         new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe(loginUrl));
-        Assert.assertTrue(driver.getCurrentUrl().equals(loginUrl));
+        Assert.assertEquals(loginUrl, driver.getCurrentUrl());
+    }
+    @Test (groups = {"smoke"})
+    public void positiveSignUpWithFaker() {
+
+        signup.signUp(firstName, lastName, email, pass);
+        logger.info("Signing Up and verifying the URS is expected");
+        new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe(loginUrl));
+        Assert.assertEquals(loginUrl, driver.getCurrentUrl());
     }
 
     @Test (groups = {"smoke"})
     public void negativeSignUpWithWrongEmail() {
 
         signup.signUp(firstName, lastName, wrongEmailFormat, pass);
-        logger.info("Signing Up using wrong email format and verifying the MESSAGE is expected");
-        Assert.assertNotEquals(signup.actualWelcomingMessage.getText(), expectedWelcomingMessage);
+        logger.info("Signing Up using wrong email format and verifying the URL is expected");
+        Assert.assertNotEquals(loginUrl, driver.getCurrentUrl());
+    }
+
+    @Test (groups = {"smoke"}) // BUG
+    public void negativeSignUpWithEmptyFirstName() {
+
+        signup.signUp(" ", lastName, email, pass);
+        logger.info("Signing Up using EMPTY SPACE as a user First Name, clicking Sign Up button and " +
+                "verifying if we passed the step");
+        Assert.assertNotEquals(loginUrl, driver.getCurrentUrl());
+    }
+
+    @Test (groups = {"smoke"}) // BUG
+    public void negativeSignUpWithEmptyLastName() {
+
+        signup.signUp(firstName, " ", email, pass);
+        logger.info("Signing Up using EMPTY SPACE as a user Last Name, clicking Sign Up button and " +
+                "verifying if we passed the step");
+        Assert.assertNotEquals(loginUrl, driver.getCurrentUrl());
+    }
+
+    @Test (groups = {"smoke"}) // BUG
+    public void negativeSignUpWithCharactersInsteadOfEmail() {
+
+        signup.signUp(firstName, lastName, "=@h", pass);
+        logger.info("Signing Up using random characters (=@h) as an Email, clicking Sign Up button and " +
+                "verifying if we passed the step");
+        Assert.assertNotEquals(loginUrl, driver.getCurrentUrl());
     }
 
     @Test (groups = {"smoke"})
@@ -33,14 +67,15 @@ public class SignUpTests extends TestBase {
 
         signup.signUp(elonSonsName, lastName, wrongEmailFormat2, pass);
         logger.info("Signing Up using unusual name and wrong email format and verifying the MESSAGE is expected");
-        Assert.assertNotEquals(signup.actualWelcomingMessage.getText(), expectedWelcomingMessage);
+        Assert.assertNotEquals(loginUrl, driver.getCurrentUrl());
     }
 
-    @Test (groups = {"smoke"})
+    @Test (groups = {"smoke"}) // BUG
     public void SignUpWithUnsafePassword() {
 
         signup.signUp(firstName, lastName, alternativeEmail, signup.unsafePassword()); // alternativeEmail used to sign up
-        logger.info("Signing Up using wrong email format and verifying the MESSAGE is expected");
+        logger.info("Signing Up using UNSAFE PASSWORD and checking if we passed to the next page, verifying the WELCOMING MESSAGE is expected");
+        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(signup.actualWelcomingMessage));
         Assert.assertEquals(signup.actualWelcomingMessage.getText(), expectedWelcomingMessage);
     }
 
@@ -48,8 +83,7 @@ public class SignUpTests extends TestBase {
     public void SignUpWithExistingUser() {
 
         signup.signUp(firstName, lastName, testerEmail, testerPassword); // existed user email
-        logger.info("Signing Up using existing customer's email and password and verifying the MESSAGES are expected");
-        Assert.assertNotEquals(signup.actualWelcomingMessage.getText(), expectedWelcomingMessage);
+        logger.info("Signing Up using existing customer's email and password and verifying the ERROR MESSAGE (This email already used) is expected");
         Assert.assertEquals(signup.emailExistedMessageActual.getText(), emailExistedMessageExpected);
     }
 

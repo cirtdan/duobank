@@ -25,8 +25,12 @@ public class SignUpPage extends PageBase {
     @FindBy(xpath = "//button[@name='register']")
     public WebElement signUpButtonField;
 
-    @FindBy(xpath = "//h4")
+    @FindBy(xpath = "//h4[.='Welcome Back, Automation Testers!']")
     public WebElement actualWelcomingMessage;
+
+    @FindBy(xpath = "//h4[.='Sign Up']")
+    public WebElement actualSignUpMessage;
+
 
     @FindBy(xpath = "//span[.='This email already used']")
     public WebElement emailExistedMessageActual;

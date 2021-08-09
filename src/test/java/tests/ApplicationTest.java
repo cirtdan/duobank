@@ -10,7 +10,7 @@ public class ApplicationTest extends TestBase{
 
         loginPage.login(testerEmail, testerPassword);
         logger.info("Verifying Loan Application page title");
-        Assert.assertTrue(driver.getTitle().equals(loanApplicationPageTitle));
+        Assert.assertEquals(loanApplicationPageTitle, driver.getTitle());
 
     }
     @Test
@@ -19,7 +19,7 @@ public class ApplicationTest extends TestBase{
         loginPage.login(testerEmail, testerPassword);
         appPage.mortgageApplicationButton.click();
         logger.info("Verifying Mortgage Application Page URL");
-        Assert.assertTrue(driver.getCurrentUrl().equals(mortgageAppUrl));
+        Assert.assertEquals(mortgageAppUrl, driver.getCurrentUrl());
 
     }
     @Test
@@ -28,7 +28,17 @@ public class ApplicationTest extends TestBase{
         loginPage.login(testerEmail, testerPassword);
         appPage.appListButton.click();
         logger.info("Verifying Application List Page URL");
-        Assert.assertTrue(driver.getCurrentUrl().equals(appListUrl));
+        Assert.assertEquals(appListUrl, driver.getCurrentUrl());
+
+    }
+    @Test
+    public void logOutTest(){
+
+        loginPage.login(testerEmail, testerPassword);
+        loginPage.actualUsernameButton.click();
+        appPage.LogOutButton.click();
+        logger.info("Logging in, then clicking Log Out button and checking the URL is expected");
+        Assert.assertEquals(driver.getCurrentUrl(), loginUrl);
 
     }
 }

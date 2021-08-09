@@ -8,14 +8,15 @@ import pages.LoginPage;
 import utilities.ConfigReader;
 import utilities.SeleniumUtils;
 
+import java.util.concurrent.TimeUnit;
+
 public class LoginTests extends TestBase{
 
     @Test (groups = {"smoke"})
     public void appHealthCheck(){
 
-
         logger.info("Navigating to the main page and checking main page URL");
-        Assert.assertTrue(driver.getCurrentUrl().equals(loginUrl));
+        Assert.assertEquals(loginUrl, driver.getCurrentUrl());
 
     }
 
@@ -24,16 +25,26 @@ public class LoginTests extends TestBase{
 
         loginPage.login(testerEmail, testerPassword);
         logger.info("Entering Email, Password and clicking login button and verifying the URL is expected");
-        Assert.assertTrue(driver.getCurrentUrl().equals(dashboardUrl));
+        Assert.assertEquals(dashboardUrl, driver.getCurrentUrl());
+
+    }
+
+    @Test (groups = {"smoke"}) // BUG
+    public void negativeLoginWithRandomCharactersInsteadOfEmail() {
+
+        loginPage.login("=@111", "1");
+        logger.info("Entering random characters (=@111) as an Email, 1 as a Password, " +
+                "clicking login button and verifying if we passed the step");
+        Assert.assertEquals(dashboardUrl, driver.getCurrentUrl());
 
     }
 
     @Test (groups = {"smoke"})
-    public void negativeLogin() {
+    public void negativeLoginWithRandomEmailAndPass() {
 
         loginPage.login(email, pass);
         logger.info("Entering random Email, Password and clicking login button and verifying the URL is expected");
-        Assert.assertFalse(driver.getCurrentUrl().equals(dashboardUrl));
+        Assert.assertNotEquals(dashboardUrl, driver.getCurrentUrl());
 
     }
 
@@ -50,7 +61,7 @@ public class LoginTests extends TestBase{
 
         loginPage.login(testerEmail, testerPassword);
         logger.info("Entering tester Email, Password, clicking login button and verifying the URL is expected");
-        Assert.assertTrue(driver.getCurrentUrl().equals(dashboardUrl));
+        Assert.assertEquals(dashboardUrl, driver.getCurrentUrl());
     }
 }
 
