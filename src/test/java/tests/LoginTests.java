@@ -36,6 +36,7 @@ public class LoginTests extends TestBase{
         logger.info("Entering random characters (=@111) as an Email, 1 as a Password, " +
                 "clicking login button and verifying if we passed the step");
         Assert.assertEquals(dashboardUrl, driver.getCurrentUrl());
+        logger.info("THERE IS A BUG");
 
     }
 

@@ -2,15 +2,9 @@ package tests;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentReporter;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.github.javafaker.Faker;
-import com.sun.javafx.tools.ant.CSSToBinTask;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.ApplicationPage;
@@ -19,12 +13,7 @@ import pages.SignUpPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.SeleniumUtils;
-
-import java.io.IOException;
 import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -102,8 +91,7 @@ public class TestBase {
     String creditReportPageTextExpected = "CREDIT REPORT";
     String eConsentPageTextExpected = "ECONSENT";
     String summaryPageTextExpected = "SUMMARY";
-
-
+    
     protected static ExtentReports reporter;
     protected static ExtentSparkReporter htmlReporter;
     protected static ExtentTest logger;

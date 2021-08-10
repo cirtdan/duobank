@@ -24,6 +24,7 @@ public class ApplicationListTest extends TestBase{
         logger.info("Navigating to the Application List page, clicking the Loan button and " +
                 "checking if the page URL is changed");
         Assert.assertEquals(appListUrl, driver.getCurrentUrl());
+        logger.info("THERE IS A BUG");
 
     }
 
@@ -36,6 +37,7 @@ public class ApplicationListTest extends TestBase{
         logger.info("Navigating to the Application List page, clicking the Loan button and " +
                 "checking if the page URL is changed");
         Assert.assertEquals(appListUrl, driver.getCurrentUrl());
+        logger.info("THERE IS A BUG");
 
     }
 

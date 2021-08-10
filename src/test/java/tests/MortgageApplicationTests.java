@@ -87,7 +87,7 @@ public class MortgageApplicationTests extends TestBase {
         appPage.downPaymentSourceField.sendKeys("Other type of Down Payment", Keys.ENTER);
         appPage.nextButton.click();
         Assert.assertEquals(appPage.personalInformationPageText.getText(), personalInformationPageTextExpected);
-
+        logger.info("THERE IS A BUG");
     }
 
     @Test
@@ -136,6 +136,7 @@ public class MortgageApplicationTests extends TestBase {
         Assert.assertEquals(appPage.lastNameField.getText(), "");
         appPage.nextButton.click();
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
+        logger.info("THERE IS A BUG");
 
     }
     @Test // BUG
@@ -155,6 +156,7 @@ public class MortgageApplicationTests extends TestBase {
         appPage.homePhoneField.sendKeys(homeNumber);
         appPage.nextButton.click();
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
+        logger.info("THERE IS A BUG");
 
     }
     @Test // BUG
@@ -174,6 +176,7 @@ public class MortgageApplicationTests extends TestBase {
         appPage.homePhoneField.sendKeys(homeNumber);
         appPage.nextButton.click();
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
+        logger.info("THERE IS A BUG");
 
     }
     @Test // BUG
@@ -191,6 +194,7 @@ public class MortgageApplicationTests extends TestBase {
         appPage.cellPhoneField.sendKeys(cellNumber);
         appPage.homePhoneField.sendKeys(homeNumber);
         Assert.assertNotEquals(appPage.maritalStatusField.getText(), "Single");
+        logger.info("THERE IS A BUG");
 
     }
 
@@ -211,6 +215,7 @@ public class MortgageApplicationTests extends TestBase {
         appPage.homePhoneField.sendKeys(homeNumber);
         appPage.nextButton.click();
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
+        logger.info("THERE IS A BUG");
 
     }
     @Test // BUG
@@ -230,6 +235,7 @@ public class MortgageApplicationTests extends TestBase {
         appPage.homePhoneField.sendKeys(homeNumber);
         appPage.nextButton.click();
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
+        logger.info("THERE IS A BUG");
 
     }
     @Test // BUG
@@ -251,6 +257,8 @@ public class MortgageApplicationTests extends TestBase {
         appPage.privatePolicyCheckBox.click(); // I/We have NOT read and accepted the terms of the Privacy Policy
         appPage.nextButton.click();
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
+        logger.info("THERE IS A BUG");
+
     }
 
     @Test // BUG
@@ -260,6 +268,7 @@ public class MortgageApplicationTests extends TestBase {
         logger.info("Clicking on Privacy Policy link on Personal Information page");
         appPage.privatePolicyLink.click(); // 404 Not Found
         appPage.nextButton.click();
+        logger.info("THERE IS A BUG");
     }
     @Test
     public void expensesPositiveTest() {
@@ -366,6 +375,8 @@ public class MortgageApplicationTests extends TestBase {
 
         appPage.nextButton.click();
         Assert.assertEquals(appPage.creditReportPageText.getText(), creditReportPageTextExpected);
+        logger.info("THERE IS A BUG");
+
     }
     @Test // BUG
     public void employmentAndIncomeTestWithNegativeMonthlyIncome() {
@@ -388,6 +399,8 @@ public class MortgageApplicationTests extends TestBase {
 
         appPage.nextButton.click();
         Assert.assertEquals(appPage.creditReportPageText.getText(), creditReportPageTextExpected);
+        logger.info("THERE IS A BUG");
+
     }
     @Test // BUG
     public void employmentAndIncomeTestWithNegativeMonthlyOvertime() {
@@ -410,6 +423,8 @@ public class MortgageApplicationTests extends TestBase {
 
         appPage.nextButton.click();
         Assert.assertEquals(appPage.creditReportPageText.getText(), creditReportPageTextExpected);
+        logger.info("THERE IS A BUG");
+
     }
     @Test // BUG
     public void employmentAndIncomeTestWithNegativeMonthlyBonuses() {
@@ -432,6 +447,8 @@ public class MortgageApplicationTests extends TestBase {
 
         appPage.nextButton.click();
         Assert.assertEquals(appPage.creditReportPageText.getText(), creditReportPageTextExpected);
+        logger.info("THERE IS A BUG");
+
     }
 
     @Test // BUG
@@ -455,6 +472,8 @@ public class MortgageApplicationTests extends TestBase {
 
         appPage.nextButton.click();
         Assert.assertEquals(appPage.creditReportPageText.getText(), creditReportPageTextExpected);
+        logger.info("THERE IS A BUG");
+
     }
 
     @Test // BUG
@@ -478,6 +497,8 @@ public class MortgageApplicationTests extends TestBase {
 
         appPage.nextButton.click();
         Assert.assertEquals(appPage.creditReportPageText.getText(), creditReportPageTextExpected);
+        logger.info("THERE IS A BUG");
+
     }
     @Test
     public void creditReportPositiveTest() {
@@ -521,6 +542,8 @@ public class MortgageApplicationTests extends TestBase {
         //appPage.doNotAgreeButton.click();
         appPage.nextButton.click();
         Assert.assertEquals(appPage.summaryPageText.getText(), summaryPageTextExpected);
+        logger.info("THERE IS A BUG");
+
     }
     @Test // BUG
     public void eConsentPositiveTestWithWrongLastName(){
@@ -534,6 +557,8 @@ public class MortgageApplicationTests extends TestBase {
         //appPage.doNotAgreeButton.click();
         appPage.nextButton.click();
         Assert.assertEquals(appPage.summaryPageText.getText(), summaryPageTextExpected);
+        logger.info("THERE IS A BUG");
+
     }
     @Test // BUG
     public void eConsentPositiveTestWithWrongEmailFormat(){
@@ -547,6 +572,7 @@ public class MortgageApplicationTests extends TestBase {
         //appPage.doNotAgreeButton.click();
         appPage.nextButton.click();
         Assert.assertEquals(appPage.summaryPageText.getText(), summaryPageTextExpected);
+        logger.info("THERE IS A BUG");
     }
 
     @Test
@@ -556,6 +582,8 @@ public class MortgageApplicationTests extends TestBase {
         logger.info("Heading to SUMMARY page and verifying the the PAGE TEXT is expected and then clicking Save button");
         Assert.assertEquals(appPage.summaryPageText.getText(), summaryPageTextExpected);
         appPage.saveButton.click();
+        loginPage.actualUsernameButton.click();
+        appPage.LogOutButton.click();
 
     }
 }
