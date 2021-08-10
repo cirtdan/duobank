@@ -14,7 +14,7 @@ public class SignUpTests extends TestBase {
     public void positiveSignUpWithMockData(String firstName, String lastName, String email, String password) {
 
         signup.signUp(firstName, lastName, email, password);
-        logger.info("Signing Up and verifying the URS is expected");
+        logger.info("Signing Up with Mock Data and verifying the URS is expected");
         new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe(loginUrl));
         Assert.assertEquals(loginUrl, driver.getCurrentUrl());
     }
@@ -22,7 +22,7 @@ public class SignUpTests extends TestBase {
     public void positiveSignUpWithFaker() {
 
         signup.signUp(firstName, lastName, email, pass);
-        logger.info("Signing Up and verifying the URS is expected");
+        logger.info("Signing Up with Fake Data and verifying the URS is expected");
         new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe(loginUrl));
         Assert.assertEquals(loginUrl, driver.getCurrentUrl());
     }

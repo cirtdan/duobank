@@ -6,10 +6,10 @@ import org.testng.annotations.Test;
 public class ApplicationTest extends TestBase{
 
     @Test
-    public void verifyPageTitle(){
+    public void verifyLoanApplicationPageTitle(){
 
         loginPage.login(testerEmail, testerPassword);
-        logger.info("Verifying Loan Application page title");
+        logger.info("Logging in, clicking Loan Application Button and verifying Loan Application page title");
         Assert.assertEquals(loanApplicationPageTitle, driver.getTitle());
 
     }
@@ -18,7 +18,7 @@ public class ApplicationTest extends TestBase{
 
         loginPage.login(testerEmail, testerPassword);
         appPage.mortgageApplicationButton.click();
-        logger.info("Verifying Mortgage Application Page URL");
+        logger.info("Logging in, clicking Mortgage Application Button and verifying Mortgage Application Page URL");
         Assert.assertEquals(mortgageAppUrl, driver.getCurrentUrl());
 
     }
@@ -27,7 +27,7 @@ public class ApplicationTest extends TestBase{
 
         loginPage.login(testerEmail, testerPassword);
         appPage.appListButton.click();
-        logger.info("Verifying Application List Page URL");
+        logger.info("Logging in, clicking Application List Button and verifying Application List Page URL");
         Assert.assertEquals(appListUrl, driver.getCurrentUrl());
 
     }

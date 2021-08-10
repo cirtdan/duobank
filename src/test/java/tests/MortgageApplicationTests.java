@@ -268,7 +268,7 @@ public class MortgageApplicationTests extends TestBase {
         logger.info("Clicking on Privacy Policy link on Personal Information page");
         appPage.privatePolicyLink.click(); // 404 Not Found
         appPage.nextButton.click();
-        logger.info("THERE IS A BUG");
+        logger.info("THERE IS A BUG - 404 Not Found");
     }
     @Test
     public void expensesPositiveTest() {
