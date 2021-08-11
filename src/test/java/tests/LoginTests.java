@@ -29,14 +29,14 @@ public class LoginTests extends TestBase{
 
     }
 
-    @Test (groups = {"smoke"}) // BUG
+    @Test (groups = {"smoke", "negative"}) // BUG
     public void negativeLoginWithRandomCharactersInsteadOfEmail() {
 
         loginPage.login("=@111", "1");
         logger.info("Entering random characters (=@111) as an Email, 1 as a Password, " +
                 "clicking login button and verifying if we passed the step");
         Assert.assertEquals(dashboardUrl, driver.getCurrentUrl());
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
 
     }
 

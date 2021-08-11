@@ -34,6 +34,7 @@ public class TestBase {
     String ssn = "123-45-6789";
     String cellNumber = "121-100-0101";
     String homeNumber = "222-100-0101";
+    String emptySpace = " ";
 
     String testerEmail = ConfigReader.getProperty("email");
     String testerPassword = ConfigReader.getProperty("pass");
@@ -60,6 +61,11 @@ public class TestBase {
     String loanApplicationPageTitle = "Loan Application";
 
     String realtorInfo = fake.name().fullName() + ", " + fake.internet().emailAddress();
+    String paymentSourceAnotherType = "Other type of Down Payment";
+
+    String unrealDateOfBirth = "01/01/2222";
+    String married = "Married";
+    String single = "Single";
 
     String purposeOfLoan = "Purchase A Home";
     String estimatedPurchasePrice = "" + (500000 + (int)(Math.random() * 500000));
@@ -91,7 +97,9 @@ public class TestBase {
     String creditReportPageTextExpected = "CREDIT REPORT";
     String eConsentPageTextExpected = "ECONSENT";
     String summaryPageTextExpected = "SUMMARY";
-    
+
+    String bug = "THERE IS A BUG";
+
     protected static ExtentReports reporter;
     protected static ExtentSparkReporter htmlReporter;
     protected static ExtentTest logger;

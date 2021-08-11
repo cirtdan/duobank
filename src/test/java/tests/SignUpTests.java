@@ -35,37 +35,37 @@ public class SignUpTests extends TestBase {
         Assert.assertNotEquals(loginUrl, driver.getCurrentUrl());
     }
 
-    @Test (groups = {"smoke"}) // BUG
+    @Test (groups = {"smoke", "negative"}) // BUG
     public void negativeSignUpWithEmptyFirstName() {
 
-        signup.signUp(" ", lastName, email, pass);
+        signup.signUp(emptySpace, lastName, email, pass);
         logger.info("Signing Up using EMPTY SPACE as a user First Name, clicking Sign Up button and " +
                 "verifying if we passed the step");
         new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(signup.actualWelcomingMessage));
         Assert.assertEquals(loginUrl, driver.getCurrentUrl());
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
     }
 
-    @Test (groups = {"smoke"}) // BUG
+    @Test (groups = {"smoke", "negative"}) // BUG
     public void negativeSignUpWithEmptyLastName() {
 
-        signup.signUp(firstName, " ", email, pass);
+        signup.signUp(firstName, emptySpace, email+0, pass);
         logger.info("Signing Up using EMPTY SPACE as a user Last Name, clicking Sign Up button and " +
                 "verifying if we passed the step");
         new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(signup.actualWelcomingMessage));
         Assert.assertEquals(loginUrl, driver.getCurrentUrl());
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
     }
 
-    @Test (groups = {"smoke"}) // BUG
+    @Test (groups = {"smoke", "negative"}) // BUG
     public void negativeSignUpWithCharactersInsteadOfEmail() {
 
-        signup.signUp(firstName, lastName, "=@h45", pass);
-        logger.info("Signing Up using random characters (=@h) as an Email, clicking Sign Up button and " +
+        signup.signUp(firstName, lastName, "=@h52111909", pass);
+        logger.info("Signing Up using random characters (=@h52111909) as an Email, clicking Sign Up button and " +
                 "verifying if we passed the step");
         new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(signup.actualWelcomingMessage));
         Assert.assertEquals(loginUrl, driver.getCurrentUrl());
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
     }
 
     @Test (groups = {"smoke"})
@@ -76,17 +76,17 @@ public class SignUpTests extends TestBase {
         Assert.assertNotEquals(loginUrl, driver.getCurrentUrl());
     }
 
-    @Test (groups = {"smoke"}) // BUG
+    @Test (groups = {"smoke", "negative"}) // BUG
     public void SignUpWithUnsafePassword() {
 
         signup.signUp(firstName, lastName, alternativeEmail, signup.unsafePassword()); // alternativeEmail used to sign up
         logger.info("Signing Up using UNSAFE PASSWORD and checking if we passed to the next page, verifying the WELCOMING MESSAGE is expected");
         new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(signup.actualWelcomingMessage));
         Assert.assertEquals(signup.actualWelcomingMessage.getText(), expectedWelcomingMessage);
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
     }
 
-    @Test (groups = {"smoke"})
+    @Test (groups = {"smoke"}) // SOMETIMES PASSES, SOMETIMES NOT
     public void SignUpWithExistingUser() {
 
         signup.signUp(firstName, lastName, testerEmail, testerPassword); // existed user email

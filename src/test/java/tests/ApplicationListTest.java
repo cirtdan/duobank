@@ -15,7 +15,7 @@ public class ApplicationListTest extends TestBase{
 
     }
 
-    @Test
+    @Test (groups = {"negative"})
     public void loanButtonCheck(){ // BUG
 
         loginPage.login(testerEmail, testerPassword);
@@ -24,11 +24,11 @@ public class ApplicationListTest extends TestBase{
         logger.info("Navigating to the Application List page, clicking the Loan button and " +
                 "checking if the page URL is changed");
         Assert.assertEquals(appListUrl, driver.getCurrentUrl());
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
 
     }
 
-    @Test
+    @Test (groups = {"negative"})
     public void homeButtonCheck(){ // BUG
 
         loginPage.login(testerEmail, testerPassword);
@@ -37,7 +37,7 @@ public class ApplicationListTest extends TestBase{
         logger.info("Navigating to the Application List page, clicking the Loan button and " +
                 "checking if the page URL is changed");
         Assert.assertEquals(appListUrl, driver.getCurrentUrl());
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
 
     }
 

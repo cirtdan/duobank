@@ -43,7 +43,7 @@ public class MortgageApplicationTests extends TestBase {
         appPage.estimatedPurchasePriceField.sendKeys(estimatedPurchasePrice);
         appPage.downPaymentAmountField.sendKeys(downPaymentAmount);
         appPage.downPaymentSourceButton.click();
-        appPage.downPaymentSourceField.sendKeys("Other type of Down Payment", Keys.ENTER);
+        appPage.downPaymentSourceField.sendKeys(paymentSourceAnotherType, Keys.ENTER);
         appPage.nextButton.click();
         Assert.assertEquals(appPage.personalInformationPageText.getText(), personalInformationPageTextExpected);
 
@@ -65,14 +65,14 @@ public class MortgageApplicationTests extends TestBase {
         Assert.assertEquals(calculatedLoanAmount, expectedLoanAmount);
     }
 
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void preapprovalDetailsNegativeTestWithWrongRealtorInfo() {
 
         loginPage.login(testerEmail, testerPassword);
         appPage.mortgageApplicationButton.click();
         logger.info("Filling the application on the PreApproval Details using EMPTY SPACE as a realtor information, " +
                 "clicking Next button and checking if we passes the step");
-        appPage.realtorInfoField.sendKeys(" ");
+        appPage.realtorInfoField.sendKeys(emptySpace);
         //appPage.workingWithLoanOfficerYES.click(); // ARE YOU WORKING WITH A REALTOR? - YES
         appPage.workingWithLoanOfficerNO.click(); // ARE YOU WORKING WITH A REALTOR? - NO
 
@@ -84,10 +84,10 @@ public class MortgageApplicationTests extends TestBase {
         Assert.assertEquals(calculatedLoanAmount, expectedLoanAmount);
 
         appPage.downPaymentSourceButton.click();
-        appPage.downPaymentSourceField.sendKeys("Other type of Down Payment", Keys.ENTER);
+        appPage.downPaymentSourceField.sendKeys(paymentSourceAnotherType, Keys.ENTER);
         appPage.nextButton.click();
         Assert.assertEquals(appPage.personalInformationPageText.getText(), personalInformationPageTextExpected);
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
     }
 
     @Test
@@ -109,7 +109,7 @@ public class MortgageApplicationTests extends TestBase {
         appPage.dateOfBirthField.sendKeys(dateOfBirth);
         appPage.ssnField.sendKeys(ssn);
         appPage.maritalStatusButton.click();
-        appPage.maritalStatusField.sendKeys("Married", Keys.ENTER);
+        appPage.maritalStatusField.sendKeys(married, Keys.ENTER);
         appPage.cellPhoneField.sendKeys(cellNumber);
         appPage.homePhoneField.sendKeys(homeNumber);
         appPage.nextButton.click();
@@ -118,28 +118,28 @@ public class MortgageApplicationTests extends TestBase {
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
     }
 
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void personalInformationNegativeTestWithEmptyName() {
 
         preapprovalDetailsPositiveTest();
         logger.info("Adding First Name and Last Name using ONLY EMPTY SPACE on the Personal Information page, " +
                 "clicking next button and checking if we passed the step");
-        appPage.firstNameField.sendKeys(" ");
-        appPage.lastNameField.sendKeys(" ");
+        appPage.firstNameField.sendKeys(emptySpace);
+        appPage.lastNameField.sendKeys(emptySpace);
         appPage.emailField.sendKeys(email);
         appPage.dateOfBirthField.sendKeys(dateOfBirth);
         appPage.ssnField.sendKeys(ssn);
         appPage.maritalStatusButton.click();
-        appPage.maritalStatusField.sendKeys("Married", Keys.ENTER);
+        appPage.maritalStatusField.sendKeys(married, Keys.ENTER);
         appPage.cellPhoneField.sendKeys(cellNumber);
         appPage.homePhoneField.sendKeys(homeNumber);
         Assert.assertEquals(appPage.lastNameField.getText(), "");
         appPage.nextButton.click();
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
 
     }
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void personalInformationNegativeTestWithWrongDateOfBirth() {
 
         preapprovalDetailsPositiveTest();
@@ -148,18 +148,18 @@ public class MortgageApplicationTests extends TestBase {
         appPage.firstNameField.sendKeys(firstName);
         appPage.lastNameField.sendKeys(lastName);
         appPage.emailField.sendKeys(email);
-        appPage.dateOfBirthField.sendKeys("01/01/2222");
+        appPage.dateOfBirthField.sendKeys(unrealDateOfBirth);
         appPage.ssnField.sendKeys(ssn);
         appPage.maritalStatusButton.click();
-        appPage.maritalStatusField.sendKeys("Married", Keys.ENTER);
+        appPage.maritalStatusField.sendKeys(married, Keys.ENTER);
         appPage.cellPhoneField.sendKeys(cellNumber);
         appPage.homePhoneField.sendKeys(homeNumber);
         appPage.nextButton.click();
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
 
     }
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void personalInformationNegativeTestWithWrongSSN() {
 
         preapprovalDetailsPositiveTest();
@@ -171,15 +171,15 @@ public class MortgageApplicationTests extends TestBase {
         appPage.dateOfBirthField.sendKeys(dateOfBirth);
         appPage.ssnField.sendKeys("1");
         appPage.maritalStatusButton.click();
-        appPage.maritalStatusField.sendKeys("Married", Keys.ENTER);
+        appPage.maritalStatusField.sendKeys(married, Keys.ENTER);
         appPage.cellPhoneField.sendKeys(cellNumber);
         appPage.homePhoneField.sendKeys(homeNumber);
         appPage.nextButton.click();
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
 
     }
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void personalInformationTestForASingleCustomer() {
 
         preapprovalDetailsPositiveTest();
@@ -190,15 +190,15 @@ public class MortgageApplicationTests extends TestBase {
         appPage.dateOfBirthField.sendKeys(dateOfBirth);
         appPage.ssnField.sendKeys(ssn);
         appPage.maritalStatusButton.click();
-        appPage.maritalStatusField.sendKeys("Single", Keys.ENTER);
+        appPage.maritalStatusField.sendKeys(single, Keys.ENTER);
         appPage.cellPhoneField.sendKeys(cellNumber);
         appPage.homePhoneField.sendKeys(homeNumber);
-        Assert.assertNotEquals(appPage.maritalStatusField.getText(), "Single");
-        logger.info("THERE IS A BUG");
+        Assert.assertNotEquals(appPage.maritalStatusField.getText(), single);
+        logger.info(bug);
 
     }
 
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void personalInformationTestWithWrongCellNumber() {
 
         preapprovalDetailsPositiveTest();
@@ -210,15 +210,15 @@ public class MortgageApplicationTests extends TestBase {
         appPage.dateOfBirthField.sendKeys(dateOfBirth);
         appPage.ssnField.sendKeys(ssn);
         appPage.maritalStatusButton.click();
-        appPage.maritalStatusField.sendKeys("Married", Keys.ENTER);
+        appPage.maritalStatusField.sendKeys(married, Keys.ENTER);
         appPage.cellPhoneField.sendKeys("1");
         appPage.homePhoneField.sendKeys(homeNumber);
         appPage.nextButton.click();
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
 
     }
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void personalInformationTestWithWrongEmailFormat() {
 
         preapprovalDetailsPositiveTest();
@@ -230,15 +230,15 @@ public class MortgageApplicationTests extends TestBase {
         appPage.dateOfBirthField.sendKeys(dateOfBirth);
         appPage.ssnField.sendKeys(ssn);
         appPage.maritalStatusButton.click();
-        appPage.maritalStatusField.sendKeys("Married", Keys.ENTER);
+        appPage.maritalStatusField.sendKeys(married, Keys.ENTER);
         appPage.cellPhoneField.sendKeys(cellNumber);
         appPage.homePhoneField.sendKeys(homeNumber);
         appPage.nextButton.click();
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
 
     }
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void personalInformationTestNoClickingPrivatePolicy() {
 
         preapprovalDetailsPositiveTest();
@@ -249,7 +249,7 @@ public class MortgageApplicationTests extends TestBase {
         appPage.dateOfBirthField.sendKeys(dateOfBirth);
         appPage.ssnField.sendKeys(ssn);
         appPage.maritalStatusButton.click();
-        appPage.maritalStatusField.sendKeys("Married", Keys.ENTER);
+        appPage.maritalStatusField.sendKeys(married, Keys.ENTER);
         appPage.cellPhoneField.sendKeys(cellNumber);
         appPage.homePhoneField.sendKeys(homeNumber);
         logger.info("Adding personal information and NOT ACCEPTING PRIVACY POLICY, clicking next button " +
@@ -257,18 +257,17 @@ public class MortgageApplicationTests extends TestBase {
         appPage.privatePolicyCheckBox.click(); // I/We have NOT read and accepted the terms of the Privacy Policy
         appPage.nextButton.click();
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
 
     }
 
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void personalInformationTestAndClickPrivacyPolicyLink() {
 
         preapprovalDetailsPositiveTest();
         logger.info("Clicking on Privacy Policy link on Personal Information page");
         appPage.privatePolicyLink.click(); // 404 Not Found
-        appPage.nextButton.click();
-        logger.info("THERE IS A BUG - 404 Not Found");
+        logger.info(bug + " - 404 Not Found");
     }
     @Test
     public void expensesPositiveTest() {
@@ -354,13 +353,13 @@ public class MortgageApplicationTests extends TestBase {
 
 
 
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void employmentAndIncomeTestWithNoEmployerName() {
 
         expensesPositiveTest();
         logger.info("Filling the application and adding an EMPTY SPACE as an Employer Name " +
                 "clicking Next button and verifying if we passed the step");
-        appPage.employerNameField.sendKeys(" ");
+        appPage.employerNameField.sendKeys(emptySpace);
         appPage.jobPositionField.sendKeys(jobPosition);
         appPage.jobCityField.sendKeys(jobCity);
 
@@ -375,10 +374,10 @@ public class MortgageApplicationTests extends TestBase {
 
         appPage.nextButton.click();
         Assert.assertEquals(appPage.creditReportPageText.getText(), creditReportPageTextExpected);
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
 
     }
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void employmentAndIncomeTestWithNegativeMonthlyIncome() {
 
         expensesPositiveTest();
@@ -399,10 +398,10 @@ public class MortgageApplicationTests extends TestBase {
 
         appPage.nextButton.click();
         Assert.assertEquals(appPage.creditReportPageText.getText(), creditReportPageTextExpected);
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
 
     }
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void employmentAndIncomeTestWithNegativeMonthlyOvertime() {
 
         expensesPositiveTest();
@@ -423,10 +422,10 @@ public class MortgageApplicationTests extends TestBase {
 
         appPage.nextButton.click();
         Assert.assertEquals(appPage.creditReportPageText.getText(), creditReportPageTextExpected);
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
 
     }
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void employmentAndIncomeTestWithNegativeMonthlyBonuses() {
 
         expensesPositiveTest();
@@ -447,11 +446,11 @@ public class MortgageApplicationTests extends TestBase {
 
         appPage.nextButton.click();
         Assert.assertEquals(appPage.creditReportPageText.getText(), creditReportPageTextExpected);
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
 
     }
 
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void employmentAndIncomeTestWithNegativeMonthlyCommissions() {
 
         expensesPositiveTest();
@@ -472,11 +471,11 @@ public class MortgageApplicationTests extends TestBase {
 
         appPage.nextButton.click();
         Assert.assertEquals(appPage.creditReportPageText.getText(), creditReportPageTextExpected);
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
 
     }
 
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void employmentAndIncomeTestWithNegativeMonthlyDividends() {
 
         expensesPositiveTest();
@@ -497,14 +496,15 @@ public class MortgageApplicationTests extends TestBase {
 
         appPage.nextButton.click();
         Assert.assertEquals(appPage.creditReportPageText.getText(), creditReportPageTextExpected);
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
 
     }
     @Test
     public void creditReportPositiveTest() {
 
         employmentAndIncomePositiveTest();
-        logger.info("Heading to Credit Report page and verifying the the PAGE TEXT is expected and clicking Next button");
+        logger.info("Heading to Credit Report page and verifying the the PAGE TEXT is expected " +
+                "and clicking Next button");
         Assert.assertEquals(appPage.creditReportPageText.getText(), creditReportPageTextExpected);
         appPage.nextButton.click();
 
@@ -521,7 +521,8 @@ public class MortgageApplicationTests extends TestBase {
     public void eConsentPositiveTest(){
 
         creditReportPositiveTest();
-        logger.info("Signing eConsent by using a proper credentials, clicking Next button and verifying if we passed the step");
+        logger.info("Signing eConsent by using proper credentials, clicking Next button " +
+                "and verifying if we passed the step");
         appPage.eConsentFirstNameField.sendKeys(firstName);
         appPage.eConsentLastNameField.sendKeys(lastName);
         appPage.eConsentEmailField.sendKeys(email);
@@ -530,56 +531,57 @@ public class MortgageApplicationTests extends TestBase {
         appPage.nextButton.click();
         Assert.assertEquals(appPage.summaryPageText.getText(), summaryPageTextExpected);
     }
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void eConsentPositiveTestWithWrongFirstName(){
 
         creditReportPositiveTest();
-        logger.info("Signing eConsent by using an EMPTY SPACE as a FIRST NAME, clicking Next button and verifying if we passed the step");
-        appPage.eConsentFirstNameField.sendKeys(" ");
+        logger.info("Signing eConsent by using an EMPTY SPACE as a FIRST NAME, clicking Next button " +
+                "and verifying if we passed the step");
+        appPage.eConsentFirstNameField.sendKeys(emptySpace);
         appPage.eConsentLastNameField.sendKeys(lastName);
         appPage.eConsentEmailField.sendKeys(email);
         appPage.agreeButton.click();
-        //appPage.doNotAgreeButton.click();
         appPage.nextButton.click();
         Assert.assertEquals(appPage.summaryPageText.getText(), summaryPageTextExpected);
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
 
     }
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void eConsentPositiveTestWithWrongLastName(){
 
         creditReportPositiveTest();
-        logger.info("Signing eConsent by using an EMPTY SPACE as a LAST NAME, clicking Next button and verifying if we passed the step");
+        logger.info("Signing eConsent by using an EMPTY SPACE as a LAST NAME, clicking Next button " +
+                "and verifying if we passed the step");
         appPage.eConsentFirstNameField.sendKeys(firstName);
-        appPage.eConsentLastNameField.sendKeys(" ");
+        appPage.eConsentLastNameField.sendKeys(emptySpace);
         appPage.eConsentEmailField.sendKeys(email);
         appPage.agreeButton.click();
-        //appPage.doNotAgreeButton.click();
         appPage.nextButton.click();
         Assert.assertEquals(appPage.summaryPageText.getText(), summaryPageTextExpected);
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
 
     }
-    @Test // BUG
+    @Test (groups = {"negative"}) // BUG
     public void eConsentPositiveTestWithWrongEmailFormat(){
 
         creditReportPositiveTest();
-        logger.info("Signing eConsent by using a WRONG EMAIL FORMAT (=@h.com), clicking Next button and verifying if we passed the step");
+        logger.info("Signing eConsent by using a WRONG EMAIL FORMAT (=@h.com), " +
+                "clicking Next button and verifying if we passed the step");
         appPage.eConsentFirstNameField.sendKeys(firstName);
         appPage.eConsentLastNameField.sendKeys(lastName);
         appPage.eConsentEmailField.sendKeys(wrongEmailFormat3);
         appPage.agreeButton.click();
-        //appPage.doNotAgreeButton.click();
         appPage.nextButton.click();
         Assert.assertEquals(appPage.summaryPageText.getText(), summaryPageTextExpected);
-        logger.info("THERE IS A BUG");
+        logger.info(bug);
     }
 
     @Test
     public void summaryPageTest(){
 
         eConsentPositiveTest();
-        logger.info("Heading to SUMMARY page and verifying the the PAGE TEXT is expected and then clicking Save button");
+        logger.info("Heading to SUMMARY page and verifying the the PAGE TEXT is expected " +
+                "and then clicking Save button");
         Assert.assertEquals(appPage.summaryPageText.getText(), summaryPageTextExpected);
         appPage.saveButton.click();
         loginPage.actualUsernameButton.click();

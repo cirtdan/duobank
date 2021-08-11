@@ -75,7 +75,6 @@
                     <configuration>
                         <!--suppress UnresolvedMavenProperty -->
                         <suiteXmlFiles>${xmlFile}</suiteXmlFiles>
-                        <suiteXmlFiles>${xmlFile2}</suiteXmlFiles>
                     </configuration>
 
                 </plugin>
