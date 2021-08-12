@@ -12,8 +12,7 @@
 
         <packages>
 
-            <package name="tests.LoginTests"></package>
-            <package name="tests.SignUpTests"></package>
+            <package name="tests"></package>
             <!--runs all the packages-->
         </packages>
 
