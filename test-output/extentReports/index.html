@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">DUOBANK AUTOMATION TEST</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Aug 12, 2021 01:59:26 PM</span></a>
+<a href="#"><span class="badge badge-primary">Aug 12, 2021 06:47:35 PM</span></a>
 </li>
 </ul>
 </div>
@@ -67,6 +67,7 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -74,46 +75,58 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">TEST CASE: positiveSignUpWithMockData2</p>
+            <p class="name">TEST CASE: mortgageApplicationHealthCheck</p>
             <p class="text-sm">
-              <span>1:59:27 PM</span> / <span>00:00:04:046</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>6:47:37 PM</span> / <span>00:00:06:335</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">TEST CASE: positiveSignUpWithMockData2</h5>
-<span class='badge badge-success'>08.12.2021 1:59:27 PM</span>
-<span class='badge badge-danger'>08.12.2021 1:59:31 PM</span>
-<span class='badge badge-default'>00:00:04:046</span>
+<h5 class="test-status text-fail">TEST CASE: mortgageApplicationHealthCheck</h5>
+<span class='badge badge-success'>08.12.2021 6:47:37 PM</span>
+<span class='badge badge-danger'>08.12.2021 6:47:43 PM</span>
+<span class='badge badge-default'>00:00:06:335</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
 </div>
-</div><div class="detail-body mt-4">
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='failureScreenshot20210812064743.png' src="failureScreenshot20210812064743.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>1:59:28 PM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:47:42 PM</td>
         <td>
-          Signing Up with Mock Data and verifying the URS is expected
+          Test mortgageApplicationHealthCheck Failed
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>1:59:31 PM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:47:42 PM</td>
         <td>
-          Test positiveSignUpWithMockData2 Passed
+          Exception: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='Mortgage Application']"}
+  (Session info: chrome=92.0.4515.131)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Rafaels-MacBook-Pro.local', ip: 'fe80:0:0:0:c72:5eef:b723:f97f%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '1.8.0_281'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /var/folders/vb/mz_37vxn07g...}, goog:chromeOptions: {debuggerAddress: localhost:50441}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3b4dd39380959984403f9aeba31afa3b
+*** Element info: {Using=xpath, value=//span[.='Mortgage Application']}
         </td>
       </tr>
   </tbody>
@@ -126,9 +139,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">TEST CASE: positiveSignUpWithMockData2</p>
+            <p class="name">TEST CASE: preapprovalDetailsPageTest</p>
             <p class="text-sm">
-              <span>1:59:31 PM</span> / <span>00:00:03:768</span>
+              <span>6:47:43 PM</span> / <span>00:00:02:448</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -136,10 +149,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">TEST CASE: positiveSignUpWithMockData2</h5>
-<span class='badge badge-success'>08.12.2021 1:59:31 PM</span>
-<span class='badge badge-danger'>08.12.2021 1:59:35 PM</span>
-<span class='badge badge-default'>00:00:03:768</span>
+<h5 class="test-status text-pass">TEST CASE: preapprovalDetailsPageTest</h5>
+<span class='badge badge-success'>08.12.2021 6:47:43 PM</span>
+<span class='badge badge-danger'>08.12.2021 6:47:46 PM</span>
+<span class='badge badge-default'>00:00:02:448</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -151,392 +164,16 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:59:32 PM</td>
+        <td>6:47:46 PM</td>
         <td>
-          Signing Up with Mock Data and verifying the URS is expected
+          Logging in, clicking the Mortgage Application Button and checking if I am on the PreApproval Details page
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>1:59:35 PM</td>
+        <td>6:47:46 PM</td>
         <td>
-          Test positiveSignUpWithMockData2 Passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="3"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">TEST CASE: positiveSignUpWithMockData2</p>
-            <p class="text-sm">
-              <span>1:59:35 PM</span> / <span>00:00:03:772</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">TEST CASE: positiveSignUpWithMockData2</h5>
-<span class='badge badge-success'>08.12.2021 1:59:35 PM</span>
-<span class='badge badge-danger'>08.12.2021 1:59:39 PM</span>
-<span class='badge badge-default'>00:00:03:772</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>1:59:36 PM</td>
-        <td>
-          Signing Up with Mock Data and verifying the URS is expected
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>1:59:39 PM</td>
-        <td>
-          Test positiveSignUpWithMockData2 Passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="4"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">TEST CASE: positiveSignUpWithMockData2</p>
-            <p class="text-sm">
-              <span>1:59:39 PM</span> / <span>00:00:03:790</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">TEST CASE: positiveSignUpWithMockData2</h5>
-<span class='badge badge-success'>08.12.2021 1:59:39 PM</span>
-<span class='badge badge-danger'>08.12.2021 1:59:43 PM</span>
-<span class='badge badge-default'>00:00:03:790</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>1:59:40 PM</td>
-        <td>
-          Signing Up with Mock Data and verifying the URS is expected
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>1:59:43 PM</td>
-        <td>
-          Test positiveSignUpWithMockData2 Passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="5"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">TEST CASE: positiveSignUpWithMockData2</p>
-            <p class="text-sm">
-              <span>1:59:44 PM</span> / <span>00:00:03:856</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">TEST CASE: positiveSignUpWithMockData2</h5>
-<span class='badge badge-success'>08.12.2021 1:59:44 PM</span>
-<span class='badge badge-danger'>08.12.2021 1:59:47 PM</span>
-<span class='badge badge-default'>00:00:03:856</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>1:59:44 PM</td>
-        <td>
-          Signing Up with Mock Data and verifying the URS is expected
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>1:59:47 PM</td>
-        <td>
-          Test positiveSignUpWithMockData2 Passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="6"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">TEST CASE: positiveSignUpWithMockData2</p>
-            <p class="text-sm">
-              <span>1:59:48 PM</span> / <span>00:00:03:795</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">TEST CASE: positiveSignUpWithMockData2</h5>
-<span class='badge badge-success'>08.12.2021 1:59:48 PM</span>
-<span class='badge badge-danger'>08.12.2021 1:59:51 PM</span>
-<span class='badge badge-default'>00:00:03:795</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>1:59:48 PM</td>
-        <td>
-          Signing Up with Mock Data and verifying the URS is expected
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>1:59:51 PM</td>
-        <td>
-          Test positiveSignUpWithMockData2 Passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="7"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">TEST CASE: positiveSignUpWithMockData2</p>
-            <p class="text-sm">
-              <span>1:59:52 PM</span> / <span>00:00:03:805</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">TEST CASE: positiveSignUpWithMockData2</h5>
-<span class='badge badge-success'>08.12.2021 1:59:52 PM</span>
-<span class='badge badge-danger'>08.12.2021 1:59:55 PM</span>
-<span class='badge badge-default'>00:00:03:805</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>1:59:52 PM</td>
-        <td>
-          Signing Up with Mock Data and verifying the URS is expected
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>1:59:55 PM</td>
-        <td>
-          Test positiveSignUpWithMockData2 Passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="8"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">TEST CASE: positiveSignUpWithMockData2</p>
-            <p class="text-sm">
-              <span>1:59:56 PM</span> / <span>00:00:03:928</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">TEST CASE: positiveSignUpWithMockData2</h5>
-<span class='badge badge-success'>08.12.2021 1:59:56 PM</span>
-<span class='badge badge-danger'>08.12.2021 2:00:00 PM</span>
-<span class='badge badge-default'>00:00:03:928</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>1:59:56 PM</td>
-        <td>
-          Signing Up with Mock Data and verifying the URS is expected
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>2:00:00 PM</td>
-        <td>
-          Test positiveSignUpWithMockData2 Passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="9"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">TEST CASE: positiveSignUpWithMockData2</p>
-            <p class="text-sm">
-              <span>2:00:00 PM</span> / <span>00:00:03:811</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">TEST CASE: positiveSignUpWithMockData2</h5>
-<span class='badge badge-success'>08.12.2021 2:00:00 PM</span>
-<span class='badge badge-danger'>08.12.2021 2:00:04 PM</span>
-<span class='badge badge-default'>00:00:03:811</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>2:00:00 PM</td>
-        <td>
-          Signing Up with Mock Data and verifying the URS is expected
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>2:00:04 PM</td>
-        <td>
-          Test positiveSignUpWithMockData2 Passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="10"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">TEST CASE: positiveSignUpWithMockData2</p>
-            <p class="text-sm">
-              <span>2:00:04 PM</span> / <span>00:00:03:808</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">TEST CASE: positiveSignUpWithMockData2</h5>
-<span class='badge badge-success'>08.12.2021 2:00:04 PM</span>
-<span class='badge badge-danger'>08.12.2021 2:00:08 PM</span>
-<span class='badge badge-default'>00:00:03:808</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>2:00:05 PM</td>
-        <td>
-          Signing Up with Mock Data and verifying the URS is expected
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>2:00:08 PM</td>
-        <td>
-          Test positiveSignUpWithMockData2 Passed
+          Test preapprovalDetailsPageTest Passed
         </td>
       </tr>
   </tbody>
@@ -558,25 +195,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Aug 12, 2021 01:59:26 PM</h3>
+<h3>Aug 12, 2021 06:47:35 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Aug 12, 2021 02:00:08 PM</h3>
+<h3>Aug 12, 2021 06:47:46 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>10</h3>
+<h3>1</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -592,12 +229,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>10</b> tests passed
+<div><small data-tooltip='50%'>
+<b>1</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='50%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -615,10 +252,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='50%'><b>10</b> events passed</small></div>
+<div><small data-tooltip='25%'><b>1</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>10</b> others
+<small data-tooltip='50%'><b>2</b> events failed,
+<b data-tooltip='%'>1</b> others
 </small>
 </div>
 </div>
@@ -634,7 +271,7 @@
 </div></div>
 <script>
 var timeline = {
-"TEST CASE: positiveSignUpWithMockData2":4.046,"TEST CASE: positiveSignUpWithMockData2":3.768,"TEST CASE: positiveSignUpWithMockData2":3.772,"TEST CASE: positiveSignUpWithMockData2":3.79,"TEST CASE: positiveSignUpWithMockData2":3.856,"TEST CASE: positiveSignUpWithMockData2":3.795,"TEST CASE: positiveSignUpWithMockData2":3.805,"TEST CASE: positiveSignUpWithMockData2":3.928,"TEST CASE: positiveSignUpWithMockData2":3.811,"TEST CASE: positiveSignUpWithMockData2":3.808
+"TEST CASE: mortgageApplicationHealthCheck":6.335,"TEST CASE: preapprovalDetailsPageTest":2.448
 };
 </script>
 <div class="row">
@@ -665,8 +302,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 10,
-failParent: 0,
+passParent: 1,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -682,11 +319,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 10,
-failEvents: 0,
+passEvents: 1,
+failEvents: 2,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 10
+infoEvents: 1
 };
 </script>        </div>
       </div>
