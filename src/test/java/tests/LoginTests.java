@@ -64,5 +64,6 @@ public class LoginTests extends TestBase{
         logger.info("Entering tester Email, Password, clicking login button and verifying the URL is expected");
         Assert.assertEquals(dashboardUrl, driver.getCurrentUrl());
     }
+
 }
 

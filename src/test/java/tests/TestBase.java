@@ -69,7 +69,7 @@ public class TestBase {
 
     String purposeOfLoan = "Purchase A Home";
     String estimatedPurchasePrice = "" + (500000 + (int)(Math.random() * 500000));
-    String downPaymentAmount = "" + (100000 + (int)(Math.random() * 400000));;
+    String downPaymentAmount = "" + (100000 + (int)(Math.random() * 400000));
     String expectedDownPaymentPercentage = "" + (Integer.parseInt(downPaymentAmount) * 100 / Integer.parseInt(estimatedPurchasePrice));
     String expectedLoanAmount = "" + (Integer.parseInt(estimatedPurchasePrice) - Integer.parseInt(downPaymentAmount));
     String monthlyRentalPayment = "2000";

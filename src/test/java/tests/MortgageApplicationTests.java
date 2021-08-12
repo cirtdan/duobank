@@ -588,4 +588,5 @@ public class MortgageApplicationTests extends TestBase {
         appPage.LogOutButton.click();
 
     }
+
 }
