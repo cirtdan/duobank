@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class MortgageApplicationTests extends TestBase {
 
-    @Test
+    @Test (groups = {"sprint002"})
     public void mortgageApplicationHealthCheck(){
 
         loginPage.login(testerEmail, testerPassword);
@@ -18,7 +18,7 @@ public class MortgageApplicationTests extends TestBase {
     }
 
 
-    @Test
+    @Test (groups = {"sprint002"})
     public void preapprovalDetailsPageTest() {
 
         loginPage.login(testerEmail, testerPassword);
@@ -588,4 +588,5 @@ public class MortgageApplicationTests extends TestBase {
         appPage.LogOutButton.click();
 
     }
+
 }

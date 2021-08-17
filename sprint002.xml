@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Smoke Tests Suite">
+<suite name="sprint002 Tests Suite">
 
     <groups>
         <run>
-            <include name="smoke"/>
+            <include name="sprint002"></include>
         </run>
     </groups>
 
-    <test name="Smoke Tests UI">
+    <test name="sprint002 Tests UI">
 
         <packages>
 

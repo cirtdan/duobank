@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -99,5 +100,20 @@ public class SignUpTests extends TestBase {
 
         return CSVReader.readData("MOCK_DATA.csv");
 
+    }
+    @DataProvider
+    public Object [][] getData2() throws IOException {
+
+        return CSVReader.readData("MOCK_DATA2.csv");
+
+    }
+
+    @Test (dataProvider = "getData2")
+    public void positiveSignUpWithMockData2(String firstName, String lastName, String email, String password) {
+
+        signup.signUp(firstName, lastName, email, password);
+        logger.info("Signing Up with Mock Data and verifying the URS is expected");
+        new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe(loginUrl));
+        Assert.assertEquals(loginUrl, driver.getCurrentUrl());
     }
 }

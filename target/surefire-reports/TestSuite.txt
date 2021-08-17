@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 54, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 354.163 s <<< FAILURE! - in TestSuite
+tests.MortgageApplicationTests.eConsentPositiveTest  Time elapsed: 15.647 s  <<< FAILURE!
+org.openqa.selenium.ElementNotInteractableException: 
+element not interactable
+  (Session info: chrome=92.0.4515.131)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Rafaels-MacBook-Pro.local', ip: 'fe80:0:0:0:c72:5eef:b723:f97f%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '1.8.0_281'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /var/folders/vb/mz_37vxn07g...}, goog:chromeOptions: {debuggerAddress: localhost:59055}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3f9ad4e5b0f651c010c8b6b906323449
+	at tests.MortgageApplicationTests.eConsentPositiveTest(MortgageApplicationTests.java:526)
+
