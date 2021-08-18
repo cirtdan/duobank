@@ -13,7 +13,7 @@ public class ApplicationTest extends TestBase{
         Assert.assertEquals(loanApplicationPageTitle, driver.getTitle());
 
     }
-    @Test
+    @Test(groups = {"sprint_2"})
     public void clickMortgageAppAndVerifyUrl(){
 
         loginPage.login(testerEmail, testerPassword);

@@ -98,7 +98,7 @@ public class MortgageApplicationTests extends TestBase {
         Assert.assertEquals(appPage.personalInformationPageText.getText(), personalInformationPageTextExpected);
     }
 
-    @Test
+    @Test (groups = {"sprint_2"})
     public void personalInformationPositiveTest() {
 
         preapprovalDetailsPositiveTest();
