@@ -21,7 +21,7 @@ public class SignUpTests extends TestBase {
         Assert.assertEquals(loginUrl, driver.getCurrentUrl());
 
     }
-    @Test (groups = {"smoke"})
+    @Test (groups = {"smoke","sprint_2"})
     public void positiveSignUpWithFaker() {
 
         signup.signUp(firstName, lastName, email, pass);
