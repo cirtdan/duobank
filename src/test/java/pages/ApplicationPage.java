@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 public class ApplicationPage extends  PageBase{
 
@@ -196,6 +197,21 @@ public class ApplicationPage extends  PageBase{
 
     @FindBy(xpath = "//a//i")
     public WebElement LogOutButton;
+
+    @FindBy(xpath =  "//select[@name='src_down_payment']")
+    public WebElement downPaymentSource1;
+
+    public  boolean selectDownpaymentSource(){
+        Select select = new Select(downPaymentSource1);
+        select.selectByVisibleText("Other type of Down Payment");
+        String actualSelectedResult = select.getFirstSelectedOption().getText();
+        String expectedResult = "Other type of Down Payment";
+        System.out.println("actualSelectedResult = " + actualSelectedResult);
+        System.out.println("expectedResult = " + expectedResult);
+
+
+        return actualSelectedResult.equals(expectedResult);
+    }
 
 
 
