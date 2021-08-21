@@ -1,11 +1,12 @@
 package tests;
 
-import org.openqa.selenium.By;
+import com.google.common.base.Verify;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import utilities.CSVReader;
 import java.io.IOException;
 
@@ -18,6 +19,7 @@ public class SignUpTests extends TestBase {
         logger.info("Signing Up with Mock Data and verifying the URS is expected");
         new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe(loginUrl));
         Assert.assertEquals(loginUrl, driver.getCurrentUrl());
+
     }
     @Test (groups = {"smoke"})
     public void positiveSignUpWithFaker() {

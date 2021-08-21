@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -196,6 +197,10 @@ public class ApplicationPage extends  PageBase{
 
     @FindBy(xpath = "//a//i")
     public WebElement LogOutButton;
+
+    @FindBy(xpath = "//a[.='Duotech Team']")
+    public WebElement duotechTeamButton;
+
 
 
 

@@ -9,12 +9,12 @@ import java.io.IOException;
     public class TestApache {
 
         public static void main(String[] args) throws IOException {
-            FileInputStream fis = new FileInputStream("MOCK_DATA2.xlsx");
+            FileInputStream fis = new FileInputStream("MOCK_DATA_excel.xlsx");
             XSSFWorkbook workbook = new XSSFWorkbook(fis);
             XSSFSheet sheet = workbook.getSheet("Sheet1");
             XSSFRow headerRow  =  sheet.getRow(0);
             XSSFCell cell = headerRow.getCell(0);
-//        int noOfColumns = headerRow.getPhysicalNumberOfCells();
+        // int noOfColumns = headerRow.getPhysicalNumberOfCells();
             int noOfColumns = headerRow.getLastCellNum();
             int noOfRows = sheet.getPhysicalNumberOfRows();
             System.out.println(noOfColumns);

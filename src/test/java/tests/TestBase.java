@@ -97,6 +97,7 @@ public class TestBase {
     String creditReportPageTextExpected = "CREDIT REPORT";
     String eConsentPageTextExpected = "ECONSENT";
     String summaryPageTextExpected = "SUMMARY";
+    String duotechTeamPageTitle = "IDSLBD - Top Website Design and Development Company in Bangladesh";
 
     String bug = "THERE IS A BUG";
 

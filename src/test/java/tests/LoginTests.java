@@ -65,5 +65,15 @@ public class LoginTests extends TestBase{
         Assert.assertEquals(dashboardUrl, driver.getCurrentUrl());
     }
 
+    @Test
+    public void clickingDuotechTeamButtonAndVerifyingNewTab() { // Rafael's part
+
+        loginPage.login(testerEmail, testerPassword);
+        logger.info("Logging in, clicking DUOTECH TEAM Button and verifying if we switched to a new tab");
+        appPage.duotechTeamButton.click();
+        SeleniumUtils.switchToWindow(duotechTeamPageTitle);
+        Assert.assertEquals(driver.getTitle(), duotechTeamPageTitle);
+    }
+
 }
 
