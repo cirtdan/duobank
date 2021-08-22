@@ -1,20 +1,14 @@
 package tests;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class MortgageApplicationTests extends TestBase {
 
-    @Test(groups = {"sprint002"})
-    public void mortgageApplicationHealthCheck() {
+    @Test (groups = {"sprint002"})
+    public void mortgageApplicationHealthCheck(){
 
         loginPage.login(testerEmail, testerPassword);
         appPage.mortgageApplicationButton.click();
@@ -24,7 +18,7 @@ public class MortgageApplicationTests extends TestBase {
     }
 
 
-    @Test(groups = {"sprint002"})
+    @Test (groups = {"sprint002"})
     public void preapprovalDetailsPageTest() {
 
         loginPage.login(testerEmail, testerPassword);
@@ -54,7 +48,6 @@ public class MortgageApplicationTests extends TestBase {
         Assert.assertEquals(appPage.personalInformationPageText.getText(), personalInformationPageTextExpected);
 
     }
-
     @Test
     public void preapprovalDetailsTestCheckingCalculatedLoanAmount() {
 
@@ -72,7 +65,7 @@ public class MortgageApplicationTests extends TestBase {
         Assert.assertEquals(calculatedLoanAmount, expectedLoanAmount);
     }
 
-    @Test(groups = {"negative"}) // BUG
+    @Test (groups = {"negative"}) // BUG
     public void preapprovalDetailsNegativeTestWithWrongRealtorInfo() {
 
         loginPage.login(testerEmail, testerPassword);
@@ -105,7 +98,7 @@ public class MortgageApplicationTests extends TestBase {
         Assert.assertEquals(appPage.personalInformationPageText.getText(), personalInformationPageTextExpected);
     }
 
-    @Test(groups = {"sprint_2"})
+    @Test (groups = {"sprint_2"})
     public void personalInformationPositiveTest() {
 
         preapprovalDetailsPositiveTest();
@@ -125,7 +118,7 @@ public class MortgageApplicationTests extends TestBase {
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
     }
 
-    @Test(groups = {"negative"}) // BUG
+    @Test (groups = {"negative"}) // BUG
     public void personalInformationNegativeTestWithEmptyName() {
 
         preapprovalDetailsPositiveTest();
@@ -146,8 +139,7 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
 
     }
-
-    @Test(groups = {"negative"}) // BUG
+    @Test (groups = {"negative"}) // BUG
     public void personalInformationNegativeTestWithWrongDateOfBirth() {
 
         preapprovalDetailsPositiveTest();
@@ -167,8 +159,7 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
 
     }
-
-    @Test(groups = {"negative"}) // BUG
+    @Test (groups = {"negative"}) // BUG
     public void personalInformationNegativeTestWithWrongSSN() {
 
         preapprovalDetailsPositiveTest();
@@ -188,8 +179,7 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
 
     }
-
-    @Test(groups = {"negative"}) // BUG
+    @Test (groups = {"negative"}) // BUG
     public void personalInformationTestForASingleCustomer() {
 
         preapprovalDetailsPositiveTest();
@@ -208,7 +198,7 @@ public class MortgageApplicationTests extends TestBase {
 
     }
 
-    @Test(groups = {"negative"}) // BUG
+    @Test (groups = {"negative"}) // BUG
     public void personalInformationTestWithWrongCellNumber() {
 
         preapprovalDetailsPositiveTest();
@@ -228,8 +218,7 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
 
     }
-
-    @Test(groups = {"negative"}) // BUG
+    @Test (groups = {"negative"}) // BUG
     public void personalInformationTestWithWrongEmailFormat() {
 
         preapprovalDetailsPositiveTest();
@@ -249,8 +238,7 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
 
     }
-
-    @Test(groups = {"negative"}) // BUG
+    @Test (groups = {"negative"}) // BUG
     public void personalInformationTestNoClickingPrivatePolicy() {
 
         preapprovalDetailsPositiveTest();
@@ -273,7 +261,7 @@ public class MortgageApplicationTests extends TestBase {
 
     }
 
-    @Test(groups = {"negative"}) // BUG
+    @Test (groups = {"negative"}) // BUG
     public void personalInformationTestAndClickPrivacyPolicyLink() {
 
         preapprovalDetailsPositiveTest();
@@ -281,7 +269,6 @@ public class MortgageApplicationTests extends TestBase {
         appPage.privatePolicyLink.click(); // 404 Not Found
         logger.info(bug + " - 404 Not Found");
     }
-
     @Test
     public void expensesPositiveTest() {
 
@@ -294,7 +281,6 @@ public class MortgageApplicationTests extends TestBase {
 
 
     }
-
     @Test
     public void expensesPageTestCheckingErrorText() {
 
@@ -307,7 +293,6 @@ public class MortgageApplicationTests extends TestBase {
         Assert.assertEquals(actualErrorMessage, monthlyRentalPaymentExpectedErrorMessage);
 
     }
-
     @Test
     public void employmentAndIncomePositiveTest() {
 
@@ -367,7 +352,8 @@ public class MortgageApplicationTests extends TestBase {
     }
 
 
-    @Test(groups = {"negative"}) // BUG
+
+    @Test (groups = {"negative"}) // BUG
     public void employmentAndIncomeTestWithNoEmployerName() {
 
         expensesPositiveTest();
@@ -391,8 +377,7 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
 
     }
-
-    @Test(groups = {"negative"}) // BUG
+    @Test (groups = {"negative"}) // BUG
     public void employmentAndIncomeTestWithNegativeMonthlyIncome() {
 
         expensesPositiveTest();
@@ -416,8 +401,7 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
 
     }
-
-    @Test(groups = {"negative"}) // BUG
+    @Test (groups = {"negative"}) // BUG
     public void employmentAndIncomeTestWithNegativeMonthlyOvertime() {
 
         expensesPositiveTest();
@@ -441,8 +425,7 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
 
     }
-
-    @Test(groups = {"negative"}) // BUG
+    @Test (groups = {"negative"}) // BUG
     public void employmentAndIncomeTestWithNegativeMonthlyBonuses() {
 
         expensesPositiveTest();
@@ -467,7 +450,7 @@ public class MortgageApplicationTests extends TestBase {
 
     }
 
-    @Test(groups = {"negative"}) // BUG
+    @Test (groups = {"negative"}) // BUG
     public void employmentAndIncomeTestWithNegativeMonthlyCommissions() {
 
         expensesPositiveTest();
@@ -492,7 +475,7 @@ public class MortgageApplicationTests extends TestBase {
 
     }
 
-    @Test(groups = {"negative"}) // BUG
+    @Test (groups = {"negative"}) // BUG
     public void employmentAndIncomeTestWithNegativeMonthlyDividends() {
 
         expensesPositiveTest();
@@ -516,7 +499,6 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
 
     }
-
     @Test
     public void creditReportPositiveTest() {
 
@@ -529,15 +511,14 @@ public class MortgageApplicationTests extends TestBase {
     }
 
     @Test
-    public void eConsentPageTest() {
+    public void eConsentPageTest(){
 
         creditReportPositiveTest();
         logger.info("Heading to eConsent page and verifying the the PAGE TEXT is expected");
         Assert.assertEquals(appPage.eConsentPageText.getText(), eConsentPageTextExpected);
     }
-
     @Test
-    public void eConsentPositiveTest() {
+    public void eConsentPositiveTest(){
 
         creditReportPositiveTest();
         logger.info("Signing eConsent by using proper credentials, clicking Next button " +
@@ -550,9 +531,8 @@ public class MortgageApplicationTests extends TestBase {
         appPage.nextButton.click();
         Assert.assertEquals(appPage.summaryPageText.getText(), summaryPageTextExpected);
     }
-
-    @Test(groups = {"negative"}) // BUG
-    public void eConsentPositiveTestWithWrongFirstName() {
+    @Test (groups = {"negative"}) // BUG
+    public void eConsentPositiveTestWithWrongFirstName(){
 
         creditReportPositiveTest();
         logger.info("Signing eConsent by using an EMPTY SPACE as a FIRST NAME, clicking Next button " +
@@ -566,9 +546,8 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
 
     }
-
-    @Test(groups = {"negative"}) // BUG
-    public void eConsentPositiveTestWithWrongLastName() {
+    @Test (groups = {"negative"}) // BUG
+    public void eConsentPositiveTestWithWrongLastName(){
 
         creditReportPositiveTest();
         logger.info("Signing eConsent by using an EMPTY SPACE as a LAST NAME, clicking Next button " +
@@ -582,9 +561,8 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
 
     }
-
-    @Test(groups = {"negative"}) // BUG
-    public void eConsentPositiveTestWithWrongEmailFormat() {
+    @Test (groups = {"negative"}) // BUG
+    public void eConsentPositiveTestWithWrongEmailFormat(){
 
         creditReportPositiveTest();
         logger.info("Signing eConsent by using a WRONG EMAIL FORMAT (=@h.com), " +
@@ -599,7 +577,7 @@ public class MortgageApplicationTests extends TestBase {
     }
 
     @Test
-    public void summaryPageTest() {
+    public void summaryPageTest(){
 
         eConsentPositiveTest();
         logger.info("Heading to SUMMARY page and verifying the the PAGE TEXT is expected " +
@@ -608,89 +586,6 @@ public class MortgageApplicationTests extends TestBase {
         appPage.saveButton.click();
         loginPage.actualUsernameButton.click();
         appPage.LogOutButton.click();
-
-    }
-
-
-    //Rena's test case
-    @Test
-    public void maritalStatusTest() {
-
-        preapprovalDetailsPositiveTest();
-        List<String> expectedMaritalStatus = Arrays.asList("Married", "Divorced", "Separated");
-        List<String> actualMaritalStatus = new ArrayList<>();
-        driver.findElement(By.xpath("(//span[.='Select One' and @title='Select One'])[2]")).click();
-        List<WebElement> elements = driver.findElements(By.xpath("//li[@class='select2-results__option']"));
-        for (WebElement element : elements) {
-            actualMaritalStatus.add(element.getText());
-        }
-        Assert.assertEquals(actualMaritalStatus, expectedMaritalStatus);
-
-    }
-
-
-
-    //Rena's test case
-    @Test
-    public void checkWarningMsgTest() {
-
-        loginPage.login(testerEmail, testerPassword);
-        appPage.mortgageApplicationButton.click();
-        appPage.nextButton.click();
-        String expectedWarningText = "THIS FIELD IS REQUIRED.";
-        String actualWarningText = driver.findElement(By.id("estimatedprice-error")).getText();
-        Assert.assertEquals(actualWarningText, expectedWarningText);
-    }
-
-
-    //Rena's test case
-    @Test
-    public void checkWarningMsgTest1() {
-
-        loginPage.login(testerEmail, testerPassword);
-        appPage.mortgageApplicationButton.click();
-        appPage.nextButton.click();
-        String expectedWarningText1 = "THIS FIELD IS REQUIRED.";
-        String actualWarningText1 = driver.findElement(By.id("downpaymentpercentage-error")).getText();
-        Assert.assertEquals(actualWarningText1, expectedWarningText1);
-    }
-
-    //Rena's test case
-    @Test
-    public void checkWarningMsgTest2() {
-
-        loginPage.login(testerEmail, testerPassword);
-        appPage.mortgageApplicationButton.click();
-        appPage.nextButton.click();
-        String expectedWarningText2 = "THIS FIELD IS REQUIRED.";
-        String actualWarningText2 = driver.findElement(By.id("downpayment-error")).getText();
-        Assert.assertEquals(actualWarningText2, expectedWarningText2);
-    }
-
-    //Rena's test case
-    @Test
-    public void checkWarningMsgTest3() {
-
-        loginPage.login(testerEmail, testerPassword);
-        appPage.mortgageApplicationButton.click();
-        appPage.nextButton.click();
-        String expectedWarningText = "THIS FIELD IS REQUIRED.";
-        String actualWarningText = driver.findElement(By.id("realtorinfo-error")).getText();
-        Assert.assertEquals(actualWarningText, expectedWarningText);
-    }
-
-    //Rena's test case
-    @Test
-    public void sourceOfDownPaymentTest() {
-
-        preapprovalDetailsPageTest();
-
-        Select select = new Select(driver.findElement(By.xpath("//select[@name='src_down_payment']")));
-        select.selectByIndex(1);
-        String expectedSourceOfDownPayment = "Equity on Pending Sale (executed sales contract)";
-        String actualSourceOfDownPayment = driver.findElement(By.xpath("//span[@title='Equity on Pending Sale (executed sales contract)']")).getText();
-        Assert.assertEquals(actualSourceOfDownPayment, expectedSourceOfDownPayment);
-
 
     }
 }
