@@ -629,9 +629,10 @@ public class MortgageApplicationTests extends TestBase {
     }
 
 
+
     //Rena's test case
     @Test
-    public void checkWarningMsg(){
+    public void checkWarningMsgTest() {
 
         loginPage.login(testerEmail, testerPassword);
         appPage.mortgageApplicationButton.click();
@@ -642,4 +643,54 @@ public class MortgageApplicationTests extends TestBase {
     }
 
 
+    //Rena's test case
+    @Test
+    public void checkWarningMsgTest1() {
+
+        loginPage.login(testerEmail, testerPassword);
+        appPage.mortgageApplicationButton.click();
+        appPage.nextButton.click();
+        String expectedWarningText1 = "THIS FIELD IS REQUIRED.";
+        String actualWarningText1 = driver.findElement(By.id("downpaymentpercentage-error")).getText();
+        Assert.assertEquals(actualWarningText1, expectedWarningText1);
+    }
+
+    //Rena's test case
+    @Test
+    public void checkWarningMsgTest2() {
+
+        loginPage.login(testerEmail, testerPassword);
+        appPage.mortgageApplicationButton.click();
+        appPage.nextButton.click();
+        String expectedWarningText2 = "THIS FIELD IS REQUIRED.";
+        String actualWarningText2 = driver.findElement(By.id("downpayment-error")).getText();
+        Assert.assertEquals(actualWarningText2, expectedWarningText2);
+    }
+
+    //Rena's test case
+    @Test
+    public void checkWarningMsgTest3() {
+
+        loginPage.login(testerEmail, testerPassword);
+        appPage.mortgageApplicationButton.click();
+        appPage.nextButton.click();
+        String expectedWarningText = "THIS FIELD IS REQUIRED.";
+        String actualWarningText = driver.findElement(By.id("realtorinfo-error")).getText();
+        Assert.assertEquals(actualWarningText, expectedWarningText);
+    }
+
+    //Rena's test case
+    @Test
+    public void sourceOfDownPaymentTest() {
+
+        preapprovalDetailsPageTest();
+
+        Select select = new Select(driver.findElement(By.xpath("//select[@name='src_down_payment']")));
+        select.selectByIndex(1);
+        String expectedSourceOfDownPayment = "Equity on Pending Sale (executed sales contract)";
+        String actualSourceOfDownPayment = driver.findElement(By.xpath("//span[@title='Equity on Pending Sale (executed sales contract)']")).getText();
+        Assert.assertEquals(actualSourceOfDownPayment, expectedSourceOfDownPayment);
+
+
+    }
 }
