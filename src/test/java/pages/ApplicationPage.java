@@ -51,6 +51,9 @@ public class ApplicationPage extends  PageBase{
     @FindBy(xpath = "//a[.='Next']")
     public WebElement nextButton;
 
+    @FindBy(xpath = "//label[@for='coborrower1']")
+    public WebElement withCoborrowerCheckbox;
+
     @FindBy(xpath = "//input[@id='b_firstName']")
     public WebElement firstNameField;
 
@@ -77,6 +80,33 @@ public class ApplicationPage extends  PageBase{
 
     @FindBy(xpath = "//input[@placeholder='Home Phone']")
     public WebElement homePhoneField;
+
+    // region Co-Borrower
+    @FindBy(xpath = "//input[@id='c_firstName']")
+    public WebElement coborrowerFirstNameField;
+
+    @FindBy(xpath = "//input[@id='c_lastName']")
+    public WebElement coborrowerLastNameField;
+
+    @FindBy(xpath = "//input[@id='c_email']")
+    public WebElement coborrowerEmailField;
+
+    @FindBy(xpath = "//input[@id='c_dob']")
+    public WebElement coborrowerDOBField;
+
+    @FindBy(xpath = "//input[@id='c_ssn']")
+    public WebElement coborrowerSSNField;
+
+    @FindBy(xpath = "//span[@id='select2-c_marital-container']")
+    public WebElement coborrowerMaritalStatusButton;
+
+    @FindBy(xpath = "//input[@class='select2-search__field']")
+    public WebElement coborrowerMaritalStatusField;
+
+    @FindBy(xpath = "//input[@id='c_cell']")
+    public WebElement coborrowerCellField;
+
+    // endregion
 
     @FindBy(xpath = "//label[@for='expense1']")
     public WebElement rentCheckbox;

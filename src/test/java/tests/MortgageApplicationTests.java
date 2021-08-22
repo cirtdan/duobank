@@ -285,6 +285,36 @@ public class MortgageApplicationTests extends TestBase {
         appPage.privatePolicyLink.click(); // 404 Not Found
         logger.info(bug + " - 404 Not Found");
     }
+
+    @Test
+    public void personalInformationPositiveTestCoBorrower(){
+        preapprovalDetailsPositiveTest();
+        appPage.withCoborrowerCheckbox.click();
+        appPage.firstNameField.sendKeys(firstName);
+        appPage.lastNameField.sendKeys(lastName);
+        appPage.emailField.sendKeys(email);
+        appPage.dateOfBirthField.sendKeys(dateOfBirth);
+        appPage.ssnField.sendKeys(ssn);
+        appPage.maritalStatusButton.click();
+        appPage.maritalStatusField.sendKeys(married, Keys.ENTER);
+        appPage.cellPhoneField.sendKeys(cellNumber);
+        appPage.homePhoneField.sendKeys(homeNumber);
+
+        appPage.coborrowerFirstNameField.sendKeys(firstName);
+        appPage.coborrowerLastNameField.sendKeys(lastName);
+        appPage.coborrowerEmailField.sendKeys(email);
+        appPage.coborrowerDOBField.sendKeys(dateOfBirth);
+        appPage.coborrowerSSNField.sendKeys(ssn);
+        appPage.coborrowerMaritalStatusButton.click();
+        appPage.coborrowerMaritalStatusField.sendKeys(married, Keys.ENTER);
+        appPage.coborrowerCellField.sendKeys(cellNumber);
+
+        appPage.nextButton.click();
+        logger.info("Adding proper credentials on the Personal Information page with Co-Borrower, clicking next button " +
+                "and checking if we passed to the next page.");
+        Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
+
+    }
     @Test
     public void expensesPositiveTest() {
 
