@@ -64,6 +64,22 @@ public class MortgageApplicationTests extends TestBase {
                 "if calculated loan amount equals to expected loan amount");
         Assert.assertEquals(calculatedLoanAmount, expectedLoanAmount);
     }
+    @Test
+    public void preapprovalDetailsTestCheckingPercentage(){
+        loginPage.login(testerEmail, testerPassword);
+        appPage.mortgageApplicationButton.click();
+        appPage.realtorInfoField.sendKeys(realtorInfo);
+        appPage.workingWithLoanOfficerNO.click();
+        appPage.purposeOfLoanButton.click();
+        appPage.purposeOfLoanField.sendKeys(purposeOfLoan, Keys.ENTER);
+        appPage.estimatedPurchasePriceField.sendKeys(estimatedPurchasePrice);
+        appPage.downPaymentAmountField.sendKeys(downPaymentAmount);
+        String calculatedPercentage = appPage.downPaymentPercentageField.getAttribute("value");
+        logger.info("Filling the application on the PreApproval Details page using proper information and checking " +
+                "if calculated down payment percentage equals to expected");
+
+        Assert.assertEquals(calculatedPercentage, expectedDownPaymentPercentage);
+    }
 
     @Test (groups = {"negative"}) // BUG
     public void preapprovalDetailsNegativeTestWithWrongRealtorInfo() {
