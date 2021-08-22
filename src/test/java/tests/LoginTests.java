@@ -1,8 +1,14 @@
 package tests;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.ApplicationPage;
+import pages.LoginPage;
+import utilities.ConfigReader;
 import utilities.SeleniumUtils;
+
+import java.util.concurrent.TimeUnit;
 
 public class LoginTests extends TestBase{
 
@@ -70,4 +76,3 @@ public class LoginTests extends TestBase{
     }
 
 }
-

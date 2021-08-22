@@ -1,10 +1,12 @@
 package tests;
 
+import com.google.common.base.Verify;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import utilities.CSVReader;
 import java.io.IOException;
 
@@ -61,7 +63,7 @@ public class SignUpTests extends TestBase {
     @Test (groups = {"smoke", "negative"}) // BUG
     public void negativeSignUpWithCharactersInsteadOfEmail() {
 
-        signup.signUp(firstName, lastName, "=@"+random8digitsNum, pass);
+        signup.signUp(firstName, lastName, "=@h52111909", pass);
         logger.info("Signing Up using random characters (=@h52111909) as an Email, clicking Sign Up button and " +
                 "verifying if we passed the step");
         new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(signup.actualWelcomingMessage));

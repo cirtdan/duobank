@@ -4,9 +4,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.github.javafaker.Faker;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.ApplicationPage;
@@ -49,6 +47,8 @@ public class TestBase {
     String wrongEmailFormat3 = "=@h.com";
     String elonSonsName = "X Æ A-12,";
 
+    String employer1ExpectedText = "Employer 1";
+
     String expectedUsername = ConfigReader.getProperty("firstName") + " " + ConfigReader.getProperty("lastName");
 
     String loginUrl = ConfigReader.getProperty("url");
@@ -71,7 +71,6 @@ public class TestBase {
     String married = "Married";
     String single = "Single";
 
-    String random8digitsNum = "" + (1000000 + (int)(Math.random() * 9000000));
     String purposeOfLoan = "Purchase A Home";
     String estimatedPurchasePrice = "" + (500000 + (int)(Math.random() * 500000));
     String downPaymentAmount = "" + (100000 + (int)(Math.random() * 400000));
@@ -105,7 +104,6 @@ public class TestBase {
     String duotechTeamPageTitle = "IDSLBD - Top Website Design and Development Company in Bangladesh";
 
     String bug = "THERE IS A BUG";
-    String employer1ExpectedText = "Employer 1";
 
     protected static ExtentReports reporter;
     protected static ExtentSparkReporter htmlReporter;

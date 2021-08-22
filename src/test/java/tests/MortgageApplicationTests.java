@@ -6,7 +6,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.SeleniumUtils;
 
-
 public class MortgageApplicationTests extends TestBase {
 
     @Test (groups = {"sprint002"})
@@ -135,6 +134,7 @@ public class MortgageApplicationTests extends TestBase {
                 "and checking if we passed to the next page.");
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
     }
+
     @Test ()
     public void personalInformationPositiveTestWithTesterInfo() { // RFL
 
@@ -533,19 +533,6 @@ public class MortgageApplicationTests extends TestBase {
         Assert.assertEquals(appPage.creditReportPageText.getText(), creditReportPageTextExpected);
     }
 
-    @Test (groups = {"negative"}) // BUG
-    public void employmentAndIncomeTestCheckingAlert() { // RFL
-
-        expensesPositiveTest();
-        logger.info("Filling the application, clicking CLEAR Employer 1, getting allert, clicking YES and " +
-                "checking if Employer 1 was deleted from the page");
-        SeleniumUtils.jsClick(appPage.clear1Button);
-        appPage.alertYesButton.click();
-        String employer1ActualText = appPage.employer1text.getAttribute("text");
-        Assert.assertTrue(employer1ActualText.contains(employer1ExpectedText));
-        logger.info(bug);
-    }
-
     @Test
     public void employmentAndIncomeTestCheckingMonthlyIncomeCalculation() {
 
@@ -567,6 +554,18 @@ public class MortgageApplicationTests extends TestBase {
 
         Assert.assertEquals(appPage.totalMonthlyIncome.getText(), totalMonthlyIncomeExpected);
 
+    }
+    @Test (groups = {"negative"}) // BUG
+    public void employmentAndIncomeTestCheckingAlert() { // RFL
+
+        expensesPositiveTest();
+        logger.info("Filling the application, clicking CLEAR Employer 1, getting allert, clicking YES and " +
+                "checking if Employer 1 was deleted from the page");
+        SeleniumUtils.jsClick(appPage.clear1Button);
+        appPage.alertYesButton.click();
+        String employer1ActualText = appPage.employer1text.getAttribute("text");
+        Assert.assertTrue(employer1ActualText.contains(employer1ExpectedText));
+        logger.info(bug);
     }
 
 
@@ -717,7 +716,6 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
 
     }
-
     @Test
     public void creditReportPositiveTest() {
 
@@ -799,7 +797,7 @@ public class MortgageApplicationTests extends TestBase {
     public void summaryPageTest(){
 
         eConsentPositiveTest();
-        logger.info("Heading to the SUMMARY page and verifying the the PAGE TEXT is expected " +
+        logger.info("Heading to SUMMARY page and verifying the the PAGE TEXT is expected " +
                 "and then clicking Save button");
         Assert.assertEquals(appPage.summaryPageText.getText(), summaryPageTextExpected);
         appPage.saveButton.click();
