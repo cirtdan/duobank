@@ -1,8 +1,9 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
 
 public class ApplicationPage extends  PageBase{
 
@@ -50,6 +51,9 @@ public class ApplicationPage extends  PageBase{
 
     @FindBy(xpath = "//a[.='Next']")
     public WebElement nextButton;
+
+    @FindBy(xpath = "//a[.='Previous']")
+    public WebElement previousButton;
 
     @FindBy(xpath = "//input[@id='b_firstName']")
     public WebElement firstNameField;
@@ -200,6 +204,21 @@ public class ApplicationPage extends  PageBase{
 
     @FindBy(xpath = "//a[.='Duotech Team']")
     public WebElement duotechTeamButton;
+
+    @FindBy(xpath = "//a[@id='clear1']")
+    public WebElement clear1Button;
+
+    @FindBy(xpath = "//button[.='Yes!']")
+    public WebElement alertYesButton;
+
+    @FindBy(xpath = "//div[@class='Employer']/a")
+    public WebElement employer1text;
+
+    @FindBy(xpath = "(//select[@name='income_source[]'])[1]/option")
+    public List<WebElement> additionalIncomeSources;
+
+
+
 
 
 

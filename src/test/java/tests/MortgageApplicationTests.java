@@ -4,6 +4,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.SeleniumUtils;
+
 
 public class MortgageApplicationTests extends TestBase {
 
@@ -130,6 +132,25 @@ public class MortgageApplicationTests extends TestBase {
         appPage.homePhoneField.sendKeys(homeNumber);
         appPage.nextButton.click();
         logger.info("Adding proper credentials on the Personal Information page, clicking next button " +
+                "and checking if we passed to the next page.");
+        Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
+    }
+    @Test ()
+    public void personalInformationPositiveTestWithTesterInfo() { // RFL
+
+        preapprovalDetailsPositiveTest();
+
+        appPage.firstNameField.sendKeys(testerFirstName);
+        appPage.lastNameField.sendKeys(testerLastName);
+        appPage.emailField.sendKeys(testerEmail);
+        appPage.dateOfBirthField.sendKeys(dateOfBirth);
+        appPage.ssnField.sendKeys(ssn);
+        appPage.maritalStatusButton.click();
+        appPage.maritalStatusField.sendKeys(married, Keys.ENTER);
+        appPage.cellPhoneField.sendKeys(cellNumber);
+        appPage.homePhoneField.sendKeys(homeNumber);
+        appPage.nextButton.click();
+        logger.info("Adding tester FN, LN and email on the Personal Information page, clicking next button " +
                 "and checking if we passed to the next page.");
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
     }
@@ -328,20 +349,21 @@ public class MortgageApplicationTests extends TestBase {
         appPage.monthlyCommissionsField.sendKeys(monthlyCommissions);
         appPage.monthlyDividentsField.sendKeys(monthlyDividents);
 
-        new Select(appPage.additionalIncomeSourceField1);
-        select.selectByIndex(incomeSource);
-        appPage.additionalIncomeAmountField1.sendKeys(additionalIncomeAmount);
-
-        new Select(appPage.additionalIncomeSourceField2);
-        select.selectByIndex(incomeSource);
-        appPage.additionalIncomeAmountField2.sendKeys(additionalIncomeAmount);
-
-        new Select(appPage.additionalIncomeSourceField3);
-        select.selectByIndex(incomeSource);
-        appPage.additionalIncomeAmountField3.sendKeys(additionalIncomeAmount);
-
         appPage.nextButton.click();
         Assert.assertEquals(appPage.creditReportPageText.getText(), creditReportPageTextExpected);
+    }
+
+    @Test (groups = {"negative"}) // BUG
+    public void employmentAndIncomeTestCheckingAlert() { // RFL
+
+        expensesPositiveTest();
+        logger.info("Filling the application, clicking CLEAR Employer 1, getting allert, clicking YES and " +
+                "checking if Employer 1 was deleted from the page");
+        SeleniumUtils.jsClick(appPage.clear1Button);
+        appPage.alertYesButton.click();
+        String employer1ActualText = appPage.employer1text.getAttribute("text");
+        Assert.assertTrue(employer1ActualText.contains(employer1ExpectedText));
+        logger.info(bug);
     }
 
     @Test
@@ -515,6 +537,7 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
 
     }
+
     @Test
     public void creditReportPositiveTest() {
 
@@ -596,12 +619,31 @@ public class MortgageApplicationTests extends TestBase {
     public void summaryPageTest(){
 
         eConsentPositiveTest();
-        logger.info("Heading to SUMMARY page and verifying the the PAGE TEXT is expected " +
+        logger.info("Heading to the SUMMARY page and verifying the the PAGE TEXT is expected " +
                 "and then clicking Save button");
         Assert.assertEquals(appPage.summaryPageText.getText(), summaryPageTextExpected);
         appPage.saveButton.click();
-        loginPage.actualUsernameButton.click();
-        appPage.LogOutButton.click();
 
     }
+    @Test
+    public void summaryPageTestCheckingPreviousButton(){ // RFL
+
+        eConsentPositiveTest();
+        logger.info("Heading to the SUMMARY page, clicking Previous button and " +
+                "verifying if we passed to the previous page");
+        appPage.previousButton.click();
+        Assert.assertEquals(appPage.eConsentPageText.getText(), eConsentPageTextExpected);
+
+    }
+    @Test
+    public void logOutTest(){ // RFL
+
+        summaryPageTest();
+        logger.info("Clicking Log Out button and checking if we logged out");
+        loginPage.actualUsernameButton.click();
+        appPage.LogOutButton.click();
+        Assert.assertEquals(driver.getCurrentUrl(), loginUrl);
+
+    }
+
 }

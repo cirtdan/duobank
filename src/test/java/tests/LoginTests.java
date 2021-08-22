@@ -1,14 +1,8 @@
 package tests;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.ApplicationPage;
-import pages.LoginPage;
-import utilities.ConfigReader;
 import utilities.SeleniumUtils;
-
-import java.util.concurrent.TimeUnit;
 
 public class LoginTests extends TestBase{
 
@@ -66,7 +60,7 @@ public class LoginTests extends TestBase{
     }
 
     @Test
-    public void clickingDuotechTeamButtonAndVerifyingNewTab() { // Rafael's part
+    public void clickingDuotechTeamButtonAndVerifyingNewTab() { // RFL
 
         loginPage.login(testerEmail, testerPassword);
         logger.info("Logging in, clicking DUOTECH TEAM Button and verifying if we switched to a new tab");
