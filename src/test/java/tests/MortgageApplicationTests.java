@@ -1,9 +1,15 @@
 package tests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MortgageApplicationTests extends TestBase {
 
@@ -586,6 +592,89 @@ public class MortgageApplicationTests extends TestBase {
         appPage.saveButton.click();
         loginPage.actualUsernameButton.click();
         appPage.LogOutButton.click();
+
+    }
+
+
+    //Rena's test case
+    @Test
+    public void maritalStatusTest() {
+
+        preapprovalDetailsPositiveTest();
+        List<String> expectedMaritalStatus = Arrays.asList("Married", "Divorced", "Separated");
+        List<String> actualMaritalStatus = new ArrayList<>();
+        driver.findElement(By.xpath("(//span[.='Select One' and @title='Select One'])[2]")).click();
+        List<WebElement> elements = driver.findElements(By.xpath("//li[@class='select2-results__option']"));
+        for (WebElement element : elements) {
+            actualMaritalStatus.add(element.getText());
+        }
+        Assert.assertEquals(actualMaritalStatus, expectedMaritalStatus);
+
+    }
+
+
+
+    //Rena's test case
+    @Test
+    public void checkWarningMsgTest() {
+
+        loginPage.login(testerEmail, testerPassword);
+        appPage.mortgageApplicationButton.click();
+        appPage.nextButton.click();
+        String expectedWarningText = "THIS FIELD IS REQUIRED.";
+        String actualWarningText = driver.findElement(By.id("estimatedprice-error")).getText();
+        Assert.assertEquals(actualWarningText, expectedWarningText);
+    }
+
+
+    //Rena's test case
+    @Test
+    public void checkWarningMsgTest1() {
+
+        loginPage.login(testerEmail, testerPassword);
+        appPage.mortgageApplicationButton.click();
+        appPage.nextButton.click();
+        String expectedWarningText1 = "THIS FIELD IS REQUIRED.";
+        String actualWarningText1 = driver.findElement(By.id("downpaymentpercentage-error")).getText();
+        Assert.assertEquals(actualWarningText1, expectedWarningText1);
+    }
+
+    //Rena's test case
+    @Test
+    public void checkWarningMsgTest2() {
+
+        loginPage.login(testerEmail, testerPassword);
+        appPage.mortgageApplicationButton.click();
+        appPage.nextButton.click();
+        String expectedWarningText2 = "THIS FIELD IS REQUIRED.";
+        String actualWarningText2 = driver.findElement(By.id("downpayment-error")).getText();
+        Assert.assertEquals(actualWarningText2, expectedWarningText2);
+    }
+
+    //Rena's test case
+    @Test
+    public void checkWarningMsgTest3() {
+
+        loginPage.login(testerEmail, testerPassword);
+        appPage.mortgageApplicationButton.click();
+        appPage.nextButton.click();
+        String expectedWarningText = "THIS FIELD IS REQUIRED.";
+        String actualWarningText = driver.findElement(By.id("realtorinfo-error")).getText();
+        Assert.assertEquals(actualWarningText, expectedWarningText);
+    }
+
+    //Rena's test case
+    @Test
+    public void sourceOfDownPaymentTest() {
+
+        preapprovalDetailsPageTest();
+
+        Select select = new Select(driver.findElement(By.xpath("//select[@name='src_down_payment']")));
+        select.selectByIndex(1);
+        String expectedSourceOfDownPayment = "Equity on Pending Sale (executed sales contract)";
+        String actualSourceOfDownPayment = driver.findElement(By.xpath("//span[@title='Equity on Pending Sale (executed sales contract)']")).getText();
+        Assert.assertEquals(actualSourceOfDownPayment, expectedSourceOfDownPayment);
+
 
     }
 }
