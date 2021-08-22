@@ -306,6 +306,186 @@ public class MortgageApplicationTests extends TestBase {
         appPage.privatePolicyLink.click(); // 404 Not Found
         logger.info(bug + " - 404 Not Found");
     }
+
+    @Test
+    public void personalInformationPositiveTestCoBorrower(){
+        preapprovalDetailsPositiveTest();
+        appPage.withCoborrowerCheckbox.click();
+        appPage.firstNameField.sendKeys(firstName);
+        appPage.lastNameField.sendKeys(lastName);
+        appPage.emailField.sendKeys(email);
+        appPage.dateOfBirthField.sendKeys(dateOfBirth);
+        appPage.ssnField.sendKeys(ssn);
+        appPage.maritalStatusButton.click();
+        appPage.maritalStatusField.sendKeys(married, Keys.ENTER);
+        appPage.cellPhoneField.sendKeys(cellNumber);
+        appPage.homePhoneField.sendKeys(homeNumber);
+
+        appPage.coborrowerFirstNameField.sendKeys(firstName);
+        appPage.coborrowerLastNameField.sendKeys(lastName);
+        appPage.coborrowerEmailField.sendKeys(email);
+        appPage.coborrowerDOBField.sendKeys(dateOfBirth);
+        appPage.coborrowerSSNField.sendKeys(ssn);
+        appPage.coborrowerMaritalStatusButton.click();
+        appPage.coborrowerMaritalStatusField.sendKeys(married, Keys.ENTER);
+        appPage.coborrowerCellField.sendKeys(cellNumber);
+
+        appPage.nextButton.click();
+        logger.info("Adding proper credentials on the Personal Information page with Co-Borrower, clicking next button " +
+                "and checking if we passed to the next page.");
+        Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
+
+    }
+
+    @Test (groups = {"negative"})
+    public void personalInformationNegativeTestCoBorrowerWithIloneMaskFirstName(){
+        preapprovalDetailsPositiveTest();
+        appPage.withCoborrowerCheckbox.click();
+        appPage.firstNameField.sendKeys(firstName);
+        appPage.lastNameField.sendKeys(lastName);
+        appPage.emailField.sendKeys(email);
+        appPage.dateOfBirthField.sendKeys(dateOfBirth);
+        appPage.ssnField.sendKeys(ssn);
+        appPage.maritalStatusButton.click();
+        appPage.maritalStatusField.sendKeys(married, Keys.ENTER);
+        appPage.cellPhoneField.sendKeys(cellNumber);
+        appPage.homePhoneField.sendKeys(homeNumber);
+
+        appPage.coborrowerFirstNameField.sendKeys(elonSonsName);
+        appPage.coborrowerLastNameField.sendKeys(lastName);
+        appPage.coborrowerEmailField.sendKeys(email);
+        appPage.coborrowerDOBField.sendKeys(dateOfBirth);
+        appPage.coborrowerSSNField.sendKeys(ssn);
+        appPage.coborrowerMaritalStatusButton.click();
+        appPage.coborrowerMaritalStatusField.sendKeys(married, Keys.ENTER);
+        appPage.coborrowerCellField.sendKeys(cellNumber);
+
+        appPage.nextButton.click();
+        logger.info("Adding Elone Mask name as a first name on the Personal Information page with Co-Borrower, clicking next button " +
+                "and checking if we passed to the next page.");
+        Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
+        logger.info(bug);
+    }
+
+    @Test (groups = {"negative"})
+    public void personalInformationNegativeTestCoBorrowerWithIloneMaskLastName(){
+        preapprovalDetailsPositiveTest();
+        appPage.withCoborrowerCheckbox.click();
+        appPage.firstNameField.sendKeys(firstName);
+        appPage.lastNameField.sendKeys(lastName);
+        appPage.emailField.sendKeys(email);
+        appPage.dateOfBirthField.sendKeys(dateOfBirth);
+        appPage.ssnField.sendKeys(ssn);
+        appPage.maritalStatusButton.click();
+        appPage.maritalStatusField.sendKeys(married, Keys.ENTER);
+        appPage.cellPhoneField.sendKeys(cellNumber);
+        appPage.homePhoneField.sendKeys(homeNumber);
+
+        appPage.coborrowerFirstNameField.sendKeys(firstName);
+        appPage.coborrowerLastNameField.sendKeys(elonSonsName);
+        appPage.coborrowerEmailField.sendKeys(email);
+        appPage.coborrowerDOBField.sendKeys(dateOfBirth);
+        appPage.coborrowerSSNField.sendKeys(ssn);
+        appPage.coborrowerMaritalStatusButton.click();
+        appPage.coborrowerMaritalStatusField.sendKeys(married, Keys.ENTER);
+        appPage.coborrowerCellField.sendKeys(cellNumber);
+
+        appPage.nextButton.click();
+        logger.info("Adding Elone Mask name as a last name on the Personal Information page with Co-Borrower, clicking next button " +
+                "and checking if we passed to the next page.");
+        Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
+        logger.info(bug);
+    }
+
+    @Test (groups = {"negative"})
+    public void personalInformationNegativeTestCoBorrowerwithFutureDOB(){
+        preapprovalDetailsPositiveTest();
+        appPage.withCoborrowerCheckbox.click();
+        appPage.firstNameField.sendKeys(firstName);
+        appPage.lastNameField.sendKeys(lastName);
+        appPage.emailField.sendKeys(email);
+        appPage.dateOfBirthField.sendKeys(dateOfBirth);
+        appPage.ssnField.sendKeys(ssn);
+        appPage.maritalStatusButton.click();
+        appPage.maritalStatusField.sendKeys(married, Keys.ENTER);
+        appPage.cellPhoneField.sendKeys(cellNumber);
+        appPage.homePhoneField.sendKeys(homeNumber);
+
+        appPage.coborrowerFirstNameField.sendKeys(firstName);
+        appPage.coborrowerLastNameField.sendKeys(lastName);
+        appPage.coborrowerEmailField.sendKeys(email);
+        appPage.coborrowerDOBField.sendKeys(unrealDateOfBirth);
+        appPage.coborrowerSSNField.sendKeys(ssn);
+        appPage.coborrowerMaritalStatusButton.click();
+        appPage.coborrowerMaritalStatusField.sendKeys(married, Keys.ENTER);
+        appPage.coborrowerCellField.sendKeys(cellNumber);
+
+        appPage.nextButton.click();
+        logger.info("Adding future Date of Birth on the Personal Information page with Co-Borrower, clicking next button " +
+                "and checking if we passed to the next page.");
+        Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
+        logger.info(bug);
+    }
+    @Test (groups = {"negative"})
+    public void personalInformationNegativeTestCoBorrowerWithWrongSSN(){
+        preapprovalDetailsPositiveTest();
+        appPage.withCoborrowerCheckbox.click();
+        appPage.firstNameField.sendKeys(firstName);
+        appPage.lastNameField.sendKeys(lastName);
+        appPage.emailField.sendKeys(email);
+        appPage.dateOfBirthField.sendKeys(dateOfBirth);
+        appPage.ssnField.sendKeys(ssn);
+        appPage.maritalStatusButton.click();
+        appPage.maritalStatusField.sendKeys(married, Keys.ENTER);
+        appPage.cellPhoneField.sendKeys(cellNumber);
+        appPage.homePhoneField.sendKeys(homeNumber);
+
+        appPage.coborrowerFirstNameField.sendKeys(firstName);
+        appPage.coborrowerLastNameField.sendKeys(lastName);
+        appPage.coborrowerEmailField.sendKeys(email);
+        appPage.coborrowerDOBField.sendKeys(dateOfBirth);
+        appPage.coborrowerSSNField.sendKeys(elonSonsName);
+        appPage.coborrowerMaritalStatusButton.click();
+        appPage.coborrowerMaritalStatusField.sendKeys(married, Keys.ENTER);
+        appPage.coborrowerCellField.sendKeys(cellNumber);
+
+        appPage.nextButton.click();
+        logger.info("Adding Elone Mask name as SSN on the Personal Information page with Co-Borrower, clicking next button " +
+                "and checking if we passed to the next page.");
+        Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
+        logger.info(bug);
+    }
+
+    @Test (groups = {"negative"})
+    public void personalInformationNegativeTestCoBorrowerWithCharactersInCellphone(){
+        preapprovalDetailsPositiveTest();
+        appPage.withCoborrowerCheckbox.click();
+        appPage.firstNameField.sendKeys(firstName);
+        appPage.lastNameField.sendKeys(lastName);
+        appPage.emailField.sendKeys(email);
+        appPage.dateOfBirthField.sendKeys(dateOfBirth);
+        appPage.ssnField.sendKeys(ssn);
+        appPage.maritalStatusButton.click();
+        appPage.maritalStatusField.sendKeys(married, Keys.ENTER);
+        appPage.cellPhoneField.sendKeys(cellNumber);
+        appPage.homePhoneField.sendKeys(homeNumber);
+
+        appPage.coborrowerFirstNameField.sendKeys(firstName);
+        appPage.coborrowerLastNameField.sendKeys(lastName);
+        appPage.coborrowerEmailField.sendKeys(email);
+        appPage.coborrowerDOBField.sendKeys(dateOfBirth);
+        appPage.coborrowerSSNField.sendKeys(ssn);
+        appPage.coborrowerMaritalStatusButton.click();
+        appPage.coborrowerMaritalStatusField.sendKeys(married, Keys.ENTER);
+        appPage.coborrowerCellField.sendKeys("1a2s3d4f5g");
+
+        appPage.nextButton.click();
+        logger.info("Using 1a2s3d4f5g as cell phone the Personal Information page with Co-Borrower, clicking next button " +
+                "and checking if we passed to the next page.");
+        Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
+        logger.info(bug);
+    }
+
     @Test
     public void expensesPositiveTest() {
 
