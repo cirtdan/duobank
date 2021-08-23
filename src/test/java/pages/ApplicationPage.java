@@ -117,6 +117,10 @@ public class ApplicationPage extends  PageBase{
     @FindBy(xpath = "//input[@name='monthly_rental_payment']")
     public WebElement monthlyRentalPaymentField;
 
+    @FindBy(xpath = "//input[@id='firtmortagagetotalpayment']")
+    public WebElement firstMortgageTotalPaymentField;
+
+
     @FindBy(xpath = "//input[@id='employername1']")
     public WebElement employerNameField;
 
@@ -230,6 +234,17 @@ public class ApplicationPage extends  PageBase{
 
     @FindBy(xpath = "//a[.='Duotech Team']")
     public WebElement duotechTeamButton;
+
+    @FindBy(xpath="//label[@for='expense2']")
+    public WebElement ownButton;
+
+    @FindBy(xpath = "(//button[.='Add Another Employer'])[1]")
+    public WebElement addAnotherEmployerButton;
+    @FindBy(xpath = "//a[.='Clear']")
+    public WebElement clearButton;
+    @FindBy(xpath = "//button[.='Cancel']")
+    public WebElement cancelOnAlert;
+
 
 
 

@@ -4,6 +4,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.SeleniumUtils;
 
 public class MortgageApplicationTests extends TestBase {
 
@@ -474,9 +475,16 @@ public class MortgageApplicationTests extends TestBase {
         appPage.monthlyRentalPaymentField.sendKeys(monthlyRentalPayment);
         appPage.nextButton.click();
         Assert.assertEquals(appPage.employmentAndIncomePageText.getText(), employmentAndIncomePageTextExpected);
-
-
     }
+        @Test //ilkin
+        public void expensesPageFieldTextCheck() {
+            personalInformationPositiveTest();
+            appPage.ownButton.click();
+            Assert.assertEquals(appPage.firstMortgageTotalPaymentField.getAttribute("placeholder"),"First Mortagage Total Payment");
+
+        }
+
+
     @Test
     public void expensesPageTestCheckingErrorText() {
 
@@ -782,6 +790,22 @@ public class MortgageApplicationTests extends TestBase {
         appPage.saveButton.click();
         loginPage.actualUsernameButton.click();
         appPage.LogOutButton.click();
+    }
+
+    @Test    //ilkin
+    public void employmentAndIncomePageAlert(){
+       expensesPositiveTest();
+       appPage.addAnotherEmployerButton.click();
+       appPage.clearButton.click();
+        appPage.cancelOnAlert.click(); // checking if cancel button on AlertBox works
+
 
     }
+
+
+
 }
+
+
+
+
