@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utilities.SeleniumUtils;
 
 public class ApplicationPage extends  PageBase{
 
@@ -50,6 +51,9 @@ public class ApplicationPage extends  PageBase{
 
     @FindBy(xpath = "//a[.='Next']")
     public WebElement nextButton;
+
+    @FindBy(xpath = "//a[.='Previous']")
+    public WebElement previousButton;
 
     @FindBy(xpath = "//label[@for='coborrower1']")
     public WebElement withCoborrowerCheckbox;
@@ -230,6 +234,19 @@ public class ApplicationPage extends  PageBase{
 
     @FindBy(xpath = "//a[.='Duotech Team']")
     public WebElement duotechTeamButton;
+
+    @FindBy(xpath = "//a[@id='clear1']")
+    public WebElement clear1Button;
+
+    @FindBy(xpath = "//button[.='Yes!']")
+    public WebElement alertYesButton;
+
+    @FindBy(xpath = "//div[@class='Employer']/a")
+    public WebElement employer1text;
+
+
+
+
 
 
 
