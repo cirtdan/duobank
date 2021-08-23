@@ -36,6 +36,8 @@ public class TestBase {
     String homeNumber = "222-100-0101";
     String emptySpace = " ";
 
+    String testerFirstName = ConfigReader.getProperty("firstName");
+    String testerLastName = ConfigReader.getProperty("lastName");
     String testerEmail = ConfigReader.getProperty("email");
     String testerPassword = ConfigReader.getProperty("pass");
 
@@ -44,6 +46,8 @@ public class TestBase {
     String wrongEmailFormat2 = "XA-12@io-.com";
     String wrongEmailFormat3 = "=@h.com";
     String elonSonsName = "X Æ A-12,";
+
+    String employer1ExpectedText = "Employer 1";
 
     String expectedUsername = ConfigReader.getProperty("firstName") + " " + ConfigReader.getProperty("lastName");
 
