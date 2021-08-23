@@ -64,7 +64,7 @@ public class MortgageApplicationTests extends TestBase {
                 "if calculated loan amount equals to expected loan amount");
         Assert.assertEquals(calculatedLoanAmount, expectedLoanAmount);
     }
-    @Test
+    @Test (groups = {"sprint_2"})
     public void preapprovalDetailsTestCheckingPercentage(){
         loginPage.login(testerEmail, testerPassword);
         appPage.mortgageApplicationButton.click();
@@ -286,7 +286,7 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug + " - 404 Not Found");
     }
 
-    @Test
+    @Test (groups = {"sprint_2"})
     public void personalInformationPositiveTestCoBorrower(){
         preapprovalDetailsPositiveTest();
         appPage.withCoborrowerCheckbox.click();
@@ -316,7 +316,7 @@ public class MortgageApplicationTests extends TestBase {
 
     }
 
-    @Test (groups = {"negative"})
+    @Test (groups = {"negative", "sprint_2"})
     public void personalInformationNegativeTestCoBorrowerWithIloneMaskFirstName(){
         preapprovalDetailsPositiveTest();
         appPage.withCoborrowerCheckbox.click();
@@ -346,7 +346,7 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
     }
 
-    @Test (groups = {"negative"})
+    @Test (groups = {"negative", "sprint_2"})
     public void personalInformationNegativeTestCoBorrowerWithIloneMaskLastName(){
         preapprovalDetailsPositiveTest();
         appPage.withCoborrowerCheckbox.click();
@@ -376,7 +376,7 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
     }
 
-    @Test (groups = {"negative"})
+    @Test (groups = {"negative", "sprint_2"})
     public void personalInformationNegativeTestCoBorrowerwithFutureDOB(){
         preapprovalDetailsPositiveTest();
         appPage.withCoborrowerCheckbox.click();
@@ -405,7 +405,7 @@ public class MortgageApplicationTests extends TestBase {
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
         logger.info(bug);
     }
-    @Test (groups = {"negative"})
+    @Test (groups = {"negative", "sprint_2"})
     public void personalInformationNegativeTestCoBorrowerWithWrongSSN(){
         preapprovalDetailsPositiveTest();
         appPage.withCoborrowerCheckbox.click();
@@ -435,7 +435,7 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
     }
 
-    @Test (groups = {"negative"})
+    @Test (groups = {"negative", "sprint_2"})
     public void personalInformationNegativeTestCoBorrowerWithCharactersInCellphone(){
         preapprovalDetailsPositiveTest();
         appPage.withCoborrowerCheckbox.click();
