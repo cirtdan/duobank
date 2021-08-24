@@ -802,8 +802,16 @@ public class MortgageApplicationTests extends TestBase {
 
 
     }
-
-@Test (groups = {"sprint_2"})    //ilkin
+    @Test(groups = {"negative","sprint_2"})//ilkin //bug
+    public void expensesPagewrongAmountTotalMortgage() {
+        personalInformationPositiveTest();
+        appPage.ownButton.click();
+        appPage.mortgageTotalPayment.sendKeys("0001");
+        appPage.nextButton.click();
+        Assert.assertEquals(appPage.employmentAndIncomePageText.getText(), employmentAndIncomePageTextExpected);
+        logger.info(bug);
+    }
+@Test (groups = {"negative","sprint_2"})    //ilkin
     public void employmentAndIncomePageWrongEmploymentDate()  {
 
     expensesPositiveTest();
@@ -833,6 +841,7 @@ public class MortgageApplicationTests extends TestBase {
         String expectedWarningText = "THIS FIELD IS REQUIRED.";
         String actualWarningText = driver.findElement(By.id("estimatedprice-error")).getText();
         Assert.assertEquals(actualWarningText, expectedWarningText);
+
     }
 
     //Rena's test case

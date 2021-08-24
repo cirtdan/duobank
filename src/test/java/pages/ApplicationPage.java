@@ -247,6 +247,8 @@ public class ApplicationPage extends PageBase {
 
     @FindBy(xpath = "//label[@for='expense2']")
     public WebElement ownButton;
+    @FindBy(xpath = "//input[@id='firtmortagagetotalpayment']")
+    public WebElement mortgageTotalPayment;
 
     @FindBy(xpath = "(//button[.='Add Another Employer'])[1]")
     public WebElement addAnotherEmployerButton;
