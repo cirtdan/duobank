@@ -8,6 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.SeleniumUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -467,7 +468,25 @@ public class MortgageApplicationTests extends TestBase {
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
         logger.info(bug);
     }
+    @Test ()
+    public void personalInformationPositiveTestWithTesterInfo() { // RFL
 
+        preapprovalDetailsPositiveTest();
+
+        appPage.firstNameField.sendKeys(testerFirstName);
+        appPage.lastNameField.sendKeys(testerLastName);
+        appPage.emailField.sendKeys(testerEmail);
+        appPage.dateOfBirthField.sendKeys(dateOfBirth);
+        appPage.ssnField.sendKeys(ssn);
+        appPage.maritalStatusButton.click();
+        appPage.maritalStatusField.sendKeys(married, Keys.ENTER);
+        appPage.cellPhoneField.sendKeys(cellNumber);
+        appPage.homePhoneField.sendKeys(homeNumber);
+        appPage.nextButton.click();
+        logger.info("Adding tester FN, LN and email on the Personal Information page, clicking next button " +
+                "and checking if we passed to the next page.");
+        Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
+    }
     @Test (groups = {"negative", "sprint_2"})
     public void personalInformationNegativeTestCoBorrowerWithCharactersInCellphone(){
         preapprovalDetailsPositiveTest();
@@ -533,7 +552,7 @@ public class MortgageApplicationTests extends TestBase {
         Assert.assertEquals(actualErrorMessage, monthlyRentalPaymentExpectedErrorMessage);
 
     }
-    @Test
+    @Test(groups = {"sprint_2"})
     public void employmentAndIncomePositiveTest() {
 
         expensesPositiveTest();
@@ -592,7 +611,6 @@ public class MortgageApplicationTests extends TestBase {
     }
 
 
-
     @Test (groups = {"negative"}) // BUG
     public void employmentAndIncomeTestWithNoEmployerName() {
 
@@ -617,7 +635,7 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
 
     }
-    @Test (groups = {"negative"}) // BUG
+    @Test (groups = {"negative", "sprint_2"}) // BUG
     public void employmentAndIncomeTestWithNegativeMonthlyIncome() {
 
         expensesPositiveTest();
@@ -714,6 +732,18 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
 
     }
+    @Test (groups = {"negative"}) // BUG
+    public void employmentAndIncomeTestCheckingAlert() { // RFL
+
+        expensesPositiveTest();
+        logger.info("Filling the application, clicking CLEAR Employer 1, getting allert, clicking YES and " +
+                "checking if Employer 1 was deleted from the page");
+        SeleniumUtils.jsClick(appPage.clear1Button);
+        appPage.alertYesButton.click();
+        String employer1ActualText = appPage.employer1text.getAttribute("text");
+        Assert.assertTrue(employer1ActualText.contains(employer1ExpectedText));
+        logger.info(bug);
+    }
 
     @Test (groups = {"negative"}) // BUG
     public void employmentAndIncomeTestWithNegativeMonthlyDividends() {
@@ -739,7 +769,7 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
 
     }
-    @Test
+    @Test(groups = {"sprint_2"})
     public void creditReportPositiveTest() {
 
         employmentAndIncomePositiveTest();
@@ -826,6 +856,26 @@ public class MortgageApplicationTests extends TestBase {
         appPage.saveButton.click();
         loginPage.actualUsernameButton.click();
         appPage.LogOutButton.click();
+
+    }
+    @Test
+    public void summaryPageTestCheckingPreviousButton(){ // RFL
+
+        eConsentPositiveTest();
+        logger.info("Heading to the SUMMARY page, clicking Previous button and " +
+                "verifying if we passed to the previous page");
+        appPage.previousButton.click();
+        Assert.assertEquals(appPage.eConsentPageText.getText(), eConsentPageTextExpected);
+
+    }
+    @Test
+    public void logOutTest(){ // RFL
+
+        summaryPageTest();
+        logger.info("Clicking Log Out button and checking if we logged out");
+        loginPage.actualUsernameButton.click();
+        appPage.LogOutButton.click();
+        Assert.assertEquals(driver.getCurrentUrl(), loginUrl);
 
     }
 

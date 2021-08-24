@@ -1,10 +1,7 @@
 package pages;
 
-import jdk.nashorn.internal.runtime.regexp.joni.Config;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utilities.ConfigReader;
 
 public class LoginPage extends  PageBase{
 

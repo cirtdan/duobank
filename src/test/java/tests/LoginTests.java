@@ -1,14 +1,8 @@
 package tests;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.ApplicationPage;
-import pages.LoginPage;
-import utilities.ConfigReader;
 import utilities.SeleniumUtils;
-
-import java.util.concurrent.TimeUnit;
 
 public class LoginTests extends TestBase{
 
@@ -65,7 +59,7 @@ public class LoginTests extends TestBase{
         Assert.assertEquals(dashboardUrl, driver.getCurrentUrl());
     }
 
-    @Test
+    @Test(groups = {"smoke", "sprint_2"})
     public void clickingDuotechTeamButtonAndVerifyingNewTab() { // RFL
 
         loginPage.login(testerEmail, testerPassword);

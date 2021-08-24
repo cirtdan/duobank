@@ -1,7 +1,10 @@
 package tests;
 
 import com.google.common.base.Verify;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -118,4 +121,5 @@ public class SignUpTests extends TestBase {
         new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe(loginUrl));
         Assert.assertEquals(loginUrl, driver.getCurrentUrl());
     }
+
 }

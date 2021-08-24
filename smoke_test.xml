@@ -12,7 +12,7 @@
 
         <packages>
 
-            <package name="tests"></package>
+            <package name="tests"/>
             <!--runs all the packages-->
         </packages>
 
