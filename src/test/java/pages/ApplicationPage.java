@@ -1,10 +1,9 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ApplicationPage extends  PageBase{
+public class ApplicationPage extends PageBase {
 
     @FindBy(xpath = "//span[.='Mickey Mouse']")
     public WebElement actualUsernameButton;
@@ -50,6 +49,9 @@ public class ApplicationPage extends  PageBase{
 
     @FindBy(xpath = "//a[.='Next']")
     public WebElement nextButton;
+
+    @FindBy(xpath = "//a[.='Previous']")
+    public WebElement previousButton;
 
     @FindBy(xpath = "//label[@for='coborrower1']")
     public WebElement withCoborrowerCheckbox;
@@ -119,7 +121,6 @@ public class ApplicationPage extends  PageBase{
 
     @FindBy(xpath = "//input[@id='firtmortagagetotalpayment']")
     public WebElement firstMortgageTotalPaymentField;
-
 
     @FindBy(xpath = "//input[@id='employername1']")
     public WebElement employerNameField;
@@ -235,7 +236,16 @@ public class ApplicationPage extends  PageBase{
     @FindBy(xpath = "//a[.='Duotech Team']")
     public WebElement duotechTeamButton;
 
-    @FindBy(xpath="//label[@for='expense2']")
+    @FindBy(xpath = "//a[@id='clear1']")
+    public WebElement clear1Button;
+
+    @FindBy(xpath = "//button[.='Yes!']")
+    public WebElement alertYesButton;
+
+    @FindBy(xpath = "//div[@class='Employer']/a")
+    public WebElement employer1text;
+
+    @FindBy(xpath = "//label[@for='expense2']")
     public WebElement ownButton;
 
     @FindBy(xpath = "(//button[.='Add Another Employer'])[1]")
@@ -244,18 +254,8 @@ public class ApplicationPage extends  PageBase{
     public WebElement clearButton;
     @FindBy(xpath = "//button[.='Cancel']")
     public WebElement cancelOnAlert;
-    @FindBy(xpath="//input[@type='search']")
+    @FindBy(xpath = "//input[@type='search']")
     public WebElement searchBoxOnApplicationList;
-    @FindBy(xpath="//*[@id='DataTables_Table_0']/tbody/tr/td[2]")
+    @FindBy(xpath = "//*[@id='DataTables_Table_0']/tbody/tr/td[2]")
     public WebElement checkLineOfList;
-
-
-
-
-
-
-
-
-
-
 }

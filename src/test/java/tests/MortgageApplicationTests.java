@@ -1,14 +1,21 @@
 package tests;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utilities.SeleniumUtils;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MortgageApplicationTests extends TestBase {
 
-    @Test (groups = {"sprint_2"})
+    @Test (groups = {"sprint002"})
     public void mortgageApplicationHealthCheck(){
 
         loginPage.login(testerEmail, testerPassword);
@@ -19,7 +26,7 @@ public class MortgageApplicationTests extends TestBase {
     }
 
 
-    @Test (groups = {"sprint_2"})
+    @Test (groups = {"sprint002"})
     public void preapprovalDetailsPageTest() {
 
         loginPage.login(testerEmail, testerPassword);
@@ -65,7 +72,7 @@ public class MortgageApplicationTests extends TestBase {
                 "if calculated loan amount equals to expected loan amount");
         Assert.assertEquals(calculatedLoanAmount, expectedLoanAmount);
     }
-    @Test
+    @Test (groups = {"sprint_2"})
     public void preapprovalDetailsTestCheckingPercentage(){
         loginPage.login(testerEmail, testerPassword);
         appPage.mortgageApplicationButton.click();
@@ -287,9 +294,14 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug + " - 404 Not Found");
     }
 
-    @Test
+    @Test (groups = {"sprint_2"})
     public void personalInformationPositiveTestCoBorrower(){
         preapprovalDetailsPositiveTest();
+
+        // -- scroll window to the top to bring checkbox on the screen
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("javascript:window.scrollBy(0,-100)");
+
         appPage.withCoborrowerCheckbox.click();
         appPage.firstNameField.sendKeys(firstName);
         appPage.lastNameField.sendKeys(lastName);
@@ -317,9 +329,14 @@ public class MortgageApplicationTests extends TestBase {
 
     }
 
-    @Test (groups = {"negative"})
+    @Test (groups = {"negative", "sprint_2"})
     public void personalInformationNegativeTestCoBorrowerWithIloneMaskFirstName(){
         preapprovalDetailsPositiveTest();
+
+        // -- scroll window to the top to bring checkbox on the screen
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("javascript:window.scrollBy(0,-100)");
+
         appPage.withCoborrowerCheckbox.click();
         appPage.firstNameField.sendKeys(firstName);
         appPage.lastNameField.sendKeys(lastName);
@@ -347,9 +364,14 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
     }
 
-    @Test (groups = {"negative"})
+    @Test (groups = {"negative", "sprint_2"})
     public void personalInformationNegativeTestCoBorrowerWithIloneMaskLastName(){
         preapprovalDetailsPositiveTest();
+
+        // -- scroll window to the top to bring checkbox on the screen
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("javascript:window.scrollBy(0,-100)");
+
         appPage.withCoborrowerCheckbox.click();
         appPage.firstNameField.sendKeys(firstName);
         appPage.lastNameField.sendKeys(lastName);
@@ -377,9 +399,14 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
     }
 
-    @Test (groups = {"negative"})
+    @Test (groups = {"negative", "sprint_2"})
     public void personalInformationNegativeTestCoBorrowerwithFutureDOB(){
         preapprovalDetailsPositiveTest();
+
+        // -- scroll window to the top to bring checkbox on the screen
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("javascript:window.scrollBy(0,-100)");
+
         appPage.withCoborrowerCheckbox.click();
         appPage.firstNameField.sendKeys(firstName);
         appPage.lastNameField.sendKeys(lastName);
@@ -406,9 +433,14 @@ public class MortgageApplicationTests extends TestBase {
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
         logger.info(bug);
     }
-    @Test (groups = {"negative"})
+    @Test (groups = {"negative", "sprint_2"})
     public void personalInformationNegativeTestCoBorrowerWithWrongSSN(){
         preapprovalDetailsPositiveTest();
+
+        // -- scroll window to the top to bring checkbox on the screen
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("javascript:window.scrollBy(0,-100)");
+
         appPage.withCoborrowerCheckbox.click();
         appPage.firstNameField.sendKeys(firstName);
         appPage.lastNameField.sendKeys(lastName);
@@ -436,9 +468,14 @@ public class MortgageApplicationTests extends TestBase {
         logger.info(bug);
     }
 
-    @Test (groups = {"negative"})
+    @Test (groups = {"negative", "sprint_2"})
     public void personalInformationNegativeTestCoBorrowerWithCharactersInCellphone(){
         preapprovalDetailsPositiveTest();
+
+        // -- scroll window to the top to bring checkbox on the screen
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("javascript:window.scrollBy(0,-100)");
+
         appPage.withCoborrowerCheckbox.click();
         appPage.firstNameField.sendKeys(firstName);
         appPage.lastNameField.sendKeys(lastName);
@@ -476,14 +513,13 @@ public class MortgageApplicationTests extends TestBase {
         appPage.nextButton.click();
         Assert.assertEquals(appPage.employmentAndIncomePageText.getText(), employmentAndIncomePageTextExpected);
     }
-        @Test (groups = {"sprint_2"})//ilkin
-        public void expensesPageFieldTextCheck() {
-            personalInformationPositiveTest();
-            appPage.ownButton.click();
-            Assert.assertEquals(appPage.firstMortgageTotalPaymentField.getAttribute("placeholder"),"First Mortagage Total Payment");
 
-        }
-
+    @Test (groups = {"sprint_2"})//ilkin
+    public void expensesPageFieldTextCheck() {
+        personalInformationPositiveTest();
+        appPage.ownButton.click();
+        Assert.assertEquals(appPage.firstMortgageTotalPaymentField.getAttribute("placeholder"),"First Mortagage Total Payment");
+    }
 
     @Test
     public void expensesPageTestCheckingErrorText() {
@@ -790,40 +826,102 @@ public class MortgageApplicationTests extends TestBase {
         appPage.saveButton.click();
         loginPage.actualUsernameButton.click();
         appPage.LogOutButton.click();
+
+    }
+
+
+    //Rena's test case
+    @Test
+    public void maritalStatusTest() {
+
+        preapprovalDetailsPositiveTest();
+        List<String> expectedMaritalStatus = Arrays.asList("Married", "Divorced", "Separated");
+        List<String> actualMaritalStatus = new ArrayList<>();
+        driver.findElement(By.xpath("(//span[.='Select One' and @title='Select One'])[2]")).click();
+        List<WebElement> elements = driver.findElements(By.xpath("//li[@class='select2-results__option']"));
+        for (WebElement element : elements) {
+            actualMaritalStatus.add(element.getText());
+        }
+        Assert.assertEquals(actualMaritalStatus, expectedMaritalStatus);
+
     }
 
     @Test  (groups = {"sprint_2"})  //ilkin
-    public void employmentAndIncomePageAlert(){
-       expensesPositiveTest();
-       appPage.addAnotherEmployerButton.click();
-       appPage.clearButton.click();
+    public void employmentAndIncomePageAlert() {
+        expensesPositiveTest();
+        appPage.addAnotherEmployerButton.click();
+        appPage.clearButton.click();
         appPage.cancelOnAlert.click(); // checking if cancel button on AlertBox works
+    }
+
+    //Rena's test case
+    @Test
+    public void checkWarningMsgTest() {
+
+        loginPage.login(testerEmail, testerPassword);
+        appPage.mortgageApplicationButton.click();
+        appPage.nextButton.click();
+        String expectedWarningText = "THIS FIELD IS REQUIRED.";
+        String actualWarningText = driver.findElement(By.id("estimatedprice-error")).getText();
+        Assert.assertEquals(actualWarningText, expectedWarningText);
+    }
+
+    @Test (groups = {"sprint_2"})    //ilkin
+    public void employmentAndIncomePageWrongEmploymentDate() {
+        expensesPositiveTest();
+        appPage.employerNameField.sendKeys(employerName);
+        appPage.jobPositionField.sendKeys(jobPosition);
+        appPage.jobCityField.sendKeys(jobCity);
+    }
+
+    //Rena's test case
+    @Test
+    public void checkWarningMsgTest1() {
+
+        loginPage.login(testerEmail, testerPassword);
+        appPage.mortgageApplicationButton.click();
+        appPage.nextButton.click();
+        String expectedWarningText1 = "THIS FIELD IS REQUIRED.";
+        String actualWarningText1 = driver.findElement(By.id("downpaymentpercentage-error")).getText();
+        Assert.assertEquals(actualWarningText1, expectedWarningText1);
+    }
+
+    //Rena's test case
+    @Test
+    public void checkWarningMsgTest2() {
+
+        loginPage.login(testerEmail, testerPassword);
+        appPage.mortgageApplicationButton.click();
+        appPage.nextButton.click();
+        String expectedWarningText2 = "THIS FIELD IS REQUIRED.";
+        String actualWarningText2 = driver.findElement(By.id("downpayment-error")).getText();
+        Assert.assertEquals(actualWarningText2, expectedWarningText2);
+    }
+
+    //Rena's test case
+    @Test
+    public void checkWarningMsgTest3() {
+
+        loginPage.login(testerEmail, testerPassword);
+        appPage.mortgageApplicationButton.click();
+        appPage.nextButton.click();
+        String expectedWarningText = "THIS FIELD IS REQUIRED.";
+        String actualWarningText = driver.findElement(By.id("realtorinfo-error")).getText();
+        Assert.assertEquals(actualWarningText, expectedWarningText);
+    }
+
+    //Rena's test case
+    @Test
+    public void sourceOfDownPaymentTest() {
+
+        preapprovalDetailsPageTest();
+
+        Select select = new Select(driver.findElement(By.xpath("//select[@name='src_down_payment']")));
+        select.selectByIndex(1);
+        String expectedSourceOfDownPayment = "Equity on Pending Sale (executed sales contract)";
+        String actualSourceOfDownPayment = driver.findElement(By.xpath("//span[@title='Equity on Pending Sale (executed sales contract)']")).getText();
+        Assert.assertEquals(actualSourceOfDownPayment, expectedSourceOfDownPayment);
 
 
     }
-
-@Test (groups = {"sprint_2"})    //ilkin
-    public void employmentAndIncomePageWrongEmploymentDate()  {
-
-    expensesPositiveTest();
-    appPage.employerNameField.sendKeys(employerName);
-    appPage.jobPositionField.sendKeys(jobPosition);
-    appPage.jobCityField.sendKeys(jobCity);
-
-    Select select = new Select(appPage.stateSelect);
-    select.selectByIndex(jobState);
-    appPage.jobStartDateField.sendKeys("00/00/0000");
-    appPage.grossMonthlyIncomeField.sendKeys(grossMonthlyIncome);
-    appPage.nextButton.click();
-
-    logger.info("Writing wrong format of date for job start date and it accepts it.");
-    Assert.assertEquals(appPage.creditReportPageText.getText(), creditReportPageTextExpected);
-    logger.info(bug);
-
 }
-
-}
-
-
-
-

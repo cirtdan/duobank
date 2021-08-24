@@ -2,7 +2,6 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utilities.SeleniumUtils;
 
 public class ApplicationListTest extends TestBase{
 
@@ -41,12 +40,12 @@ public class ApplicationListTest extends TestBase{
         logger.info(bug);
 
     }
-@Test (groups = {"sprint_2"})//ilkin
-    public void searchBoxCheck(){
+
+    @Test (groups = {"sprint_2"})//ilkin
+    public void searchBoxCheck() {
         loginPage.login(testerEmail, testerPassword);
         appPage.appListButton.click();
         appPage.searchBoxOnApplicationList.sendKeys("Lenita Douglas");
-        Assert.assertTrue(true,"Lenita Douglas");
-
-}
+        Assert.assertTrue(true, "Lenita Douglas");
+    }
 }
