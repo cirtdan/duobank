@@ -244,6 +244,10 @@ public class ApplicationPage extends  PageBase{
     public WebElement clearButton;
     @FindBy(xpath = "//button[.='Cancel']")
     public WebElement cancelOnAlert;
+    @FindBy(xpath="//input[@type='search']")
+    public WebElement searchBoxOnApplicationList;
+    @FindBy(xpath="//*[@id='DataTables_Table_0']/tbody/tr/td[2]")
+    public WebElement checkLineOfList;
 
 
 

@@ -2,6 +2,7 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.SeleniumUtils;
 
 public class ApplicationListTest extends TestBase{
 
@@ -40,5 +41,12 @@ public class ApplicationListTest extends TestBase{
         logger.info(bug);
 
     }
+@Test //ilkin
+    public void searchBoxCheck(){
+        loginPage.login(testerEmail, testerPassword);
+        appPage.appListButton.click();
+        appPage.searchBoxOnApplicationList.sendKeys("Lenita Douglas");
+        Assert.assertEquals("Lenita Douglas",appPage.checkLineOfList);
 
+}
 }

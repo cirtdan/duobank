@@ -802,7 +802,25 @@ public class MortgageApplicationTests extends TestBase {
 
     }
 
+@Test     //ilkin
+    public void employmentAndIncomePageWrongEmploymentDate()  {
 
+    expensesPositiveTest();
+    appPage.employerNameField.sendKeys(employerName);
+    appPage.jobPositionField.sendKeys(jobPosition);
+    appPage.jobCityField.sendKeys(jobCity);
+
+    Select select = new Select(appPage.stateSelect);
+    select.selectByIndex(jobState);
+    appPage.jobStartDateField.sendKeys("00/00/0000");
+    appPage.grossMonthlyIncomeField.sendKeys(grossMonthlyIncome);
+    appPage.nextButton.click();
+
+    logger.info("Writing wrong format of date for job start date and it accepts it.");
+    Assert.assertEquals(appPage.creditReportPageText.getText(), creditReportPageTextExpected);
+    logger.info(bug);
+
+}
 
 }
 
