@@ -165,4 +165,14 @@ public class TestBase {
         reporter.flush();
     }
 
+
+     //_______________________Tetiana Kucherova doing sprint2  home work here:P___________________________
+    String ExpectedMatchingMSG ="No matching records found";
+
+    String ExpectedTextOfList1 ="10";
+    String ExpectedTextOfList2 ="20";
+    String ExpectedTextOfList3 ="30";
+    String ExpectedTextOfList4 ="40";
+    String ExpectedTextOfList5 ="45";
+
 }
