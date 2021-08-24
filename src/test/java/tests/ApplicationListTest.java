@@ -41,7 +41,7 @@ public class ApplicationListTest extends TestBase{
         logger.info(bug);
 
     }
-@Test //ilkin
+@Test (groups = {"sprint_2"})//ilkin
     public void searchBoxCheck(){
         loginPage.login(testerEmail, testerPassword);
         appPage.appListButton.click();

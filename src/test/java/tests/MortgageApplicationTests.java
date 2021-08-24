@@ -8,7 +8,7 @@ import utilities.SeleniumUtils;
 
 public class MortgageApplicationTests extends TestBase {
 
-    @Test (groups = {"sprint002"})
+    @Test (groups = {"sprint_2"})
     public void mortgageApplicationHealthCheck(){
 
         loginPage.login(testerEmail, testerPassword);
@@ -19,7 +19,7 @@ public class MortgageApplicationTests extends TestBase {
     }
 
 
-    @Test (groups = {"sprint002"})
+    @Test (groups = {"sprint_2"})
     public void preapprovalDetailsPageTest() {
 
         loginPage.login(testerEmail, testerPassword);
@@ -476,7 +476,7 @@ public class MortgageApplicationTests extends TestBase {
         appPage.nextButton.click();
         Assert.assertEquals(appPage.employmentAndIncomePageText.getText(), employmentAndIncomePageTextExpected);
     }
-        @Test //ilkin
+        @Test (groups = {"sprint_2"})//ilkin
         public void expensesPageFieldTextCheck() {
             personalInformationPositiveTest();
             appPage.ownButton.click();
@@ -792,7 +792,7 @@ public class MortgageApplicationTests extends TestBase {
         appPage.LogOutButton.click();
     }
 
-    @Test    //ilkin
+    @Test  (groups = {"sprint_2"})  //ilkin
     public void employmentAndIncomePageAlert(){
        expensesPositiveTest();
        appPage.addAnotherEmployerButton.click();
@@ -802,7 +802,7 @@ public class MortgageApplicationTests extends TestBase {
 
     }
 
-@Test     //ilkin
+@Test (groups = {"sprint_2"})    //ilkin
     public void employmentAndIncomePageWrongEmploymentDate()  {
 
     expensesPositiveTest();
