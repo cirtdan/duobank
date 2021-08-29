@@ -1,12 +1,10 @@
-package tests;
+package uitests;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.ApplicationPage;
@@ -28,20 +26,20 @@ public class TestBase {
 
     Faker fake = new Faker();
 
-    String firstName = fake.name().firstName();
-    String lastName = fake.name().lastName();
-    String email = fake.internet().emailAddress();
-    String pass = fake.internet().password();
+    protected String firstName = fake.name().firstName();
+    protected String lastName = fake.name().lastName();
+    protected String email = fake.internet().emailAddress();
+    protected String pass = fake.internet().password();
     String dateOfBirth = "05/05/1985";
     String ssn = "123-45-6789";
     String cellNumber = "121-100-0101";
     String homeNumber = "222-100-0101";
     String emptySpace = " ";
 
-    String testerFirstName = ConfigReader.getProperty("firstName");
-    String testerLastName = ConfigReader.getProperty("lastName");
-    String testerEmail = ConfigReader.getProperty("email");
-    String testerPassword = ConfigReader.getProperty("pass");
+    protected String testerFirstName = ConfigReader.getProperty("firstName");
+    protected String testerLastName = ConfigReader.getProperty("lastName");
+    protected String testerEmail = ConfigReader.getProperty("email");
+    protected String testerPassword = ConfigReader.getProperty("pass");
 
     String alternativeEmail = fake.internet().emailAddress();
     String wrongEmailFormat = "@gmail.com";
@@ -53,10 +51,10 @@ public class TestBase {
 
     String expectedUsername = ConfigReader.getProperty("firstName") + " " + ConfigReader.getProperty("lastName");
 
-    String loginUrl = ConfigReader.getProperty("url");
-    String dashboardUrl = ConfigReader.getProperty("dashboardUrl");
-    String mortgageAppUrl = ConfigReader.getProperty("mortgageAppUrl");
-    String appListUrl = ConfigReader.getProperty("appListUrl");
+    protected String loginUrl = ConfigReader.getProperty("url");
+    protected String dashboardUrl = ConfigReader.getProperty("dashboardUrl");
+    protected String mortgageAppUrl = ConfigReader.getProperty("mortgageAppUrl");
+    protected String appListUrl = ConfigReader.getProperty("appListUrl");
 
     String expectedWelcomingMessage = "Welcome Back, Automation Testers!";
     String expectedSignUpMessage = "Sign Up";

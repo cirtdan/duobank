@@ -1,4 +1,4 @@
-package tests;
+package uitests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -61,7 +61,6 @@ public class ApplicationListTest extends TestBase{
         loginPage.login ( testerEmail, testerPassword );
         appPage.appListButton.click ( );
 
-        // driver.get("http://duobank-env.eba-hjmrxg9a.us-east-2.elasticbeanstalk.com/applications.php");
         WebElement DDButton = driver.findElement
                 ( By.xpath ( "//*[@id='DataTables_Table_0_length']/label/select" ));
        Select select = new Select(DDButton);
@@ -107,13 +106,10 @@ public class ApplicationListTest extends TestBase{
          driver.findElement ( By.xpath (" //*[@id='DataTables_Table_0_paginate']/ul/li[5]/a")).click();
          Assert.assertEquals( appPage.N40.getText(), ExpectedTextOfList4);
          driver.findElement ( By.xpath (" //*[@id='DataTables_Table_0_paginate']/ul/li[6]/a")).click();
-        //    Assert.assertEquals( appPage.N45.getText(), ExpectedTextOfList5);
-        // driver.findElement ( By.xpath (" //*[@id='DataTables_Table_0_paginate']/ul/li[6]/a")).click();
 
             }
         }
 
-/*//*[@id="DataTables_Table_0_next"]*/
 
 
 

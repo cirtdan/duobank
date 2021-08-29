@@ -1,10 +1,9 @@
-package tests;
+package uitests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -359,7 +358,7 @@ public class MortgageApplicationTests extends TestBase {
         appPage.coborrowerCellField.sendKeys(cellNumber);
 
         appPage.nextButton.click();
-        logger.info("Adding Elone Mask name as a first name on the Personal Information page with Co-Borrower, clicking next button " +
+        logger.info("Adding Elon Mask name as a first name on the Personal Information page with Co-Borrower, clicking next button " +
                 "and checking if we passed to the next page.");
         Assert.assertEquals(appPage.expensesPageText.getText(), expensesPageTextExpected);
         logger.info(bug);
@@ -903,9 +902,16 @@ public class MortgageApplicationTests extends TestBase {
         appPage.clearButton.click();
         appPage.cancelOnAlert.click(); // checking if cancel button on AlertBox works
     }
+    @Test (groups = {"sprint_2"})    //ilkin
+    public void employmentAndIncomePageWrongEmploymentDate() {
+        expensesPositiveTest();
+        appPage.employerNameField.sendKeys(employerName);
+        appPage.jobPositionField.sendKeys(jobPosition);
+        appPage.jobCityField.sendKeys(jobCity);
+    }
 
     //Rena's test case
-    @Test
+    @Test (groups = {"sprint_2"})
     public void checkWarningMsgTest() {
 
         loginPage.login(testerEmail, testerPassword);
@@ -916,16 +922,8 @@ public class MortgageApplicationTests extends TestBase {
         Assert.assertEquals(actualWarningText, expectedWarningText);
     }
 
-    @Test (groups = {"sprint_2"})    //ilkin
-    public void employmentAndIncomePageWrongEmploymentDate() {
-        expensesPositiveTest();
-        appPage.employerNameField.sendKeys(employerName);
-        appPage.jobPositionField.sendKeys(jobPosition);
-        appPage.jobCityField.sendKeys(jobCity);
-    }
-
     //Rena's test case
-    @Test
+    @Test (groups = {"sprint_2"})
     public void checkWarningMsgTest1() {
 
         loginPage.login(testerEmail, testerPassword);
@@ -937,7 +935,7 @@ public class MortgageApplicationTests extends TestBase {
     }
 
     //Rena's test case
-    @Test
+    @Test (groups = {"sprint_2"})
     public void checkWarningMsgTest2() {
 
         loginPage.login(testerEmail, testerPassword);
@@ -949,7 +947,7 @@ public class MortgageApplicationTests extends TestBase {
     }
 
     //Rena's test case
-    @Test
+    @Test (groups = {"sprint_2"})
     public void checkWarningMsgTest3() {
 
         loginPage.login(testerEmail, testerPassword);
@@ -961,7 +959,7 @@ public class MortgageApplicationTests extends TestBase {
     }
 
     //Rena's test case
-    @Test
+    @Test (groups = {"sprint_2"})
     public void sourceOfDownPaymentTest() {
 
         preapprovalDetailsPageTest();
@@ -971,7 +969,6 @@ public class MortgageApplicationTests extends TestBase {
         String expectedSourceOfDownPayment = "Equity on Pending Sale (executed sales contract)";
         String actualSourceOfDownPayment = driver.findElement(By.xpath("//span[@title='Equity on Pending Sale (executed sales contract)']")).getText();
         Assert.assertEquals(actualSourceOfDownPayment, expectedSourceOfDownPayment);
-
 
     }
 }

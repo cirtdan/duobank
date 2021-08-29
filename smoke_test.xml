@@ -12,7 +12,7 @@
 
         <packages>
 
-            <package name="tests"/>
+            <package name="uitests"/>
             <!--runs all the packages-->
         </packages>
 

@@ -1,4 +1,11 @@
 package utilities;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -6,19 +13,18 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ExcelUtils {
+public class ExcelUtility {
+
+
+
 
     private XSSFWorkbook workBook;
     private XSSFSheet sheet;
     private String path;
 
-    public ExcelUtils(String path, String sheetName) {
+
+    public ExcelUtility(String path, String sheetName) {
         this.path = path;
         try {
             FileInputStream excelFile = new FileInputStream(path);
@@ -28,7 +34,6 @@ public class ExcelUtils {
             throw new RuntimeException(e);
         }
     }
-
     public String getCellData(int rowNum, int colNum) {
         XSSFCell cell;
         try {
@@ -55,7 +60,6 @@ public class ExcelUtils {
         }
         return table;
     }
-
     public List<Map<String, String>> getDataAsMap() {
         List<String> columnNames = getColumnNames(); // gets the names of columns
         List<Map<String, String>> data = new ArrayList<>();
@@ -71,7 +75,6 @@ public class ExcelUtils {
         }
         return data;
     }
-
     public List<String> getColumnNames() {
         List<String> columns = new ArrayList<>();
         for (Cell cell : sheet.getRow(0)) {
@@ -79,7 +82,6 @@ public class ExcelUtils {
         }
         return columns;
     }
-
     public void setCellData(String value, int rowNum, int colNum) {
         XSSFCell cell;
         XSSFRow row;
@@ -99,7 +101,6 @@ public class ExcelUtils {
             e.printStackTrace();
         }
     }
-
     public void setCellData(String value, String columnName, int row) {
         int column = getColumnNames().indexOf(columnName);
         setCellData(value, row, column);

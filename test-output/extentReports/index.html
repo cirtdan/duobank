@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">DUOBANK AUTOMATION TEST</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Aug 24, 2021 11:50:49 AM</span></a>
+<a href="#"><span class="badge badge-primary">Aug 29, 2021 05:06:35 PM</span></a>
 </li>
 </ul>
 </div>
@@ -66,7 +66,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -74,140 +74,93 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">TEST CASE: serchFild</p>
+            <p class="name">TEST CASE: updateUserInfoInDbAndVerifyOnWebsite</p>
             <p class="text-sm">
-              <span>11:50:51 AM</span> / <span>00:00:03:299</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>5:06:36 PM</span> / <span>00:00:06:684</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">TEST CASE: serchFild</h5>
-<span class='badge badge-success'>08.24.2021 11:50:51 AM</span>
-<span class='badge badge-danger'>08.24.2021 11:50:55 AM</span>
-<span class='badge badge-default'>00:00:03:299</span>
+<h5 class="test-status text-fail">TEST CASE: updateUserInfoInDbAndVerifyOnWebsite</h5>
+<span class='badge badge-success'>08.29.2021 5:06:36 PM</span>
+<span class='badge badge-danger'>08.29.2021 5:06:42 PM</span>
+<span class='badge badge-default'>00:00:06:684</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
 </div>
-</div><div class="detail-body mt-4">
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='failureScreenshot20210829050642.png' src="failureScreenshot20210829050642.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:50:55 AM</td>
+        <td>5:06:36 PM</td>
         <td>
-          In this test we are checking if search feature is working correct. We are entering random characters and checking if list will show 'No matching records found' 
+          Connect to database
         </td>
       </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:50:55 AM</td>
-        <td>
-          Test serchFild Passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="2"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">TEST CASE: serchFild</p>
-            <p class="text-sm">
-              <span>11:50:55 AM</span> / <span>00:00:01:930</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">TEST CASE: serchFild</h5>
-<span class='badge badge-success'>08.24.2021 11:50:55 AM</span>
-<span class='badge badge-danger'>08.24.2021 11:50:57 AM</span>
-<span class='badge badge-default'>00:00:01:930</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:50:57 AM</td>
+        <td>5:06:36 PM</td>
         <td>
-          In this test we are checking if search feature is working correct. We are entering random characters and checking if list will show 'No matching records found' 
+          Create a user with the details using Faker
         </td>
       </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:50:57 AM</td>
-        <td>
-          Test serchFild Passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="3"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">TEST CASE: serchFild</p>
-            <p class="text-sm">
-              <span>11:50:57 AM</span> / <span>00:00:01:982</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">TEST CASE: serchFild</h5>
-<span class='badge badge-success'>08.24.2021 11:50:57 AM</span>
-<span class='badge badge-danger'>08.24.2021 11:50:59 AM</span>
-<span class='badge badge-default'>00:00:01:982</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:50:59 AM</td>
+        <td>5:06:36 PM</td>
         <td>
-          In this test we are checking if search feature is working correct. We are entering random characters and checking if list will show 'No matching records found' 
+          Get encrypted version on the Password
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:50:59 AM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:06:36 PM</td>
         <td>
-          Test serchFild Passed
+          Send query to update the user information
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:06:36 PM</td>
+        <td>
+          Login and get the Username
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:06:42 PM</td>
+        <td>
+          Test updateUserInfoInDbAndVerifyOnWebsite Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:06:42 PM</td>
+        <td>
+          Exception: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[@class='user-name']"}
+  (Session info: chrome=92.0.4515.159)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Rafaels-MacBook-Pro.local', ip: 'fe80:0:0:0:3e:1ff6:523f:e89a%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '1.8.0_281'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /var/folders/vb/mz_37vxn07g...}, goog:chromeOptions: {debuggerAddress: localhost:53633}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 36370f996bab209d6e2f16d64d356161
+*** Element info: {Using=xpath, value=//span[@class='user-name']}
         </td>
       </tr>
   </tbody>
@@ -229,25 +182,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Aug 24, 2021 11:50:49 AM</h3>
+<h3>Aug 29, 2021 05:06:35 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Aug 24, 2021 11:50:59 AM</h3>
+<h3>Aug 29, 2021 05:06:42 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>3</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -263,12 +216,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>3</b> tests passed
+<div><small data-tooltip='0%'>
+<b>0</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='100%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -286,10 +239,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='50%'><b>3</b> events passed</small></div>
+<div><small data-tooltip='0%'><b>0</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>3</b> others
+<small data-tooltip='28%'><b>2</b> events failed,
+<b data-tooltip='%'>5</b> others
 </small>
 </div>
 </div>
@@ -305,7 +258,7 @@
 </div></div>
 <script>
 var timeline = {
-"TEST CASE: serchFild":3.299,"TEST CASE: serchFild":1.93,"TEST CASE: serchFild":1.982
+"TEST CASE: updateUserInfoInDbAndVerifyOnWebsite":6.684
 };
 </script>
 <div class="row">
@@ -336,8 +289,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 3,
-failParent: 0,
+passParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -353,11 +306,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 3,
-failEvents: 0,
+passEvents: 0,
+failEvents: 2,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 3
+infoEvents: 5
 };
 </script>        </div>
       </div>

@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class ApplicationPage extends PageBase {
 
-    @FindBy(xpath = "//span[.='Mickey Mouse']")
-    public WebElement actualUsernameButton;
+    @FindBy(xpath = "//span[@class='user-name']")
+    public WebElement usernameButton;
 
     @FindBy(xpath = "//span[.='Mortgage Application']")
     public WebElement mortgageApplicationButton;
