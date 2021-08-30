@@ -1,6 +1,7 @@
 package dbtests;
 
 import com.github.javafaker.Faker;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -18,11 +19,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-public class SignUpTestsDb extends TestBase {
+public class SignUpTestsDb_Rena extends TestBase {
 
 
     //signup a new user thru UI
-    @Test
+    @Test (groups = {"smoke","sprint_2"})
     public void verifyUserSignUpThroughDatabase() {
 
 
@@ -32,9 +33,7 @@ public class SignUpTestsDb extends TestBase {
         String email = faker.internet().emailAddress();
         String password = faker.internet().password();
 
-
         SignUpPage signup = new SignUpPage();
-
         signup.signUp(firstName, lastName, email, password);
 
         DBUtility.createConnection();
@@ -49,9 +48,31 @@ public class SignUpTestsDb extends TestBase {
 
         String actualEmail = (String) map.get("email");
         System.out.println(actualEmail);
-
         Assert.assertEquals(actualEmail, email);
+
+//        String actualPassword = (String) map.get("password");
+//        logger.info("Get encrypted version on the Password");
+//        String md5hash = DigestUtils.md5Hex(password);
+//        System.out.println(actualPassword);
+//        Assert.assertEquals(actualPassword, password);
+
+        String actualFirstName = (String) map.get("first_name");
+        System.out.println(actualFirstName);
+        Assert.assertEquals(actualFirstName, firstName);
+
+        String actualLastName = (String) map.get("last_name");
+        System.out.println(actualLastName);
+        Assert.assertEquals(actualLastName, lastName);
+
+
+
+
+
+
     }
+
+
+
 
 
 
