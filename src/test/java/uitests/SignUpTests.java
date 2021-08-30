@@ -1,15 +1,10 @@
-package tests;
+package uitests;
 
-import com.google.common.base.Verify;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import utilities.CSVReader;
 import java.io.IOException;
 

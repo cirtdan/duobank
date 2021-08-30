@@ -5,7 +5,7 @@
     <test name="Regression Tests UI" parallel="methods" thread-count="4">
         <classes>
 
-            <class name="tests.SignUpTests"/>
+            <class name="uitests.SignUpTests"/>
 
         </classes>
     </test> <!-- Test -->
