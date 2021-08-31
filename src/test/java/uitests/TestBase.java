@@ -155,7 +155,7 @@ public class TestBase {
             logger.addScreenCaptureFromPath(path);
         }
 
-        //Driver.quitDriver();
+        Driver.quitDriver();
     }
 
     @AfterSuite  (alwaysRun = true)

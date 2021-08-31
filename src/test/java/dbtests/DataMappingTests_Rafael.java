@@ -16,7 +16,7 @@ import static org.testng.Assert.*;
 
 public class DataMappingTests_Rafael extends TestBase {
 
-    @Test
+    @Test (groups = {"sprint_3"})
     public void verifyUserSignUpFlowFromUIToDatabase_Faker() {
 
         logger.info("Create a user's First Name, Last Name, Email and Password using fake data");
@@ -51,7 +51,7 @@ public class DataMappingTests_Rafael extends TestBase {
         assertEquals(map.get("password"), md5hash);
     }
 
-    @Test
+    @Test (groups = {"sprint_3"})
     public void verifyUserSignUpFlowFromDatabaseToUI_Faker() throws SQLException {
 
         logger.info("Connect to database");
@@ -87,7 +87,7 @@ public class DataMappingTests_Rafael extends TestBase {
 
 
     }
-    @Test
+    @Test (groups = {"sprint_3"})
     public void updateUserInfoInDbAndVerifyOnWebsite() throws SQLException {
 
         logger.info("Connect to database");
