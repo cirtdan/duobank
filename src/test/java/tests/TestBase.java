@@ -54,7 +54,7 @@ public class TestBase {
     String expectedUsername = ConfigReader.getProperty("firstName") + " " + ConfigReader.getProperty("lastName");
 
     String loginUrl = ConfigReader.getProperty("url");
-    String dashboardUrl = ConfigReader.getProperty("dashboardUrl");
+    protected String dashboardUrl = ConfigReader.getProperty("dashboardUrl");
     String mortgageAppUrl = ConfigReader.getProperty("mortgageAppUrl");
     String appListUrl = ConfigReader.getProperty("appListUrl");
 
