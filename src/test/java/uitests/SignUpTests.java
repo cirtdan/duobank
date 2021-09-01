@@ -94,6 +94,13 @@ public class SignUpTests extends TestBase { ///Oyat commited
         logger.info("Signing Up using existing customer's email and password and verifying the ERROR MESSAGE (This email already used) is expected");
         Assert.assertEquals(signup.emailExistedMessageActual.getText(), emailExistedMessageExpected);
     }
+    @Test (groups = {"smoke"}) // SOMETIMES PASSES, SOMETIMES NOT
+    public void SignUpAsMickeyMouse() {
+
+        signup.signUp(testerFirstName, testerLastName, "mickey.mouse@isback.com", "mickey");
+        logger.info("Signing Up as Mickey Mouse");
+        Assert.assertEquals(signup.emailExistedMessageActual.getText(), emailExistedMessageExpected);
+    }
 
     @DataProvider
     public Object [][] getData() throws IOException {

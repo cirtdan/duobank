@@ -6,13 +6,18 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+
 public class DBUtility {
+
+
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
+
+
     public static void createConnection() {
         String url = ConfigReader.getProperty("db_url");
-        String user = ConfigReader.getProperty("db_username");
+        String user = ConfigReader.getProperty("db_user");
         String password = ConfigReader.getProperty("db_password");
         try {
             connection = DriverManager.getConnection(url, user, password);
@@ -20,6 +25,7 @@ public class DBUtility {
             e.printStackTrace();
         }
     }
+
     public static void close() {
         try {
             if (resultSet != null) {
@@ -35,6 +41,8 @@ public class DBUtility {
             e.printStackTrace();
         }
     }
+
+
     private static void executeQuery(String query) {
         try {
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -47,20 +55,24 @@ public class DBUtility {
             e.printStackTrace();
         }
     }
-    public static void updateQuery(String query) {
+
+
+    public static void updateQuery(String query) throws SQLException {
         try {
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        try {
+
             int result = statement.executeUpdate(query);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
+
     }
+
+
     public static List<List<Object>> getQueryResultAsListOfLists(String query) {
         executeQuery(query);
+
         List<List<Object>> rowList = new ArrayList<>();
         ResultSetMetaData rsmd;
         try {
@@ -77,8 +89,11 @@ public class DBUtility {
         }
         return rowList;
     }
+
+
     public static List<Map<String, Object>> getQueryResultListOfMaps(String query) {
         executeQuery(query);
+
         List<Map<String, Object>> rowList = new ArrayList<>();
         ResultSetMetaData rsmd;
         try {
@@ -95,6 +110,8 @@ public class DBUtility {
         }
         return rowList;
     }
+
+
     public static List<String> getColumnNames(String query) {
         executeQuery(query);
         List<String> columns = new ArrayList<>();
@@ -110,6 +127,8 @@ public class DBUtility {
         }
         return columns;
     }
+
+
     public static int getRowCount() {
         int rowCount = 0;
         try {
