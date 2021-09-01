@@ -247,6 +247,8 @@ public class ApplicationPage extends PageBase {
 
     @FindBy(xpath = "//label[@for='expense2']")
     public WebElement ownButton;
+    @FindBy(xpath = "//input[@id='firtmortagagetotalpayment']")
+    public WebElement mortgageTotalPayment;
 
     @FindBy(xpath = "(//button[.='Add Another Employer'])[1]")
     public WebElement addAnotherEmployerButton;
@@ -258,31 +260,19 @@ public class ApplicationPage extends PageBase {
     public WebElement searchBoxOnApplicationList;
     @FindBy(xpath = "//*[@id='DataTables_Table_0']/tbody/tr/td[2]")
     public WebElement checkLineOfList;
-
-
-
-
-//________________Tetiana Kucherova doing sprint2 homework here_____________________________
-
-        @FindBy(xpath ="//select[name='DataTables_Table_0_length']")
+    @FindBy(xpath ="//select[name='DataTables_Table_0_length']")
     public WebElement dropDownButton;
-        @FindBy(xpath ="//*[@id='DataTables_Table_0']/tbody/tr/td")
+    @FindBy(xpath ="//*[@id='DataTables_Table_0']/tbody/tr/td")
     public WebElement MatchingMSG;
 
-        @FindBy(xpath="//*[@id='DataTables_Table_0']/tbody/tr[10]/td[1]")
+    @FindBy(xpath="//*[@id='DataTables_Table_0']/tbody/tr[10]/td[1]")
     public WebElement N10;
-        @FindBy(xpath="//*[@id='DataTables_Table_0']/tbody/tr[10]/td[1]")
+    @FindBy(xpath="//*[@id='DataTables_Table_0']/tbody/tr[10]/td[1]")
     public WebElement N20;
-        @FindBy(xpath="//*[@id='DataTables_Table_0']/tbody/tr[10]/td[1]")
+    @FindBy(xpath="//*[@id='DataTables_Table_0']/tbody/tr[10]/td[1]")
     public WebElement N30;
-        @FindBy(xpath="//*[@id='DataTables_Table_0']/tbody/tr[10]/td[1]")
+    @FindBy(xpath="//*[@id='DataTables_Table_0']/tbody/tr[10]/td[1]")
     public WebElement N40;
-        @FindBy(xpath="//*[@id='DataTables_Table_0']/tbody/tr[15]/td[1]")
+    @FindBy(xpath="//*[@id='DataTables_Table_0']/tbody/tr[15]/td[1]")
     public WebElement N45;
-
-//_______________________________________________________________________________________
-
-
-
-
 }
