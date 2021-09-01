@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">DUOBANK AUTOMATION TEST</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Aug 24, 2021 04:27:40 PM</span></a>
+<a href="#"><span class="badge badge-primary">Aug 31, 2021 12:46:08 PM</span></a>
 </li>
 </ul>
 </div>
@@ -79,9 +79,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">TEST CASE: personalInformationNegativeTestCoBorrowerWithIloneMaskFirstName</p>
+            <p class="name">TEST CASE: dbApostropheInLastNameSignUpNegative</p>
             <p class="text-sm">
-              <span>4:27:42 PM</span> / <span>00:00:06:536</span>
+              <span>12:46:11 PM</span> / <span>00:00:04:931</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -89,10 +89,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">TEST CASE: personalInformationNegativeTestCoBorrowerWithIloneMaskFirstName</h5>
-<span class='badge badge-success'>08.24.2021 4:27:42 PM</span>
-<span class='badge badge-danger'>08.24.2021 4:27:48 PM</span>
-<span class='badge badge-default'>00:00:06:536</span>
+<h5 class="test-status text-pass">TEST CASE: dbApostropheInLastNameSignUpNegative</h5>
+<span class='badge badge-success'>08.31.2021 12:46:11 PM</span>
+<span class='badge badge-danger'>08.31.2021 12:46:16 PM</span>
+<span class='badge badge-default'>00:00:04:931</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -104,30 +104,44 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>4:27:43 PM</td>
+        <td>12:46:11 PM</td>
         <td>
-          Filling the application on the PreApproval Details page using proper information, clicking Next button and checking if we passed the step
+          Create a user's First Name, Last Name with apostrophe, Email and Password using fake data
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>4:27:48 PM</td>
+        <td>12:46:11 PM</td>
         <td>
-          Adding Elone Mask name as a first name on the Personal Information page with Co-Borrower, clicking next button and checking if we passed to the next page.
+          Get encrypted version on the Password
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>4:27:48 PM</td>
+        <td>12:46:11 PM</td>
         <td>
-          THERE IS A BUG
+          SignUp to the website
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:46:14 PM</td>
+        <td>
+          Connect to database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:46:16 PM</td>
+        <td>
+          This is a bug
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:27:48 PM</td>
+        <td>12:46:16 PM</td>
         <td>
-          Test personalInformationNegativeTestCoBorrowerWithIloneMaskFirstName Passed
+          Test dbApostropheInLastNameSignUpNegative Passed
         </td>
       </tr>
   </tbody>
@@ -149,13 +163,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Aug 24, 2021 04:27:40 PM</h3>
+<h3>Aug 31, 2021 12:46:08 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Aug 24, 2021 04:27:48 PM</h3>
+<h3>Aug 31, 2021 12:46:16 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -206,10 +220,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='25%'><b>1</b> events passed</small></div>
+<div><small data-tooltip='16%'><b>1</b> events passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>3</b> others
+<b data-tooltip='%'>5</b> others
 </small>
 </div>
 </div>
@@ -225,7 +239,7 @@
 </div></div>
 <script>
 var timeline = {
-"TEST CASE: personalInformationNegativeTestCoBorrowerWithIloneMaskFirstName":6.536
+"TEST CASE: dbApostropheInLastNameSignUpNegative":4.931
 };
 </script>
 <div class="row">
@@ -277,7 +291,7 @@ passEvents: 1,
 failEvents: 0,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 3
+infoEvents: 5
 };
 </script>        </div>
       </div>

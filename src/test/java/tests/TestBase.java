@@ -22,19 +22,19 @@ public class TestBase {
 
     LoginPage loginPage = new LoginPage();
     SignUpPage signup = new SignUpPage();
-    ApplicationPage appPage = new ApplicationPage();
+    protected ApplicationPage appPage = new ApplicationPage();
 
     Faker fake = new Faker();
 
-    String firstName = fake.name().firstName();
-    String lastName = fake.name().lastName();
-    String email = fake.internet().emailAddress();
-    String pass = fake.internet().password();
-    String dateOfBirth = "05/05/1985";
-    String ssn = "123-45-6789";
-    String cellNumber = "121-100-0101";
-    String homeNumber = "222-100-0101";
-    String emptySpace = " ";
+    protected String firstName = fake.name().firstName();
+    protected String lastName = fake.name().lastName();
+    protected String email = fake.internet().emailAddress();
+    protected String pass = fake.internet().password();
+    protected String dateOfBirth = "05/05/1985";
+    protected String ssn = "123-45-6789";
+    protected String cellNumber = "121-100-0101";
+    protected String homeNumber = "222-100-0101";
+    protected String emptySpace = " ";
 
     String testerFirstName = ConfigReader.getProperty("firstName");
     String testerLastName = ConfigReader.getProperty("lastName");
@@ -51,57 +51,57 @@ public class TestBase {
 
     String expectedUsername = ConfigReader.getProperty("firstName") + " " + ConfigReader.getProperty("lastName");
 
-    String loginUrl = ConfigReader.getProperty("url");
-    String dashboardUrl = ConfigReader.getProperty("dashboardUrl");
-    String mortgageAppUrl = ConfigReader.getProperty("mortgageAppUrl");
-    String appListUrl = ConfigReader.getProperty("appListUrl");
+    protected String loginUrl = ConfigReader.getProperty("url");
+    protected String dashboardUrl = ConfigReader.getProperty("dashboardUrl");
+    protected String mortgageAppUrl = ConfigReader.getProperty("mortgageAppUrl");
+    protected String appListUrl = ConfigReader.getProperty("appListUrl");
 
-    String expectedWelcomingMessage = "Welcome Back, Automation Testers!";
-    String expectedSignUpMessage = "Sign Up";
-    String emailExistedMessageExpected = "This email already used";
+    protected String expectedWelcomingMessage = "Welcome Back, Automation Testers!";
+    protected String expectedSignUpMessage = "Sign Up";
+    protected String emailExistedMessageExpected = "This email already used";
 
-    String monthlyRentalPaymentExpectedErrorMessage = "THIS FIELD IS REQUIRED.";
+    protected String monthlyRentalPaymentExpectedErrorMessage = "THIS FIELD IS REQUIRED.";
 
-    String loanApplicationPageTitle = "Loan Application";
+    protected String loanApplicationPageTitle = "Loan Application";
 
-    String realtorInfo = fake.name().fullName() + ", " + fake.internet().emailAddress();
-    String paymentSourceAnotherType = "Other type of Down Payment";
+    protected String realtorInfo = fake.name().fullName() + ", " + fake.internet().emailAddress();
+    protected String paymentSourceAnotherType = "Other type of Down Payment";
 
-    String unrealDateOfBirth = "01/01/2222";
-    String married = "Married";
-    String single = "Single";
+    protected String unrealDateOfBirth = "01/01/2222";
+    protected String married = "Married";
+    protected String single = "Single";
 
-    String purposeOfLoan = "Purchase A Home";
-    String estimatedPurchasePrice = "" + (500000 + (int)(Math.random() * 500000));
-    String downPaymentAmount = "" + (100000 + (int)(Math.random() * 400000));
-    String expectedDownPaymentPercentage = "" + (Integer.parseInt(downPaymentAmount) * 100 / Integer.parseInt(estimatedPurchasePrice));
-    String expectedLoanAmount = "" + (Integer.parseInt(estimatedPurchasePrice) - Integer.parseInt(downPaymentAmount));
-    String monthlyRentalPayment = "2000";
-    String employerName = "Quality Auto LLC";
-    String jobPosition = "CFO";
-    String jobCity = "Manassas";
-    int jobState = 1 + (int)(Math.random() * 2);
-    String jobStartDate = "01/01/2020";
-    String grossMonthlyIncome = "10000";
-    String monthlyOvertime = "3000";
-    String monthlyBonuses = "2000";
-    String monthlyCommissions = "1500";
-    String monthlyDividents = "1200";
-    String totalMonthlyIncomeExpected = ""+(Integer.parseInt(grossMonthlyIncome) +
+    protected String purposeOfLoan = "Purchase A Home";
+    protected String estimatedPurchasePrice = "" + (500000 + (int)(Math.random() * 500000));
+    protected String downPaymentAmount = "" + (100000 + (int)(Math.random() * 400000));
+    protected String expectedDownPaymentPercentage = "" + (Integer.parseInt(downPaymentAmount) * 100 / Integer.parseInt(estimatedPurchasePrice));
+    protected String expectedLoanAmount = "" + (Integer.parseInt(estimatedPurchasePrice) - Integer.parseInt(downPaymentAmount));
+    protected String monthlyRentalPayment = "2000";
+    protected String employerName = "Quality Auto LLC";
+    protected String jobPosition = "CFO";
+    protected String jobCity = "Manassas";
+    protected int jobState = 1 + (int)(Math.random() * 2);
+    protected String jobStartDate = "01/01/2020";
+    protected String grossMonthlyIncome = "10000";
+    protected String monthlyOvertime = "3000";
+    protected String monthlyBonuses = "2000";
+    protected String monthlyCommissions = "1500";
+    protected String monthlyDividents = "1200";
+    protected String totalMonthlyIncomeExpected = ""+(Integer.parseInt(grossMonthlyIncome) +
             Integer.parseInt(monthlyOvertime) + Integer.parseInt(monthlyBonuses) +
             Integer.parseInt(monthlyCommissions) + Integer.parseInt(monthlyDividents)) + " $";
 
-    String additionalIncomeAmount = "" + (100 + (int)(Math.random() * 4900));
-    int incomeSource = 1 + (int)(Math.random() * 2);
+    protected String additionalIncomeAmount = "" + (100 + (int)(Math.random() * 4900));
+    protected int incomeSource = 1 + (int)(Math.random() * 2);
 
-    String preApprovalDetailsPageTextExpected = "PREAPPROVAL DETAILS";
-    String expensesPageTextExpected = "EXPENSES";
-    String personalInformationPageTextExpected = "PERSONAL INFORMATION";
-    String employmentAndIncomePageTextExpected = "EMPLOYMENT AND INCOME";
-    String creditReportPageTextExpected = "CREDIT REPORT";
-    String eConsentPageTextExpected = "ECONSENT";
-    String summaryPageTextExpected = "SUMMARY";
-    String duotechTeamPageTitle = "IDSLBD - Top Website Design and Development Company in Bangladesh";
+    protected String preApprovalDetailsPageTextExpected = "PREAPPROVAL DETAILS";
+    protected String expensesPageTextExpected = "EXPENSES";
+    protected String personalInformationPageTextExpected = "PERSONAL INFORMATION";
+    protected String employmentAndIncomePageTextExpected = "EMPLOYMENT AND INCOME";
+    protected String creditReportPageTextExpected = "CREDIT REPORT";
+    protected String eConsentPageTextExpected = "ECONSENT";
+    protected String summaryPageTextExpected = "SUMMARY";
+    protected String duotechTeamPageTitle = "IDSLBD - Top Website Design and Development Company in Bangladesh";
 
     String bug = "THERE IS A BUG";
 
