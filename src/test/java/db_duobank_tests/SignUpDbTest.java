@@ -64,7 +64,7 @@ public class SignUpDbTest extends TestBase {
 
     }
 
-    @Test(groups = {"smoke_sp3","smoke_sp3"})
+    @Test(groups = {"Sprint_3","smoke_sp3"})
     public void VerifyManualyAddedUser() {
         DBUtility.createConnection();
         logger.info("Added hard coded variable into database");
@@ -89,7 +89,7 @@ public class SignUpDbTest extends TestBase {
 
     }
 
-    @Test(groups = {"smoke_sp3","negative_sprint3"})
+    @Test(groups = {"Sprint_3","negative_sprint3"})
     public void VerifyManualyAddedUserWithNoLastName() {
         DBUtility.createConnection();
         logger.info("Added hard coded variable into database");
@@ -115,7 +115,7 @@ public class SignUpDbTest extends TestBase {
 
     }
 
-    @Test(groups = {"smoke_sp3","negative_sprint3"})
+    @Test(groups = {"Sprint_3","negative_sprint3"})
     public void VerifyManualyAddedUserWithoutemail() {
         DBUtility.createConnection();
         logger.info("Added hard coded variable into database");
