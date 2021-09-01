@@ -6,9 +6,11 @@ import static org.testng.Assert.*;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.SignUpPage;
-import tests.TestBase;
+import uitests.TestBase;
+import uitests.TestBase;
 import utilities.DBUtility;
 
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -65,7 +67,7 @@ public class SignUpDbTest extends TestBase {
     }
 
     @Test(groups = {"smoke_sp3","smoke_sp3"})
-    public void VerifyManualyAddedUser() {
+    public void VerifyManualyAddedUser() throws SQLException {
         DBUtility.createConnection();
         logger.info("Added hard coded variable into database");
         String firstName_Exp = "Madina";
@@ -90,7 +92,7 @@ public class SignUpDbTest extends TestBase {
     }
 
     @Test(groups = {"smoke_sp3","negative_sprint3"})
-    public void VerifyManualyAddedUserWithNoLastName() {
+    public void VerifyManualyAddedUserWithNoLastName() throws SQLException {
         DBUtility.createConnection();
         logger.info("Added hard coded variable into database");
         String firstName_Exp = "Madina";
@@ -116,7 +118,7 @@ public class SignUpDbTest extends TestBase {
     }
 
     @Test(groups = {"smoke_sp3","negative_sprint3"})
-    public void VerifyManualyAddedUserWithoutemail() {
+    public void VerifyManualyAddedUserWithoutemail() throws SQLException {
         DBUtility.createConnection();
         logger.info("Added hard coded variable into database");
         String firstName_Exp = "Madina";

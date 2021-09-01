@@ -15,6 +15,7 @@ import utilities.ConfigReader;
 import utilities.DBUtility;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -24,7 +25,7 @@ public class SignUpTestsDb_Rena extends TestBase {
 
 
     //signup a new user thru UI
-    @Test
+    @Test (groups = {"sprint_3"})
     public void verifyUserSignUpThroughDatabase() {
 
 
@@ -71,7 +72,7 @@ public class SignUpTestsDb_Rena extends TestBase {
     }
 
 
-    @Test
+    @Test (groups = {"sprint_3"})
     public void verifyColumnNamesOnUserTable() {
 
         DBUtility.createConnection();
@@ -88,8 +89,8 @@ public class SignUpTestsDb_Rena extends TestBase {
     }
 
 
-    @Test
-    public void verifySQLUpdates() {
+    @Test (groups = {"sprint_3"})
+    public void verifySQLUpdates() throws SQLException {
         DBUtility.createConnection();
         logger.info("Making update and verify updates");
         String expectedFirstName = "Rena";
