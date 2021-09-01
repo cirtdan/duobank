@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import utilities.CSVReader;
 import java.io.IOException;
 
-public class SignUpTests extends TestBase {
+public class SignUpTests extends TestBase { ///Oyat commited
 
     @Test (dataProvider = "getData")
     public void positiveSignUpWithMockData(String firstName, String lastName, String email, String password) {
