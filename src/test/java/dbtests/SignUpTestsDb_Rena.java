@@ -104,7 +104,9 @@ public class SignUpTestsDb_Rena extends TestBase {
         System.out.println(map);
         Assert.assertEquals(map.get("first_name"),expectedFirstName);
 
-
+        DBUtility.close();
 
     }
+
+
 }
