@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">DUOBANK AUTOMATION TEST</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Aug 30, 2021 11:34:39 PM</span></a>
+<a href="#"><span class="badge badge-primary">Sep 1, 2021 12:30:26 AM</span></a>
 </li>
 </ul>
 </div>
@@ -67,6 +67,7 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -74,14 +75,195 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">TEST CASE: verifyColumnNamesOnUserTable</p>
+            <p class="text-sm">
+              <span>12:30:27 AM</span> / <span>00:00:01:248</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">TEST CASE: verifyColumnNamesOnUserTable</h5>
+<span class='badge badge-success'>09.01.2021 12:30:27 AM</span>
+<span class='badge badge-danger'>09.01.2021 12:30:28 AM</span>
+<span class='badge badge-default'>00:00:01:248</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='failureScreenshot20210901123028.png' src="failureScreenshot20210901123028.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:27 AM</td>
+        <td>
+          Store expected column names
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:27 AM</td>
+        <td>
+          Retrieving actual column names from SQL
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:28 AM</td>
+        <td>
+          Test verifyColumnNamesOnUserTable Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:28 AM</td>
+        <td>
+          Exception: java.lang.NullPointerException
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">TEST CASE: verifySQLUpdates</p>
+            <p class="text-sm">
+              <span>12:30:30 AM</span> / <span>00:00:00:818</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">TEST CASE: verifySQLUpdates</h5>
+<span class='badge badge-success'>09.01.2021 12:30:30 AM</span>
+<span class='badge badge-danger'>09.01.2021 12:30:31 AM</span>
+<span class='badge badge-default'>00:00:00:818</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='failureScreenshot20210901123031.png' src="failureScreenshot20210901123031.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:30 AM</td>
+        <td>
+          Making update and verify updates
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:30 AM</td>
+        <td>
+          Test verifySQLUpdates Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:30 AM</td>
+        <td>
+          Exception: java.lang.NullPointerException
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">TEST CASE: verifyUserSignUpThroughDatabase</p>
+            <p class="text-sm">
+              <span>12:30:33 AM</span> / <span>00:00:01:575</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">TEST CASE: verifyUserSignUpThroughDatabase</h5>
+<span class='badge badge-success'>09.01.2021 12:30:33 AM</span>
+<span class='badge badge-danger'>09.01.2021 12:30:35 AM</span>
+<span class='badge badge-default'>00:00:01:575</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='failureScreenshot20210901123035.png' src="failureScreenshot20210901123035.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:34 AM</td>
+        <td>
+          Store the user information into the list of maps
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:34 AM</td>
+        <td>
+          Test verifyUserSignUpThroughDatabase Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:34 AM</td>
+        <td>
+          Exception: java.lang.NullPointerException
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">TEST CASE: verifyLoanOfficerStatusRange</p>
             <p class="text-sm">
-              <span>11:34:40 PM</span> / <span>00:00:00:817</span>
+              <span>12:30:37 AM</span> / <span>00:00:00:350</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -90,10 +272,10 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">TEST CASE: verifyLoanOfficerStatusRange</h5>
-<span class='badge badge-success'>08.30.2021 11:34:40 PM</span>
-<span class='badge badge-danger'>08.30.2021 11:34:41 PM</span>
-<span class='badge badge-default'>00:00:00:817</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-success'>09.01.2021 12:30:37 AM</span>
+<span class='badge badge-danger'>09.01.2021 12:30:37 AM</span>
+<span class='badge badge-default'>00:00:00:350</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
@@ -104,30 +286,628 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:34:40 PM</td>
+        <td>12:30:37 AM</td>
         <td>
           Connect to database
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:34:41 PM</td>
+        <td>12:30:37 AM</td>
         <td>
           Adding the number that is better than int max value and check if the database accepts it
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:34:41 PM</td>
+        <td>12:30:37 AM</td>
         <td>
           The database does not accept it
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:34:41 PM</td>
+        <td>12:30:37 AM</td>
         <td>
           Test verifyLoanOfficerStatusRange Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">TEST CASE: verifyLoanOfficerStatusRangeWithVerifyingExceptionMessage</p>
+            <p class="text-sm">
+              <span>12:30:39 AM</span> / <span>00:00:00:812</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">TEST CASE: verifyLoanOfficerStatusRangeWithVerifyingExceptionMessage</h5>
+<span class='badge badge-success'>09.01.2021 12:30:39 AM</span>
+<span class='badge badge-danger'>09.01.2021 12:30:40 AM</span>
+<span class='badge badge-default'>00:00:00:812</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='failureScreenshot20210901123040.png' src="failureScreenshot20210901123040.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:39 AM</td>
+        <td>
+          Connect to database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:39 AM</td>
+        <td>
+          Send update query adding out of range value and verify the exception message
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:39 AM</td>
+        <td>
+          Test verifyLoanOfficerStatusRangeWithVerifyingExceptionMessage Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:39 AM</td>
+        <td>
+          Exception: org.testng.TestException: 
+The exception was thrown with the wrong message: expected "Data truncation: Out of range value for column 'realtor_status' at row 1" but got "null"
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">TEST CASE: verifyMortgageTableColumnNames</p>
+            <p class="text-sm">
+              <span>12:30:42 AM</span> / <span>00:00:00:885</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">TEST CASE: verifyMortgageTableColumnNames</h5>
+<span class='badge badge-success'>09.01.2021 12:30:42 AM</span>
+<span class='badge badge-danger'>09.01.2021 12:30:43 AM</span>
+<span class='badge badge-default'>00:00:00:885</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='failureScreenshot20210901123043.png' src="failureScreenshot20210901123043.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:42 AM</td>
+        <td>
+          Connect to database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:42 AM</td>
+        <td>
+          Create a list of expected Mortgage Column Names
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:42 AM</td>
+        <td>
+          Send query to retrieve the actual Mortgage column names
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:42 AM</td>
+        <td>
+          Test verifyMortgageTableColumnNames Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:42 AM</td>
+        <td>
+          Exception: java.lang.NullPointerException
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">TEST CASE: verifyNoDuplicateEmails</p>
+            <p class="text-sm">
+              <span>12:30:45 AM</span> / <span>00:00:00:808</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">TEST CASE: verifyNoDuplicateEmails</h5>
+<span class='badge badge-success'>09.01.2021 12:30:45 AM</span>
+<span class='badge badge-danger'>09.01.2021 12:30:46 AM</span>
+<span class='badge badge-default'>00:00:00:808</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='failureScreenshot20210901123046.png' src="failureScreenshot20210901123046.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:45 AM</td>
+        <td>
+          Connect to database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:45 AM</td>
+        <td>
+          Send query to retrieve the duplicate emails
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:45 AM</td>
+        <td>
+          Test verifyNoDuplicateEmails Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:45 AM</td>
+        <td>
+          Exception: java.lang.NullPointerException
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">TEST CASE: verifyUserNameSupportsUnicodeChars</p>
+            <p class="text-sm">
+              <span>12:30:48 AM</span> / <span>00:00:00:841</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">TEST CASE: verifyUserNameSupportsUnicodeChars</h5>
+<span class='badge badge-success'>09.01.2021 12:30:48 AM</span>
+<span class='badge badge-danger'>09.01.2021 12:30:49 AM</span>
+<span class='badge badge-default'>00:00:00:841</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='failureScreenshot20210901123049.png' src="failureScreenshot20210901123049.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:48 AM</td>
+        <td>
+          Connect to database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:48 AM</td>
+        <td>
+          Create First Name and Last Name with non-english characters
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:48 AM</td>
+        <td>
+          Send update query to update the user's First Name and Last Name to non-english characters
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:48 AM</td>
+        <td>
+          Test verifyUserNameSupportsUnicodeChars Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:48 AM</td>
+        <td>
+          Exception: java.lang.NullPointerException
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">TEST CASE: verifyUsersTableColumnNames</p>
+            <p class="text-sm">
+              <span>12:30:51 AM</span> / <span>00:00:00:810</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">TEST CASE: verifyUsersTableColumnNames</h5>
+<span class='badge badge-success'>09.01.2021 12:30:51 AM</span>
+<span class='badge badge-danger'>09.01.2021 12:30:52 AM</span>
+<span class='badge badge-default'>00:00:00:810</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='failureScreenshot20210901123052.png' src="failureScreenshot20210901123052.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:51 AM</td>
+        <td>
+          Connect to database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:51 AM</td>
+        <td>
+          Create a list of expected Users Column Names
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:51 AM</td>
+        <td>
+          Send query to retrieve the actual Users column names
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:51 AM</td>
+        <td>
+          Test verifyUsersTableColumnNames Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:51 AM</td>
+        <td>
+          Exception: java.lang.NullPointerException
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">TEST CASE: updateUserInfoInDbAndVerifyOnWebsite</p>
+            <p class="text-sm">
+              <span>12:30:54 AM</span> / <span>00:00:00:878</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">TEST CASE: updateUserInfoInDbAndVerifyOnWebsite</h5>
+<span class='badge badge-success'>09.01.2021 12:30:54 AM</span>
+<span class='badge badge-danger'>09.01.2021 12:30:55 AM</span>
+<span class='badge badge-default'>00:00:00:878</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='failureScreenshot20210901123055.png' src="failureScreenshot20210901123055.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:54 AM</td>
+        <td>
+          Connect to database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:54 AM</td>
+        <td>
+          Create a user with the details using Faker
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:54 AM</td>
+        <td>
+          Get encrypted version on the Password
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:54 AM</td>
+        <td>
+          Send query to update the user information
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:54 AM</td>
+        <td>
+          Test updateUserInfoInDbAndVerifyOnWebsite Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:54 AM</td>
+        <td>
+          Exception: java.lang.NullPointerException
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">TEST CASE: verifyUserSignUpFlowFromDatabaseToUI_Faker</p>
+            <p class="text-sm">
+              <span>12:30:57 AM</span> / <span>00:00:00:891</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">TEST CASE: verifyUserSignUpFlowFromDatabaseToUI_Faker</h5>
+<span class='badge badge-success'>09.01.2021 12:30:57 AM</span>
+<span class='badge badge-danger'>09.01.2021 12:30:58 AM</span>
+<span class='badge badge-default'>00:00:00:891</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='failureScreenshot20210901123058.png' src="failureScreenshot20210901123058.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:57 AM</td>
+        <td>
+          Connect to database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:57 AM</td>
+        <td>
+          Create a user with the details using Faker
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:57 AM</td>
+        <td>
+          Get encrypted version on the Password
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:30:57 AM</td>
+        <td>
+          Send query to retrieve the information about the user
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:57 AM</td>
+        <td>
+          Test verifyUserSignUpFlowFromDatabaseToUI_Faker Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:30:57 AM</td>
+        <td>
+          Exception: java.lang.NullPointerException
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="12"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">TEST CASE: verifyUserSignUpFlowFromUIToDatabase_Faker</p>
+            <p class="text-sm">
+              <span>12:31:00 AM</span> / <span>00:00:01:493</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">TEST CASE: verifyUserSignUpFlowFromUIToDatabase_Faker</h5>
+<span class='badge badge-success'>09.01.2021 12:31:00 AM</span>
+<span class='badge badge-danger'>09.01.2021 12:31:01 AM</span>
+<span class='badge badge-default'>00:00:01:493</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='failureScreenshot20210901123101.png' src="failureScreenshot20210901123101.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:31:00 AM</td>
+        <td>
+          Create a user's First Name, Last Name, Email and Password using fake data
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:31:00 AM</td>
+        <td>
+          Get encrypted version on the Password
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:31:00 AM</td>
+        <td>
+          SignUp to the website
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:31:00 AM</td>
+        <td>
+          Connect to database
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:31:01 AM</td>
+        <td>
+          Send query to retrieve the information about the user
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:31:01 AM</td>
+        <td>
+          Store the user information into the list of maps
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:31:01 AM</td>
+        <td>
+          Test verifyUserSignUpFlowFromUIToDatabase_Faker Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:31:01 AM</td>
+        <td>
+          Exception: java.lang.NullPointerException
         </td>
       </tr>
   </tbody>
@@ -149,13 +929,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Aug 30, 2021 11:34:39 PM</h3>
+<h3>Sep 1, 2021 12:30:26 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Aug 30, 2021 11:34:41 PM</h3>
+<h3>Sep 1, 2021 12:31:01 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -167,7 +947,7 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>11</h3>
 </div></div>
 </div>
 </div>
@@ -183,12 +963,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
+<div><small data-tooltip='8%'>
 <b>1</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='91%'><b>11</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -206,10 +986,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='25%'><b>1</b> events passed</small></div>
+<div><small data-tooltip='1%'><b>1</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>3</b> others
+<small data-tooltip='38%'><b>22</b> events failed,
+<b data-tooltip='%'>34</b> others
 </small>
 </div>
 </div>
@@ -225,7 +1005,7 @@
 </div></div>
 <script>
 var timeline = {
-"TEST CASE: verifyLoanOfficerStatusRange":0.817
+"TEST CASE: verifyColumnNamesOnUserTable":1.248,"TEST CASE: verifySQLUpdates":0.818,"TEST CASE: verifyUserSignUpThroughDatabase":1.575,"TEST CASE: verifyLoanOfficerStatusRange":0.35,"TEST CASE: verifyLoanOfficerStatusRangeWithVerifyingExceptionMessage":0.812,"TEST CASE: verifyMortgageTableColumnNames":0.885,"TEST CASE: verifyNoDuplicateEmails":0.808,"TEST CASE: verifyUserNameSupportsUnicodeChars":0.841,"TEST CASE: verifyUsersTableColumnNames":0.81,"TEST CASE: updateUserInfoInDbAndVerifyOnWebsite":0.878,"TEST CASE: verifyUserSignUpFlowFromDatabaseToUI_Faker":0.891,"TEST CASE: verifyUserSignUpFlowFromUIToDatabase_Faker":1.493
 };
 </script>
 <div class="row">
@@ -257,7 +1037,7 @@ var timeline = {
 var statusGroup = {
 parentCount: 5,
 passParent: 1,
-failParent: 0,
+failParent: 11,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -274,10 +1054,10 @@ skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
 passEvents: 1,
-failEvents: 0,
+failEvents: 22,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 3
+infoEvents: 34
 };
 </script>        </div>
       </div>
