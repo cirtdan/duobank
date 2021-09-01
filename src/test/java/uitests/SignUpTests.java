@@ -1,16 +1,14 @@
-package tests;
+package uitests;
 
-import com.google.common.base.Verify;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import utilities.CSVReader;
 import java.io.IOException;
 
-public class SignUpTests extends TestBase {
+public class SignUpTests extends TestBase { ///Oyat commited
 
     @Test (dataProvider = "getData")
     public void positiveSignUpWithMockData(String firstName, String lastName, String email, String password) {
@@ -96,6 +94,13 @@ public class SignUpTests extends TestBase {
         logger.info("Signing Up using existing customer's email and password and verifying the ERROR MESSAGE (This email already used) is expected");
         Assert.assertEquals(signup.emailExistedMessageActual.getText(), emailExistedMessageExpected);
     }
+    @Test (groups = {"smoke"}) // SOMETIMES PASSES, SOMETIMES NOT
+    public void SignUpAsMickeyMouse() {
+
+        signup.signUp(testerFirstName, testerLastName, "mickey.mouse@isback.com", "mickey");
+        logger.info("Signing Up as Mickey Mouse");
+        Assert.assertEquals(signup.emailExistedMessageActual.getText(), emailExistedMessageExpected);
+    }
 
     @DataProvider
     public Object [][] getData() throws IOException {
@@ -118,4 +123,5 @@ public class SignUpTests extends TestBase {
         new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe(loginUrl));
         Assert.assertEquals(loginUrl, driver.getCurrentUrl());
     }
+
 }

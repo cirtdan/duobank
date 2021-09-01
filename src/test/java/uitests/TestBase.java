@@ -36,10 +36,10 @@ public class TestBase {
     protected String homeNumber = "222-100-0101";
     protected String emptySpace = " ";
 
-    String testerFirstName = ConfigReader.getProperty("firstName");
-    String testerLastName = ConfigReader.getProperty("lastName");
-    String testerEmail = ConfigReader.getProperty("email");
-    String testerPassword = ConfigReader.getProperty("pass");
+    protected String testerFirstName = ConfigReader.getProperty("firstName");
+    protected String testerLastName = ConfigReader.getProperty("lastName");
+    protected String testerEmail = ConfigReader.getProperty("email");
+    protected String testerPassword = ConfigReader.getProperty("pass");
 
     String alternativeEmail = fake.internet().emailAddress();
     String wrongEmailFormat = "@gmail.com";
@@ -155,12 +155,22 @@ public class TestBase {
             logger.addScreenCaptureFromPath(path);
         }
 
-        //Driver.quitDriver();
+        Driver.quitDriver();
     }
 
     @AfterSuite  (alwaysRun = true)
     public void tearDownReport(){
         reporter.flush();
     }
+
+
+     //_______________________Tetiana Kucherova doing sprint2  home work here:P___________________________
+    String ExpectedMatchingMSG ="No matching records found";
+
+    String ExpectedTextOfList1 ="10";
+    String ExpectedTextOfList2 ="20";
+    String ExpectedTextOfList3 ="30";
+    String ExpectedTextOfList4 ="40";
+    String ExpectedTextOfList5 ="45";
 
 }

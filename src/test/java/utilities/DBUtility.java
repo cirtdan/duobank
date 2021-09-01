@@ -9,6 +9,7 @@ import java.util.Map;
 
 public class DBUtility {
 
+
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
@@ -63,7 +64,7 @@ public class DBUtility {
             e.printStackTrace();
         }
 
-        int result = statement.executeUpdate(query);
+            int result = statement.executeUpdate(query);
 
 
     }
@@ -138,7 +139,6 @@ public class DBUtility {
             e.printStackTrace();
         }
         return rowCount;
-
     }
-}
 
+}

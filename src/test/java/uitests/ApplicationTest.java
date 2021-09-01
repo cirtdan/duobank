@@ -1,9 +1,7 @@
-package tests;
+package uitests;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utilities.SeleniumUtils;
 
 public class ApplicationTest extends TestBase{
 

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="sprint2 Tests Demo">
+<suite name="sprint3 Regression Tests Suite">
 
     <groups>
         <run>
-            <include name="sprint_2"></include>
+            <include name="sprint_3"></include>
         </run>
     </groups>
 
-    <test name="sprint2 Tests Demo">
+    <test name="sprint3 Regression Tests">
 
         <packages>
 
-            <package name="test"></package>
+            <package name="dbtests"></package>
             <!--runs all the packages-->
         </packages>
 

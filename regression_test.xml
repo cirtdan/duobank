@@ -9,7 +9,7 @@
 
 
         <packages>
-            <package name=".*"></package>
+            <package name="uitests"></package>
         </packages>
 
     </test> <!-- Test -->

@@ -2,10 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Regression Tests Suite" >
 
-    <test name="Regression Tests UI" parallel="methods" thread-count="4">
+    <test name="Database Parallel Tests" parallel="classes" thread-count="3">
         <classes>
 
-            <class name="uitests.SignUpTests"/>
+            <class name="dbtests.DataMappingTests_Rafael"/>
 
         </classes>
     </test> <!-- Test -->
