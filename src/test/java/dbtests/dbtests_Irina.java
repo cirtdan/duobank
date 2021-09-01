@@ -10,18 +10,17 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.LoginPage;
 import pages.SignUpPage;
-import tests.TestBase;
+import uitests.TestBase;
 import utilities.DBUtility;
 import utilities.SeleniumUtils;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
 public class dbtests_Irina extends TestBase {
 
     @Test(groups = {"Sprint_3"})
-    public  void dbVerifyCoBorrowerInfoPositive() throws SQLException, InterruptedException {
+    public  void dbVerifyCoBorrowerInfoPositive() {
         logger.info("Create a user's First Name, Last Name, Email and Password using fake data");
         Faker fake = new Faker();
         String expectedFirstName = fake.name().firstName();
@@ -180,7 +179,7 @@ public class dbtests_Irina extends TestBase {
     }
 
     @Test (groups = {"Sprint_3"})
-    public void dbApostropheInLastNameSignUpNegative() throws Exception {
+    public void dbApostropheInLastNameSignUpNegative() {
         logger.info("Create a user's First Name, Last Name with apostrophe, Email and Password using fake data");
         Faker fake = new Faker();
         String expectedFirstName = fake.name().firstName();
