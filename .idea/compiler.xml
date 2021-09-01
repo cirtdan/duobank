@@ -10,5 +10,8 @@
         <module name="duobank" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="duobank" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

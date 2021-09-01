@@ -17,7 +17,7 @@ public class DBUtility {
 
     public static void createConnection() {
         String url = ConfigReader.getProperty("db_url");
-        String user = ConfigReader.getProperty("db_user");
+        String user = ConfigReader.getProperty("db_username");
         String password = ConfigReader.getProperty("db_password");
         try {
             connection = DriverManager.getConnection(url, user, password);

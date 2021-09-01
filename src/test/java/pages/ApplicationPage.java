@@ -108,6 +108,40 @@ public class ApplicationPage extends PageBase {
     @FindBy(xpath = "//input[@id='c_cell']")
     public WebElement coborrowerCellField;
 
+    @FindBy(xpath = "//input[@id='co-employername1']")
+    public WebElement coborrowerEmployer;
+
+    @FindBy(xpath = "//input[@id='co-position1']")
+    public WebElement coborrowerPosition;
+
+    @FindBy(xpath = "//input[@id='co-city']")
+    public WebElement coborrowerCity;
+
+    @FindBy(xpath = "//input[@id='co-state1']")
+    public WebElement coborrowerState;
+
+    @FindBy(xpath = "//input[@id='co-start_date1']")
+    public WebElement coborrowerStartDate;
+
+    @FindBy(xpath = "//input[@id='co-grossmonthlyincome']")
+    public WebElement coborrowerGrossMonthlyIncome;
+
+    @FindBy(xpath = "//input[@id='co-monthlyovertime']")
+    public WebElement coborrowerMonthlyOvertime;
+
+    @FindBy(xpath = "//input[@id='co-monthlybonuses']")
+    public WebElement coborrowerMonthlyBonuses;
+
+    @FindBy(xpath = "//input[@id='co-monthlycommission']")
+    public WebElement coborrowerMonthlyCommission;
+
+    @FindBy(xpath = "//input[@id='co-monthlydividents']")
+    public WebElement coborrowerMonthlyDividents;
+
+
+
+
+
     // endregion
 
     @FindBy(xpath = "//label[@for='expense1']")
@@ -217,6 +251,9 @@ public class ApplicationPage extends PageBase {
 
     @FindBy(xpath = "//span[.='Credit Report']")
     public WebElement creditReportPageText;
+
+    @FindBy(xpath = "//select[@id='eConsentdeclarer']")
+    public WebElement eConsentDeclarer;
 
     @FindBy(xpath = "//span[.='eConsent']")
     public WebElement eConsentPageText;
