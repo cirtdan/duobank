@@ -19,7 +19,7 @@ import java.util.Map;
 
 public class dbtests_Irina extends TestBase {
 
-    @Test(groups = {"Sprint_3"})
+    @Test(groups = {"sprint_3"})
     public  void dbVerifyCoBorrowerInfoPositive() {
         logger.info("Create a user's First Name, Last Name, Email and Password using fake data");
         Faker fake = new Faker();
@@ -178,7 +178,7 @@ public class dbtests_Irina extends TestBase {
 
     }
 
-    @Test (groups = {"Sprint_3"})
+    @Test (groups = {"sprint_3"})
     public void dbApostropheInLastNameSignUpNegative() {
         logger.info("Create a user's First Name, Last Name with apostrophe, Email and Password using fake data");
         Faker fake = new Faker();
