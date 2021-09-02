@@ -117,4 +117,40 @@ public class DataMappingTests_Rafael extends TestBase {
         assertEquals(actualUsername, expectedUserName);
 
     }
+
+    @Test (groups = {"sprint_3"})
+    public void verifyUserSignUpFlowFromUIToDatabase_EmptySpace() {
+
+        logger.info("Create a user's First Name, Last Name, Email and Password using fake data");
+        Faker fake = new Faker();
+        String expectedFirstName = " ";
+        String expectedLastName = fake.name().lastName();
+        String expectedEmail = fake.internet().emailAddress();
+        String expectedPassword = fake.internet().password();
+        logger.info("Get encrypted version on the Password");
+        String md5hash = DigestUtils.md5Hex(expectedPassword);
+
+        logger.info("SignUp to the website");
+        new SignUpPage().signUp(expectedFirstName, expectedLastName, expectedEmail, expectedPassword);
+
+        logger.info("Connect to database");
+        DBUtility.createConnection();
+
+        logger.info("Send query to retrieve the information about the user");
+        String query = "select * from loan.tbl_user where email='"+expectedEmail+"'";
+
+        logger.info("Store the user information into the list of maps");
+        List<Map<String, Object>> listOfMaps = DBUtility.getQueryResultListOfMaps(query);
+
+        logger.info("Retrieve the user information needed");
+        Map<String, Object> map = listOfMaps.get(0);
+        System.out.println(map);
+
+        logger.info("Compare the information that was entered through UI with the Database info");
+        assertEquals(map.get("first_name"), expectedFirstName);
+        assertEquals(map.get("last_name"), expectedLastName);
+        assertEquals(map.get("email"), expectedEmail);
+        assertEquals(map.get("password"), md5hash);
     }
+
+}

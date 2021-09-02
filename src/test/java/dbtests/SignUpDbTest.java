@@ -1,4 +1,4 @@
-package db_duobank_tests;
+package dbtests;
 
 import com.github.javafaker.Faker;
 import org.apache.commons.codec.digest.DigestUtils;

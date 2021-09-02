@@ -12,7 +12,7 @@
 
         <packages>
 
-            <package name="db_duobank_tests"/>
+            <package name="dbtests"/>
             <!--runs all the packages-->
         </packages>
 
