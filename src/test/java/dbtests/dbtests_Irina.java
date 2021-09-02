@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import pages.ApplicationPage;
 import pages.LoginPage;
 import pages.SignUpPage;
 import uitests.TestBase;
@@ -20,7 +21,7 @@ import java.util.Map;
 public class dbtests_Irina extends TestBase {
 
     @Test(groups = {"sprint_3"})
-    public  void dbVerifyCoBorrowerInfoPositive() {
+    public  void db0VerifyCoBorrowerInfoPositive() {
         logger.info("Create a user's First Name, Last Name, Email and Password using fake data");
         Faker fake = new Faker();
         String expectedFirstName = fake.name().firstName();
@@ -42,13 +43,16 @@ public class dbtests_Irina extends TestBase {
         signUpPage.passwordField.sendKeys(expectedPassword);
         signUpPage.signUpButtonField.click();
 
-        SeleniumUtils.waitForUrlContains(loginUrl, 5);
+        SeleniumUtils.waitForUrlContains(loginUrl, 10);
 
         loginPage.login(expectedEmail, expectedPassword);
         logger.info("Entering Email, Password and clicking login button");
 
-        SeleniumUtils.waitForUrlContains(dashboardUrl, 5);
+        SeleniumUtils.waitForUrlContains(dashboardUrl, 10);
 
+        System.out.println("driver = " + driver);
+
+        ApplicationPage appPage = new ApplicationPage();
         appPage.mortgageApplicationButton.click();
         appPage.realtorInfoField.sendKeys(realtorInfo);
         //appPage.workingWithLoanOfficerYES.click(); // ARE YOU WORKING WITH A REALTOR? - YES
@@ -173,13 +177,12 @@ public class dbtests_Irina extends TestBase {
         softAssert.assertEquals(map.get("c_lastName"), lName);
         softAssert.assertEquals(map.get("c_email").toString().toLowerCase(), coBorEmail);  // email bug found, to prevent failure useing toLowercase
 
-
         softAssert.assertAll();
 
     }
 
-    @Test (groups = {"sprint_3"})
-    public void dbApostropheInLastNameSignUpNegative() {
+    @Test (groups = {"sprint_3", "negative"})
+    public void db1ApostropheInLastNameSignUpNegative() {
         logger.info("Create a user's First Name, Last Name with apostrophe, Email and Password using fake data");
         Faker fake = new Faker();
         String expectedFirstName = fake.name().firstName();
